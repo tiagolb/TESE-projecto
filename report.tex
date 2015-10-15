@@ -38,21 +38,24 @@
 \pagestyle{plain}
 \pagenumbering{arabic}
 \input{sections/3-introduction.tex}
-\cleardoublepage
-\input{sections/4-objectives.tex}
-\cleardoublepage
+%\cleardoublepage
+%\input{sections/4-objectives.tex}
+%\cleardoublepage
 \input{sections/5-related-work.tex}
-\cleardoublepage
-\input{sections/6-architecture.tex}
-\cleardoublepage
-\input{sections/7-evaluation.tex}
-\cleardoublepage
-\input{sections/8-conclusions.tex}
-\cleardoublepage
-\newpage
-\appendix
-\input{sections/9-appendix.tex}
-\cleardoublepage
+%\cleardoublepage
+%\input{sections/6-architecture.tex}
+%\cleardoublepage
+%\input{sections/7-evaluation.tex}
+%\cleardoublepage
+%\input{sections/8-conclusions.tex}
+%\cleardoublepage
+
+%[PREVIOUS/ORIGINAL CONFIG]
+%\newpage
+%\appendix
+%\input{sections/9-appendix.tex}
+%\tableofcontents
+%\cleardoublepage
 
 
 %
@@ -60,6 +63,23 @@
 %
 \bibliographystyle{plain}
 \addcontentsline{toc}{section}{References}
-\bibliography{references.bib}
+\bibliography{references}
+
+\newpage
+\appendix
+\input{sections/9-appendix.tex}
+\tableofcontents
+
+% *** DEFINITION OF ACRONYMS ***
+\acrodef{PC}{Personal Computer}
+\acrodef{mHealth}{Mobile Health}
+\acrodef{apps}{applications}
+\acrodef{app}{application}
+\acrodef{OS}{Operating System}
+\acrodef{TCB}{Trusted Computing Base}
+\acrodef{LOC}{lines of code}
+\acrodef{UCLA}{University of California, Los Angeles}
+\acrodef{CNN}{Cable News Network}
+\acrodef{ARM}{ARM Holdings}
 
 \end{document}

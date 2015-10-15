@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  14 OCT 2015 18:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  15 OCT 2015 17:22
 entering extended mode
 **report.tex
 (report.tex
@@ -529,56 +529,86 @@ LaTeX Font Info:    ... okay on input line 15.
 \makeMPintoPDFobject=\count141
 \everyMPtoPDFconversion=\toks30
 ) (sections/1-abstract.tex) (sections/2-keywords.tex)
-(sections/3-introduction.tex) [1
+(sections/3-introduction.tex
+Package acronym Info: Label `acro:PC' newly defined as it shall be overridden
+although it is yet undefined on input line 16.
+Package acronym Info: Label `acro:apps' newly defined as it shall be overridden
 
-{C:/Users/Tiago/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
+although it is yet undefined on input line 18.
+Package acronym Info: Label `acro:mHealth' newly defined as it shall be overrid
+den
+although it is yet undefined on input line 20.
 
-] (sections/4-objectives.tex) [3] [4
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
+ [][]\OT1/cmr/m/n/9 http://www.reuters.com/article/2014/09/24/us-cybersecurity-
+hospitals-
+ []
 
-]
-(sections/5-related-work.tex
+[1
 
-LaTeX Warning: Citation `Braem2013a' on page 5 undefined on input line 10.
+{C:/Users/Tiago/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Package acronym Info: Label `acro:UCLA' newly defined as it shall be overridden
 
-<img/rubberduck.jpg, id=19, 481.8pt x 642.4pt>
+although it is yet undefined on input line 24.
+Package acronym Info: Label `acro:CNN' newly defined as it shall be overridden
+although it is yet undefined on input line 24.
+Package acronym Info: Label `acro:OS' newly defined as it shall be overridden
+although it is yet undefined on input line 29.
+Package acronym Info: Label `acro:TCB' newly defined as it shall be overridden
+although it is yet undefined on input line 29.
+Package acronym Info: Label `acro:LOC' newly defined as it shall be overridden
+although it is yet undefined on input line 29.
+)
+(sections/5-related-work.tex [2]
+<img/rubberduck.jpg, id=15, 481.8pt x 642.4pt>
 File: img/rubberduck.jpg Graphic file (type jpg)
  <use img/rubberduck.jpg>
 Package pdftex.def Info: img/rubberduck.jpg used on input line 39.
 (pdftex.def)             Requested size: 329.7663pt x 439.69827pt.
 )
-[5] [6 <./img/rubberduck.jpg>] (sections/6-architecture.tex) [7
+(report.bbl [3] [4 <./img/rubberduck.jpg>]
+Underfull \hbox (badness 2809) in paragraph at lines 4--10
+\OT1/cmr/m/n/9 i-tor-ing, di-a-betes man-age-ment de-vices), health apps (ex-er
+-cise, weight loss,
+ []
 
-] [8
 
-]
-(sections/7-evaluation.tex) [9] [10
+Underfull \hbox (badness 5802) in paragraph at lines 17--21
+[]\OT1/cmr/m/n/9 Digital Fu-ture in Fo-cus.  Tech-ni-cal re-port, Com-score Inc
+., 03 2015.
+ []
 
-] (sections/8-conclusions.tex) [11] [12
 
-]
-(sections/9-appendix.tex) [13] [14
+Underfull \hbox (badness 10000) in paragraph at lines 17--21
+\OT1/cmr/m/n/9 http://www.comscore.com/Insights/Presentations-and-Whitepapers/2
+015/2015-
+ []
 
-]
-No file report.bbl.
-(report.aux) ) 
+) [5
+
+] (sections/9-appendix.tex) [6] (report.toc)
+\tf@toc=\write4
+ [7
+
+] (report.aux) ) 
 Here is how much of TeX's memory you used:
- 3460 strings out of 493673
- 46328 string characters out of 3141529
- 119209 words of memory out of 3000000
- 6738 multiletter control sequences out of 15000+200000
+ 3500 strings out of 493673
+ 46567 string characters out of 3141529
+ 121542 words of memory out of 3000000
+ 6785 multiletter control sequences out of 15000+200000
  8195 words of font info for 30 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 33i,9n,22p,695b,277s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
-x9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.
-pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on report.pdf (14 pages, 304042 bytes).
+ 33i,9n,22p,709b,277s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+Output written on report.pdf (7 pages, 310349 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
+ 55 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

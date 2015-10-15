@@ -6,8 +6,50 @@
 
 \section{Introduction (2/3pgs)}
 
-General description of the problem and its context, current solutions, and road map of the project.
+%General description of the problem and its context, current solutions, and road map of the project.
+%1. Contexto, importância da privacidade (nomeadamente no âmbito da e-Health)
+%2. Motivação, explicação dos problemas/desafio técnicos em tornar as apps seguras (foco em e-Health)
+%3. Definir objectivo e requisitos (dependem dos problemas técnicos)
+%4. Apresentar a arquitectura da solução
 
-According to Comscore's 2015 "Digital Future in Focus" whitepaper, with key statistics for the U.S. market, mobile devices, such as smart-phones and tablets, dominate digital media time over the PC, with the trend being to continue raising. This shows in the near future we maybe living in a world where mobile devices are the predominant device.
+% ** MOTIVATION AND CONTEXT **
+According to a Comscore's whitepaper \cite{comscore} from early 2015, with key statistics for the U.S. market, mobile devices, such as smart-phones and tablets, dominate digital media time over the \ac{PC}, with the trend being to continue raising. This shows a future where mobile devices might be the predominant device.
 
-Falar da trusted computing base
+Present in our everyday personal and professional lives, mobile \ac{apps} start to handle privacy and security-sensitive data, notably photos, health and banking information, location and general documentation, thus becoming an attractive target for attacks.
+
+This paper will focus, for the remaining of this project, on the e-Health market, also known as \ac{mHealth}. In 2013, Research2Guidance \cite{research2guidance} reported the existence of more than 97.000 \ac{mHealth} \ac{apps} across 62 app stores, with the top 10 \ac{mHealth} \ac{apps} generating up to 4 million free and 300.000 paid downloads per day. This market is expected to grow even further, from \$6.21 billion in revenue in 2013 to \$23.49 billion by 2018, according to a report from MarketsAndMarkets \cite{marketsandmarkets}.
+
+The health sector is an interesting market for attackers due to its information value. According to Reuters~\footnote{http://www.reuters.com/article/2014/09/24/us-cybersecurity-hospitals-idUSKCN0HJ21I20140924}, ``medical identity theft is often not immediately identified by a patient or their provider, giving criminals years to milk such credentials. That makes medical data more valuable than credit cards''.
+
+Such valuable information as lead to critical attacks on hospital networks around the world, consequently leaking or stealing health records of millions of patients. In September 2014, a group of hackers attacked the network of the \ac{UCLA}'s Hospital accessing computers with sensitive records of 4.5 million people. According to \ac{CNN}~\footnote{http://money.cnn.com/2015/07/17/technology/ucla-health-hack/}, among the stolen records were the names, medical information, Social Security numbers, Medicare numbers, health plan IDs, birthdays and physical addresses of \ac{UCLA}'s patients.
+
+% ** PREVIOUS SOLUTIONS **
+In the mobile context, data is even more exposed and vulnerable because of the portability of such devices, unregulated management of sensitive medical information, the sharing of information to third-party advertisers by device manufacturers and mobile app developers and security flaws on medical or consumer device software.
+
+To protect sensitive data, \ac{apps} rely on ad-hoc \ac{OS} and application-level methodologies, which in most cases depend upon a very complex \ac{TCB} code. Unlike most popular mobile platforms based on Android~\footnote{https://www.android.com/}, iOS~\footnote{http://www.apple.com/ios/} or Windows~\footnote{http://www.microsoft.com/en-us/windows}, which have a \ac{TCB} comprising of a full featured \ac{OS} and system libraries with millions of \ac{LOC}, in a small, dedicated runtime, consisting of only the necessary code to run the intended \ac{apps}, is easy to ensure the absence of exploitable code vulnerabilities.
+
+% OBJECTIVES **
+This project aims to fill the security gap in the mobile application market by proposing TrubiZone, a development system with a small, dedicated \ac{TCB} which, by using ARM TrustZone technology, allows app developers to execute parts of the application logic in a trusted environment isolated from the \ac{OS}, thus supporting the development of secure mobile applications independent from the full blown platforms and its inherent vulnerabilities.
+
+TrubiZone will be based on Genode~\footnote{http://genode.org/index} and implemented upon a Freescale i.MX53 START development board, which supports ARM's TrustZone.
+
+% RESTRICTIONS
+
+% APPLICATION SPECIFICATION
+To illustrate TrubiZone's functionality an \ac{mHealth} will be implemented.
+
+% ARCHITECTURE
+
+Two worlds etc...
+
+% CONTRIBUTIONS **
+In summary this work expects to contribute with:
+\begin{itemize}
+	\item The design of a novel security system, based on TrustZone, for development of secure mobile applications.
+	\item Implementation, on a development board, of a prototype of this new security framework.
+	\item Implementation of a mobile health application using the prototyped framework.
+	\item Assessment of the prototype and \ac{mHealth} app.
+\end{itemize}
+
+% ORGANIZATION **
+The remainder of this document proceeds as follows. Section 2 highlights the related work on mobile security, mobile health and TrustZone technology.

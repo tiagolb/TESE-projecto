@@ -2,10 +2,7 @@
 \authcount {1}
 \contentsline {author}{Tiago Brito, tiago.de.olveira.brito@tecnico.ulisboa.pt}{1}
 \contentsline {section}{\numberline {1}Introduction (2/3pgs)}{1}
-\contentsline {section}{\numberline {2}Objectives (1pg)}{3}
-\contentsline {section}{\numberline {3}Related Work (\nobreakspace {}17pgs)}{5}
-\contentsline {section}{\numberline {4}Architecture (2/3pgs)}{7}
-\contentsline {section}{\numberline {5}Evaluation (1/2pgs)}{9}
-\contentsline {section}{\numberline {6}Conclusions}{11}
-\contentsline {section}{\numberline {A}Appendix}{13}
-\contentsline {subsection}{\numberline {A.1}Work Scheduling Example}{13}
+\contentsline {section}{\numberline {2}Related Work (\nobreakspace {}17pgs)}{3}
+\contentsline {section}{References}{3}
+\contentsline {section}{\numberline {A}Appendix}{6}
+\contentsline {subsection}{\numberline {A.1}Work Scheduling Example}{6}
