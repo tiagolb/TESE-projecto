@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  16 OCT 2015 15:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  29 OCT 2015 19:54
 entering extended mode
 **report.tex
 (report.tex
@@ -587,7 +587,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--54
 
  []
 
-) (sections/5-related-work.tex) (report.bbl
+) (sections/5-related-work.tex [3]) (report.bbl
 Underfull \hbox (badness 2809) in paragraph at lines 4--10
 \OT1/cmr/m/n/9 i-tor-ing, di-a-betes man-age-ment de-vices), health apps (ex-er
 -cise, weight loss,
@@ -605,7 +605,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--21
 015/2015-
  []
 
-[3]) [4] (report.aux) ) 
+) [4] (report.aux) ) 
 Here is how much of TeX's memory you used:
  3483 strings out of 493673
  46285 string characters out of 3141529
@@ -613,17 +613,16 @@ Here is how much of TeX's memory you used:
  6775 multiletter control sequences out of 15000+200000
  8900 words of font info for 32 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 33i,9n,22p,891b,269s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmbxti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7
-.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb
->
-Output written on report.pdf (4 pages, 121180 bytes).
+ 33i,9n,22p,891b,156s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmbxti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
+6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+Output written on report.pdf (4 pages, 124820 bytes).
 PDF statistics:
  47 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
