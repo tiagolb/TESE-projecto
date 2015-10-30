@@ -13,53 +13,64 @@
 %4. Apresentar a arquitectura da solução
 
 % ** MOTIVATION AND CONTEXT **
-According to a Comscore's whitepaper \cite{comscore} from early 2015, with key statistics for the U.S. market, mobile devices, such as smart-phones and tablets, dominate digital media time over the \ac{PC}, with the trend being to continue raising. This shows a future where mobile devices might be the predominant device.
 
-Present in our everyday personal and professional lives, mobile \ac{apps} start to handle privacy and security-sensitive data, notably photos, health and banking information, location and general documentation, thus becoming an attractive target for attacks.
+Mobile devices are becoming the predominant device. Actions previously performed by powerful desktop computers can now be easily replicated on mobile devices. A recent study \cite{comscore} from early 2015, with key statistics for the U.S. market, even shows that mobile devices, such as smart-phones and tablets, dominate digital media time over the \ac{PC}, with the trend being to continue raising.
+
+Present in our everyday personal and professional lives, mobile \ac{apps} start to handle privacy and security-sensitive data. Most notably these \ac{apps} are handling photos, health and banking information, location and general documentation. The growing role of mobile devices has the negative consequence
+of becoming an attractive target for attacks. Among the several mobile platforms, Android is the one which attracts much more malware attacks \cite{fsecure}.
+%partir a ultima frase em duas
+%mostrar alguma referência que indique o aumento do malware em plataformas móveis
+
+%aqui fazer a transição para mHealth e os problemas de segurança nesta área
+%e só depois apontar este números para provar que está área está em crescimento
 
 The remaining of this project will focus on the e-Health mobile \ac{app} market, also known as \ac{mHealth}. In 2013, Research2Guidance \cite{research2guidance} reported the existence of more than 97.000 \ac{mHealth} \ac{apps} across 62 app stores, with the top 10 \ac{apps} generating up to 4 million free and 300.000 paid downloads per day. According to a report from MarketsAndMarkets \cite{marketsandmarkets}, this market is expected to grow even further, from \$6.21 billion in revenue in 2013 to \$23.49 billion by 2018.
 
 The health sector is an interesting market for attackers due to its information value. According to Reuters~\footnote{http://www.reuters.com/article/2014/09/24/us-cybersecurity-hospitals-idUSKCN0HJ21I20140924}, ``medical identity theft is often not immediately identified by a patient or their provider, giving criminals years to milk such credentials. That makes medical data more valuable than credit cards''.
 
+
+%Não usar exemplos que não sabemos se a nossa solução consegue resolver
 Such valuable information as lead criminals to perform critical attacks on hospital networks around the world, consequently leaking or stealing health records of millions of patients. In September 2014, a group of hackers attacked the network of \ac{UCLA}'s Hospital accessing computers with sensitive records of 4.5 million people. According to \ac{CNN}~\footnote{http://money.cnn.com/2015/07/17/technology/ucla-health-hack/}, among the stolen records were the names, medical information, Social Security numbers, Medicare numbers, health plan IDs, birthdays and physical addresses of \ac{UCLA}'s patients.
 
 % ** PREVIOUS SOLUTIONS AND TECHNICAL DIFFICULTIES **
 In the mobile context, data is even more exposed and vulnerable because of the portability inherent to mobile devices, unregulated management of sensitive medical information, the sharing of information to third-party advertisers by device manufacturers and mobile app developers and security flaws on medical or consumer device software.
 
-To protect sensitive data, \ac{apps} rely on ad-hoc \ac{OS} and application-level methodologies, which in most cases depend upon a very complex \ac{TCB} code. Unlike most popular mobile platforms based on Android~\footnote{https://www.android.com/}, iOS~\footnote{http://www.apple.com/ios/} or Windows~\footnote{http://www.microsoft.com/en-us/windows}, which have a \ac{TCB} comprising of a full featured \ac{OS} and system libraries with millions of \ac{LOC}, a small, dedicated runtime is easy to ensure the absence of exploitable code vulnerabilities. The difficulty in developing a runtime comprised of a small, secure \ac{TCB} is the limit it imposes upon the mobile \ac{apps} supported. By removing complexity one removes functionality such as networking, I/O and compatibility with most used platforms. 
+%Falta falar sobre alguns mecanismos de segurança existentes e indicar algumas referências
+To protect sensitive data, \ac{apps} rely on ad-hoc \ac{OS} and application-level methodologies, which in most cases depend upon a very complex \ac{TCB} code. Unlike most popular mobile platforms based on Android~\footnote{https://www.android.com/}, iOS~\footnote{http://www.apple.com/ios/} or Windows~\footnote{http://www.microsoft.com/en-us/windows}, which have a \ac{TCB} comprising of a full featured \ac{OS} and system libraries with millions of \ac{LOC}, a small, dedicated runtime is easy to ensure the absence of exploitable code vulnerabilities. The difficulty in developing a runtime comprised of a small, secure \ac{TCB} is the limit it imposes upon the mobile \ac{apps} supported. By removing complexity one removes functionality such as networking, I/O and compatibility with most used platforms.
 
+% A discutir melhor depois do trabalho relacionado, comentar por agora?
 % ** OBJECTIVES ** 
-Thus, the goal of this project is to fill the security gap in the mobile application market by proposing TrubiZone, a development system with a small, dedicated \ac{TCB} which, by using ARM TrustZone technology, allows app developers to execute parts of the application logic in a trusted environment isolated from the \ac{OS}, which in turn supports the development of secure mobile applications independent from a full blown platform and its inherent vulnerabilities.
-
-% RESTRICTIONS
-To avoid the limitations referenced above the final implementation must guarantee the following requirements:
-
-\paragraph*{\textbf{Assure Security Policies\\}}
-TrubiZone must guarantee the fundamental security properties of confidentiality, integrity and authenticity, on which every high level security application can be built on.
-
-\paragraph*{\textbf{I/O Support\\}}
-To allow the development of realistic mobile applications I/O interaction must be supported, while trying to maintain a small, compact \ac{TCB}.
-
-\paragraph*{\textbf{Support for General Applications\\}}
-The implementation should run general applications instead of dedicated and specifically crafted apps. To support this restriction TrubiZone must execute applications built using modern high-level languages with components such as garbage collection and strong typing.
-
-\paragraph*{\textbf{Developer Friendly\\}}
-Developers must be able to easily specify the security properties required and the security-sensitive app logic to transparently run in the trusted environment. This allows developers to focus on the logic and design of said application rather than mobile security mechanisms.\\
-
-% APPLICATION SPECIFICATION
-TrubiZone will be based on Genode~\footnote{http://genode.org/index} running along side Android and implemented upon a Freescale i.MX53 START development board~\footnote{http://www.freescale.com/products/arm-processors/i.mx-applications-processors-based-on-arm-cores/i.mx53-processors/i.mx53-quick-start-board:IMX53QSB}, which supports ARM's TrustZone. To illustrate TrubiZone's functionality a \ac{mHealth} will be implemented.\\
-
-% ARCHITECTURE
-*** Aqui terá uma breve descrição da arquitectura do sistema. ***\\
-
-% CONTRIBUTIONS **
-In summary this work expects to contribute with:
-\begin{itemize}
-	\item The design of a novel security system, based on TrustZone, for development of secure mobile applications.
-	\item Implementation, on a development board, of a prototype of this new security framework.
-	\item Implementation of a mobile health application using the prototyped framework.
-	\item Assessment of the prototype and \ac{mHealth} app.
-\end{itemize}
-
-% ORGANIZATION **
-The remainder of this document proceeds as follows. Section 2 highlights the related work on mobile health, mobile security and TrustZone technology. Section 3 highlights the architecture of TrubiZone.
+%Thus, the goal of this project is to fill the security gap in the mobile application market by proposing TrubiZone, a development system with a small, dedicated \ac{TCB} which, by using ARM TrustZone technology, allows app developers to execute parts of the application logic in a trusted environment isolated from the \ac{OS}, which in turn supports the development of secure mobile applications independent from a full blown platform and its inherent vulnerabilities.
+%
+%% RESTRICTIONS
+%To avoid the limitations referenced above the final implementation must guarantee the following requirements:
+%
+%\paragraph*{\textbf{Assure Security Policies\\}}
+%TrubiZone must guarantee the fundamental security properties of confidentiality, integrity and authenticity, on which every high level security application can be built on.
+%
+%\paragraph*{\textbf{I/O Support\\}}
+%To allow the development of realistic mobile applications I/O interaction must be supported, while trying to maintain a small, compact \ac{TCB}.
+%
+%\paragraph*{\textbf{Support for General Applications\\}}
+%The implementation should run general applications instead of dedicated and specifically crafted apps. To support this restriction TrubiZone must execute applications built using modern high-level languages with components such as garbage collection and strong typing.
+%
+%\paragraph*{\textbf{Developer Friendly\\}}
+%Developers must be able to easily specify the security properties required and the security-sensitive app logic to transparently run in the trusted environment. This allows developers to focus on the logic and design of said application rather than mobile security mechanisms.\\
+%
+%% APPLICATION SPECIFICATION
+%TrubiZone will be based on Genode~\footnote{http://genode.org/index} running along side Android and implemented upon a Freescale i.MX53 START development board~\footnote{http://www.freescale.com/products/arm-processors/i.mx-applications-processors-based-on-arm-cores/i.mx53-processors/i.mx53-quick-start-board:IMX53QSB}, which supports ARM's TrustZone. To illustrate TrubiZone's functionality a \ac{mHealth} will be implemented.\\
+%
+%% ARCHITECTURE
+%*** Aqui terá uma breve descrição da arquitectura do sistema. ***\\
+%
+%% CONTRIBUTIONS **
+%In summary this work expects to contribute with:
+%\begin{itemize}
+%	\item The design of a novel security system, based on TrustZone, for development of secure mobile applications.
+%	\item Implementation, on a development board, of a prototype of this new security framework.
+%	\item Implementation of a mobile health application using the prototyped framework.
+%	\item Assessment of the prototype and \ac{mHealth} app.
+%\end{itemize}
+%
+%% ORGANIZATION **
+%The remainder of this document proceeds as follows. Section 2 highlights the related work on mobile health, mobile security and TrustZone technology. Section 3 highlights the architecture of TrubiZone.
