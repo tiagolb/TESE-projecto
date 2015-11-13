@@ -16,28 +16,41 @@
 
 Mobile devices are becoming the predominant device. Actions previously performed by powerful desktop computers can now be easily replicated on mobile devices. A recent study \cite{comscore} from early 2015, with key statistics for the U.S. market, even shows that mobile devices, such as smart-phones and tablets, dominate digital media time over the \ac{PC}, with the trend being to continue raising.
 
-Present in our everyday personal and professional lives, mobile \ac{apps} start to handle privacy and security-sensitive data. Most notably these \ac{apps} are handling photos, health and banking information, location and general documentation. The growing role of mobile devices has the negative consequence
-of becoming an attractive target for attacks. Among the several mobile platforms, Android is the one which attracts much more malware attacks \cite{fsecure}.
-%partir a ultima frase em duas
-%mostrar alguma referência que indique o aumento do malware em plataformas móveis
+Present in our everyday personal and professional lives, mobile applications (apps) start to handle privacy and security-sensitive data. Most notably these apps are handling photos, health and banking information, location and general documentation. The growing role of mobile devices has the negative consequence of becoming an attractive target for attacks. Among the several mobile platforms, Android is the one which attracts much more malware attacks \cite{fsecure}.
 
 %aqui fazer a transição para mHealth e os problemas de segurança nesta área
 %e só depois apontar este números para provar que está área está em crescimento
 
-The remaining of this project will focus on the e-Health mobile \ac{app} market, also known as \ac{mHealth}. In 2013, Research2Guidance \cite{research2guidance} reported the existence of more than 97.000 \ac{mHealth} \ac{apps} across 62 app stores, with the top 10 \ac{apps} generating up to 4 million free and 300.000 paid downloads per day. According to a report from MarketsAndMarkets \cite{marketsandmarkets}, this market is expected to grow even further, from \$6.21 billion in revenue in 2013 to \$23.49 billion by 2018.
-
-The health sector is an interesting market for attackers due to its information value. According to Reuters~\footnote{http://www.reuters.com/article/2014/09/24/us-cybersecurity-hospitals-idUSKCN0HJ21I20140924}, ``medical identity theft is often not immediately identified by a patient or their provider, giving criminals years to milk such credentials. That makes medical data more valuable than credit cards''.
-
+The health sector is an interesting market for attackers due to its information value. According to Reuters~\footnote{http://www.reuters.com/article/2014/09/24/us-cybersecurity-hospitals-idUSKCN0HJ21I20140924}, ``medical identity theft is often not immediately identified by a patient or their provider, giving criminals years to milk such credentials. That makes medical data more valuable than credit cards''. This is way regulatory laws such as the \ac{HIPAA}, which establishes standards for electronic health care transactions, are so important to follow when managing sensitive health data.
 
 %Não usar exemplos que não sabemos se a nossa solução consegue resolver
-Such valuable information as lead criminals to perform critical attacks on hospital networks around the world, consequently leaking or stealing health records of millions of patients. In September 2014, a group of hackers attacked the network of \ac{UCLA}'s Hospital accessing computers with sensitive records of 4.5 million people. According to \ac{CNN}~\footnote{http://money.cnn.com/2015/07/17/technology/ucla-health-hack/}, among the stolen records were the names, medical information, Social Security numbers, Medicare numbers, health plan IDs, birthdays and physical addresses of \ac{UCLA}'s patients.
+Valuable health care information is a motivation for criminals to perform critical attacks on hospital networks around the world, consequently leaking or stealing health records of millions of patients. In September 2014, a group of hackers attacked the network of \ac{UCLA}'s Hospital accessing computers with sensitive records of 4.5 million people. According to \ac{CNN}~\footnote{http://money.cnn.com/2015/07/17/technology/ucla-health-hack/}, among the stolen records were the names, medical information, Social Security numbers, Medicare numbers, health plan IDs, birthdays and physical addresses of \ac{UCLA}'s patients.
 
 % ** PREVIOUS SOLUTIONS AND TECHNICAL DIFFICULTIES **
-In the mobile context, data is even more exposed and vulnerable because of the portability inherent to mobile devices, unregulated management of sensitive medical information, the sharing of information to third-party advertisers by device manufacturers and mobile app developers and security flaws on medical or consumer device software.
+In the mobile context, data is even more exposed and vulnerable due to the inherent portability of these devices, the sharing of information to third-party advertisers by device manufacturers or mobile app developers, unregulated management of sensitive medical information, specially because regulatory laws such as \ac{HIPAA} do not account for the mobile sector, and because of security flaws on medical or consumer device software.
+
+Parallel to the growth of the mobile app market, the number of e-Health mobile app, also known as \ac{mHealth}, available is increasing rapidly. In 2013, Research2Guidance \cite{research2guidance} reported the existence of more than 97.000 \ac{mHealth} apps across 62 app stores, with the top 10 apps generating up to 4 million free and 300.000 paid downloads per day. According to a report from MarketsAndMarkets \cite{marketsandmarkets}, this market is expected to grow even further, from \$6.21 billion in revenue in 2013 to \$23.49 billion by 2018.
 
 %Falta falar sobre alguns mecanismos de segurança existentes e indicar algumas referências
-To protect sensitive data, \ac{apps} rely on ad-hoc \ac{OS} and application-level methodologies, which in most cases depend upon a very complex \ac{TCB} code. Unlike most popular mobile platforms based on Android~\footnote{https://www.android.com/}, iOS~\footnote{http://www.apple.com/ios/} or Windows~\footnote{http://www.microsoft.com/en-us/windows}, which have a \ac{TCB} comprising of a full featured \ac{OS} and system libraries with millions of \ac{LOC}, a small, dedicated runtime is easy to ensure the absence of exploitable code vulnerabilities. The difficulty in developing a runtime comprised of a small, secure \ac{TCB} is the limit it imposes upon the mobile \ac{apps} supported. By removing complexity one removes functionality such as networking, I/O and compatibility with most used platforms.
 
+%do que esta na proxima linha ver o que faz sentido e adicionar algumas referencias
+%  \cite{smalley2013security,bugiel2011practical,bugiel2013flexible}
+%  \cite{nauman2010apex,kern2012permission,wang2014compac}
+To protect sensitive data on mobile apps developers rely on mechanisms such as \ac{DRM} \cite{drm}, access control mechanisms, permission refinement, security \ac{API}, privacy enhancement systems and access control hooks, either from native Android~\footnote{https://www.android.com/}, iOS~\footnote{http://www.apple.com/ios/} and Windows~\footnote{http://www.microsoft.com/en-us/windows} or from extensions. These mechanisms rely on ad-hoc \ac{OS} and application-level methodologies, which in most cases depend upon a very complex \ac{TCB} code, and do not fully enjoy the potential of the hardware of most modern smartphones, by not taking advantage of technology such as ARM's TrustZone.\\
+
+%Unlike most popular mobile platforms based on Android~\footnote{https://www.android.com/}, iOS~\footnote{http://www.apple.com/ios/} or Windows~\footnote{http://www.microsoft.com/en-us/windows}, which have a \ac{TCB} comprising of a full featured \ac{OS} and system libraries with millions of \ac{LOC}, a small, dedicated runtime is easy to ensure the absence of exploitable code vulnerabilities. The difficulty in developing a runtime comprised of a small, secure \ac{TCB} is the limit it imposes upon the mobile apps supported. By removing complexity one removes functionality such as networking, I/O and compatibility with most used platforms.
+
+Objectivos\\
+
+Restrições\\
+
+Especificação do sistema\\
+
+Arquitectura\\
+
+Contribuições\\
+
+Organização\\
 % A discutir melhor depois do trabalho relacionado, comentar por agora?
 % ** OBJECTIVES ** 
 %Thus, the goal of this project is to fill the security gap in the mobile application market by proposing TrubiZone, a development system with a small, dedicated \ac{TCB} which, by using ARM TrustZone technology, allows app developers to execute parts of the application logic in a trusted environment isolated from the \ac{OS}, which in turn supports the development of secure mobile applications independent from a full blown platform and its inherent vulnerabilities.

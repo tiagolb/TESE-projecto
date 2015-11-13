@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  30 OCT 2015 10:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  13 NOV 2015 23:14
 entering extended mode
 **report.tex
 (report.tex
@@ -531,42 +531,70 @@ LaTeX Font Info:    ... okay on input line 15.
 ) (sections/1-abstract.tex) (sections/3-introduction.tex
 Package acronym Info: Label `acro:PC' newly defined as it shall be overridden
 although it is yet undefined on input line 17.
-Package acronym Info: Label `acro:apps' newly defined as it shall be overridden
 
-although it is yet undefined on input line 19.
-Package acronym Info: Label `acro:app' newly defined as it shall be overridden
-although it is yet undefined on input line 27.
-Package acronym Info: Label `acro:mHealth' newly defined as it shall be overrid
-den
-although it is yet undefined on input line 27.
-
-Overfull \hbox (10.25212pt too wide) in paragraph at lines 27--28
-\OT1/cmr/m/n/10 ([])[] mar-ket, also known as [][]Mo-bile Health ([])[]. In 201
-3, Re-search2Guidance
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 29--29
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
  [][]\OT1/cmr/m/n/9 http://www.reuters.com/article/2014/09/24/us-cybersecurity-
 hospitals-
  []
 
+Package acronym Info: Label `acro:HIPAA' newly defined as it shall be overridde
+n
+although it is yet undefined on input line 24.
 [1
 
 {C:/Users/Tiago/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 Package acronym Info: Label `acro:UCLA' newly defined as it shall be overridden
 
-although it is yet undefined on input line 33.
+although it is yet undefined on input line 27.
 Package acronym Info: Label `acro:CNN' newly defined as it shall be overridden
-although it is yet undefined on input line 33.
+although it is yet undefined on input line 27.
+Package acronym Info: Label `acro:mHealth' newly defined as it shall be overrid
+den
+although it is yet undefined on input line 32.
+Package acronym Info: Label `acro:DRM' newly defined as it shall be overridden
+although it is yet undefined on input line 39.
+Package acronym Info: Label `acro:API' newly defined as it shall be overridden
+although it is yet undefined on input line 39.
 Package acronym Info: Label `acro:OS' newly defined as it shall be overridden
 although it is yet undefined on input line 39.
 Package acronym Info: Label `acro:TCB' newly defined as it shall be overridden
 although it is yet undefined on input line 39.
-Package acronym Info: Label `acro:LOC' newly defined as it shall be overridden
-although it is yet undefined on input line 39.
-)
-(sections/5-related-work.tex [2]) (report.bbl
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+
+ []
+
+[2]) (sections/5-related-work.tex
+Underfull \hbox (badness 10000) in paragraph at lines 53--2
+
+ []
+
+) (report.bbl
 Underfull \hbox (badness 2809) in paragraph at lines 4--10
 \OT1/cmr/m/n/9 i-tor-ing, di-a-betes man-age-ment de-vices), health apps (ex-er
 -cise, weight loss,
@@ -584,25 +612,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--27
 015/2015-
  []
 
-) [3] (report.aux) ) 
+[3]) [4] (report.aux) ) 
 Here is how much of TeX's memory you used:
- 3477 strings out of 493673
- 46201 string characters out of 3141529
- 121519 words of memory out of 3000000
- 6774 multiletter control sequences out of 15000+200000
- 8195 words of font info for 30 fonts, out of 3000000 for 9000
+ 3482 strings out of 493673
+ 46241 string characters out of 3141529
+ 121618 words of memory out of 3000000
+ 6778 multiletter control sequences out of 15000+200000
+ 8540 words of font info for 31 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 33i,9n,22p,891b,190s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on report.pdf (3 pages, 108301 bytes).
+ 33i,9n,22p,776b,268s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7
+.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb
+><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+Output written on report.pdf (4 pages, 119858 bytes).
 PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
+ 47 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
