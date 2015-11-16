@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{marketsandmarkets}
 { Mobile health apps \& solutions market by connected devices (cardiac
@@ -25,6 +25,53 @@
 \newblock
   \url{http://www.comscore.com/Insights/Presentations-and-Whitepapers/2015/2015-US-Digital-Future-in-Focus}.
 
+\bibitem{doctoronline}
+Airpersons.
+\newblock Doctor online {@ONLINE}.
+\newblock
+  \url{https://play.google.com/store/apps/details?id=com.airpersons.airpersonsmobilehealth}.
+
+\bibitem{recipesbyingredients}
+AB~Mobile Apps.
+\newblock Recipes by ingredients {@ONLINE}.
+\newblock
+  \url{https://play.google.com/store/apps/details?id=com.abMobile.recipebyingredient}.
+
+\bibitem{avancha2012privacy}
+Sasikanth Avancha, Amit Baxi, and David Kotz.
+\newblock Privacy in mobile technology for personal healthcare.
+\newblock {\em ACM Computing Surveys (CSUR)}, 45(1):3, 2012.
+
+\bibitem{aviv2012practicality}
+Adam~J Aviv, Benjamin Sapp, Matt Blaze, and Jonathan~M Smith.
+\newblock Practicality of accelerometer side channels on smartphones.
+\newblock In {\em Proceedings of the 28th Annual Computer Security Applications
+  Conference}, pages 41--50. ACM, 2012.
+
+\bibitem{cai2012practicality}
+Liang Cai and Hao Chen.
+\newblock {\em On the practicality of motion based keystroke inference attack}.
+\newblock Springer, 2012.
+
+\bibitem{sevenwaystohangyourselfwithandroid}
+Chin and O'Neil.
+\newblock Seven ways to hang yourself with android {@ONLINE}.
+\newblock
+  \url{https://www.defcon.org/images/defcon-19/dc-19-presentations/O'Neil-Chin/DEFCON-19-O'Neil-Chin-Google-Android.pdf},
+  2011.
+
+\bibitem{chin2011analyzing}
+Erika Chin, Adrienne~Porter Felt, Kate Greenwood, and David Wagner.
+\newblock Analyzing inter-application communication in android.
+\newblock In {\em Proceedings of the 9th international conference on Mobile
+  systems, applications, and services}, pages 239--252. ACM, 2011.
+
+\bibitem{cvspharmacy}
+CVS/pharmacy.
+\newblock Cvs/pharmacy {@ONLINE}.
+\newblock
+  \url{https://play.google.com/store/apps/details?id=com.cvs.launchers.cvs}.
+
 \bibitem{drm}
 OMA DRM.
 \newblock Open mobile alliance digital rights management.(2010).
@@ -36,9 +83,42 @@ Dongjing He, Muhammad Naveed, Carl~A Gunter, and Klara Nahrstedt.
 \newblock In {\em AMIA Annual Symposium Proceedings}, volume 2014, page 645.
   American Medical Informatics Association, 2014.
 
+\bibitem{noomwlc}
+Noom Inc.
+\newblock Noom weight loss coach {@ONLINE}.
+\newblock \url{https://play.google.com/store/apps/details?id=com.wsl.noom}.
+
 \bibitem{kotz2011threat}
 David Kotz.
 \newblock A threat taxonomy for mhealth privacy.
 \newblock In {\em COMSNETS}, pages 1--6, 2011.
+
+\bibitem{sleeptalk}
+MadinSweden.
+\newblock Sleep talk recorder {@ONLINE}.
+\newblock
+  \url{https://play.google.com/store/apps/details?id=com.madinsweden.sleeptalk}.
+
+\bibitem{naveed2014inside}
+Muhammad Naveed, Xiaoyong Zhou, Soteris Demetriou, XiaoFeng Wang, and Carl~A
+  Gunter.
+\newblock Inside job: Understanding and mitigating the threat of external
+  device mis-bonding on android.
+\newblock In {\em Proceedings of the 21st Annual Network and Distributed System
+  Security Symposium (NDSS)}, pages 23--26, 2014.
+
+\bibitem{snoreclock}
+Ralph Schiffhauer.
+\newblock Snoreclock {@ONLINE}.
+\newblock
+  \url{https://play.google.com/store/apps/details?id=de.ralphsapps.snorecontrol}.
+
+\bibitem{zhou2013identity}
+Xiaoyong Zhou, Soteris Demetriou, Dongjing He, Muhammad Naveed, Xiaorui Pan,
+  XiaoFeng Wang, Carl~A Gunter, and Klara Nahrstedt.
+\newblock Identity, location, disease and more: Inferring your secrets from
+  android public resources.
+\newblock In {\em Proceedings of the 2013 ACM SIGSAC conference on Computer \&
+  communications security}, pages 1017--1028. ACM, 2013.
 
 \end{thebibliography}
