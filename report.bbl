@@ -30,4 +30,15 @@ OMA DRM.
 \newblock Open mobile alliance digital rights management.(2010).
 \newblock {\em Retrieved May}, 2, 2011.
 
+\bibitem{he2014security}
+Dongjing He, Muhammad Naveed, Carl~A Gunter, and Klara Nahrstedt.
+\newblock Security concerns in android mhealth apps.
+\newblock In {\em AMIA Annual Symposium Proceedings}, volume 2014, page 645.
+  American Medical Informatics Association, 2014.
+
+\bibitem{kotz2011threat}
+David Kotz.
+\newblock A threat taxonomy for mhealth privacy.
+\newblock In {\em COMSNETS}, pages 1--6, 2011.
+
 \end{thebibliography}
