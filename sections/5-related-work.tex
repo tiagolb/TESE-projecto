@@ -59,7 +59,7 @@ In the second study, 27 apps, from the top 1080 free apps from the Medical and H
 
 Some health apps use Bluetooth devices to collect personal health information such as heart rate, respiration, pulse oximetry, electrocardiogram (ECG), blood pressure, body weight, body temperature, quality of sleep and exercise activities. Naveed et al. \cite{naveed2014inside} show how a malicious app can stealthily collect user data from an Android device or spoof a device and inject fake data into the original device's app in what is called an \ac{DMB} attack. Ont of the 27 apps analysed in this study connects to external health sensors and uses default PIN code 0000, which makes it vulnerable to the \ac{DMB} attack. Along with the logging, external storage, exported components and the other problems discussed above, which represent the explicit channels used for attacks, side channels can be exploited by a malicious party to infer sensitive information from apps, even when they are well-designed and implemented. This study mentions an example by Zhou et al. \cite{zhou2013identity} where a correlation between network payload size, which is publicly accessible in Android, and the disease condition a user selects on WebMD mobile \cite{webmd}. This problem is mitigated by enforcing limitations on accessing Android public resources by modifying the Android kernel. 
 
-In the third study, another 22 apps, which send information over the Internet, are randomly selected from the same top 1080 apps and used to understand the seriousness of the threat considering the sensitive information sent. The 22 apps are analysed to understand what information is effectively being sent over the Internet and the conclusion is that when used as intended these apps gather, store and transmit a variety of sensitive user data which includes at least personal profiles, health sensor data, lifestyle data, medical information browsing history and third-party app data (e.g. Facebook account information). Figure \ref{fig:sensitivedistribution} shows the distribution of sensitive information in the 22 apps. The consequences of data breaches, information disclosure or tempering with sensitive health data depends on the type, sensitivity and volume of the data breached, but it is clear that profiling, medical identity theft and healthcare decision-making errors are possible consequences.
+In the third study, another 22 apps, which send information over the Internet, are randomly selected from the same top 1080 apps and used to understand the seriousness of the threat considering the sensitive information sent. The 22 apps are analysed to understand what information is effectively being sent over the Internet and the conclusion is that when used as intended these apps gather, store and transmit a variety of sensitive user data which includes at least personal profiles, health sensor data, lifestyle data, medical information browsing history and third-party app data (e.g. Facebook account information). Figure \ref{fig:sensitivedistribution} shows the distribution of sensitive information in the 22 apps. The consequences of data breaches, information disclosure or tempering with sensitive health data depends on the type, sensitivity and volume of the data breached, but it is clear that profiling, medical identity theft and healthcare decision-making errors are possible consequences. This is way the authors suggest the use of encryption for communication and storage and encourage developers to create a set of security and privacy guidelines that offer a baseline for protection.
 
 \begin{figure}[hb!]
   \centering
@@ -68,15 +68,17 @@ In the third study, another 22 apps, which send information over the Internet, a
   \label{fig:sensitivedistribution}
 \end{figure}
 
-% é por isto que os autores deste paper sugerem umas coisas e é também por isto que eu acho que certes coisas podem ser melhoradas fazendo uso de tecnologias como TrustZone que usam o potencial completo do hardware já acessível à maioria de nós
+% EM QUE O TRABALHO ME AJUDOU
+The work by He, Dongjing, et al. \cite{he2014security} helped in understanding what are the most common attack surfaces when considering mHealth applications on Android and it also helped assessing the security risks inherent to applications which handle privacy sensitive information. This paper generally describes the state-of-the-art of security in commercial mobile health apps and pinpoints what should be fixed in order to build better and more secure application for the healthcare industry. It is clear that developers focus much more on building feature-full applications rather than secure applications and this is way it is important to build a framework which allows developers to completely focus on the features they want to provide without having to focus heavily on security. We believe that building a developer framework over ARM's TrustZone technology is a good solution because with TrustZone is possible to fully enjoy the potential of the hardware already available in most mobile devices. This technology will be described in section \ref{sec:trustzone}. 
 
-%\subsection{Mobile Security}
+\subsection{Mobile Security}
 %
 %TEXT HERE\\
 %TEXT HERE\\
 %TEXT HERE
 %
-%\subsection{TrustZone}
+\subsection{TrustZone}
+\label{sec:trustzone}
 %
 %TEXT HERE\\
 %TEXT HERE\\
