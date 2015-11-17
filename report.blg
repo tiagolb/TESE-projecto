@@ -15,6 +15,8 @@ Warning--entry type for "snoreclock" isn't style-file defined
 --line 199 of file references.bib
 Warning--entry type for "sleeptalk" isn't style-file defined
 --line 205 of file references.bib
+Warning--entry type for "webmd" isn't style-file defined
+--line 211 of file references.bib
 Warning--to sort, need author or key in comscore
 Warning--to sort, need author or key in fsecure
 Warning--to sort, need author or key in research2guidance
@@ -23,4 +25,4 @@ Warning--empty author in marketsandmarkets
 Warning--empty author in research2guidance
 Warning--empty author in fsecure
 Warning--empty author in comscore
-(There were 15 warnings)
+(There were 16 warnings)
