@@ -8,16 +8,30 @@
 
 % começar por dizer como é que está organizada esta secção do trabalho e resumir de uma forma muito geral o que se fala em cada subsecção
 
-This section presents the related work for this project and characterizes the main contributions of past works and how these contributions helped in the development of this project. This section is organized is the main parts: mHealth, mobile security and TrustZone.
+This section presents the related work for this project and characterizes the main contributions of past works and how these contributions helped in the development of this project. This section is organized is three main parts: mHealth, mobile security and TrustZone.
 
-The first part focuses on describing the attack surfaces of mHealth apps, the most common threats and their seriousness, present a few publicly available unsecure mHealth apps as well as some compliance recommendations that app developers should follow to avoid unnecessary security risks when handling sensitive health information. The second part of this sections describes the state of the art of mobile security with a particular focus on the Android Operating System and how developers can build secure applications with a trusting \ac{OS} and security mechanisms built upon the application layer. The third part of the related work describes TrustZone, a hardware technology available a most modern \ac{ARM} processors which supports executions of two isolated worlds, a hardware secure world and a normal world. Besides describing the technology this sections also presents previous work developed using TrustZone and who these previous contributions may be helpful in achieving the main goals of this project. 
+The first part focuses on describing the attack surfaces of mHealth apps, the most common threats and their seriousness, present a few publicly available unsecure mHealth apps as well as some compliance recommendations that app developers should follow to avoid unnecessary security risks when handling sensitive health information. The second part of this sections describes the state-of-the-art of mobile security with a particular focus on the Android Operating System and how developers can build secure applications with a trusting \ac{OS} and security mechanisms built upon the application layer. The third part of the related work describes TrustZone, a hardware technology available in most modern \ac{ARM} processors which supports execution of two isolated worlds, a hardware-protected secure world and a normal world. Besides describing the technology, this sections also presents previous work developed using TrustZone and how these previous contributions may be helpful in achieving the main goals of this project. 
 
 \subsection{mHealth}
 
-As discussed above, mobile devices are increasing in number at astonishing rates and with this growth the mobile market becomes cheap and accessible. This motivates the shift from mainframe systems located in the facilities of healthcare providers to apps on mobile devices as well as storage in shared could services. This accessibility also motivates the private sector in building more healthcare applications to support both patients and healthcare agents. Thus, the mobile health market is becoming a competitive market and one which is increasingly handling with more sensitive data.
+As discussed above, mobile devices are increasing in number at astonishing rates and with this growth the mobile market becomes cheap and accessible. This motivates the shift from mainframe systems, located in the facilities of healthcare providers, to apps on mobile devices as well as storage in shared cloud services. This accessibility also motivates the private sector in building more healthcare applications to support both patients and healthcare agents. Thus, the mobile health market is becoming a competitive market and one which is increasingly handling more sensitive data.
 
 %falar sobre as duas citations abaixo (ler os papers)
-Kotz, David \cite{kotz2011threat} defines a threat taxonomy for mHealth. Avancha, Baxi and Kotz \cite{avancha2012privacy} surveyed the literature and developed a privacy framework for mHealth as well as discussed the technologies that could support privacy-sensitive mHealth systems.
+
+% THREAT TAXONOMY
+Kotz, David \cite{kotz2011threat} defines a threat taxonomy for mHealth. In this paper the author categorizes threats into three main categories: \emph{Identity Threats}, \emph{Access Threats} and \emph{Disclosure Threats}.
+
+Identity threats are described as mis-use of patient identities and include cases where a patient may lose (or share) their identity credentials, allowing malicious agents to access their \ac{PHR}. \emph{Insiders} (authorized \ac{PHR} users, staff of the \ac{PHR} organization, or staff of other mHealth support systems) may also use patient identities for medical fraud or for medical identity theft and \emph{outsiders} may be able to observe patient identity or location from communications.
+
+Access threats are described as unauthorized access to \ac{PHR} and include cases where the patient, which controls the data, may allow broader-than-intended access or disclosure of information, \emph{insiders} who may snoop or modify patient data, with intents other than improving the healthcare of the patient, and even \emph{outsiders} which, by breaking into patient records, may leak or modify this data.
+
+Disclosure threats include cases where an adversary captures network packets in order to obtain sensitive health data, this problem can be mitigated by using strong encryption methods, but even if the network traffic is encrypted it is possible to analyse the traffic to determine its characteristics \cite{wright2006inferring}. The adversary may also use physical-layer or link-layer fingerprinting methods to identify the device type and, because the wireless medium is open, an active adversary may inject frames or may selectively interfere with (cause collisions with) wireless frames. These methods may enable the adversary to create a man-in-the-middle situation, to use link-layer fingerprinting methods, or to compromise the devices in a way that divulges their secrets.
+
+This work by Kotz, David \cite{kotz2011threat} helped in understanding what threats are inherent to mHealth systems and their development. An explicit set of rules for developing privacy-sensitive health applications was still needed to ease the development process. Avancha, Baxi and Kotz \cite{avancha2012privacy} filled the gap by surveying the literature, developing a privacy framework for mHealth and discussing the technologies that could support privacy-sensitive mHealth systems.
+
+% PRIVACY FRAMEWORK FOR MHEALTH
+
+This survey considers essential accounting for privacy in the design and implementation of any mHealth system, given the sensitivity of the data collected. A developer may use the list of privacy properties provided by this article as a check-list that should be considered in any design. Furthermore, a set of questions is left open for researchers to improve the efficiency and effect of these properties. It is also mentioned that the privacy challenges identified by this article need to be addressed with urgency, because mHealth devices and systems are being deployed now, and retrofitting privacy protections is far more difficult than building them in from the start.
 
 % SECURITY CONCERNS MHEALTH ANDROID
 % ler os papers citados aqui
@@ -33,7 +47,7 @@ In this paper, three studies were made with the following goals:
 % ler os papers citados aqui
  In the first study 160 apps are analysed to find evidence of threats. From analysing previous literature \cite{zhou2013identity,naveed2014inside,aviv2012practicality,cai2012practicality,chin2011analyzing,fsecure,sevenwaystohangyourselfwithandroid}, seven attack surfaces are determined to be in need of protection. These seven attack surfaces are shown in table \ref{tab:attacksurfaces}.
 
-\begin{table}
+\begin{table}[t]
 	\caption {Description of attack surface (taken from He et al. \cite{he2014security})}
 	\label{tab:attacksurfaces}
 	\begin{tabular}{|>{\raggedright}p{2cm}|>{\raggedright\arraybackslash}p{10cm}|}
@@ -48,7 +62,7 @@ In this paper, three studies were made with the following goals:
 		Side Channel        & Sensitive information can be inferred by a malicious app with side channels, e.g. network package size, sequence, timing, etc. \\ \hline
 	\end{tabular}
 \end{table}
-\FloatBarrier
+%\FloatBarrier
 
 % AQUI ESTOU A DIZER TBM QUE ESCOLHI A APPLICACAO A FAZER POR CAUSA DESTES NUMEROS
 In this study the authors also document that the 160 apps studied target two different audiences: 129 (81.65\%) are for patients, 32 (20.25\%) are for healthcare professionals and the remaining 3 (1.90\%) are targeted for both. Most apps targated for patients (60\%) are in the Life Management category followed by apps that manage and synchronize user health information (PHR Management) which occupy nearly half (46.88\%) of these apps. These numbers are a good indicator of what data is handled by most commercial mHealth apps available and motivate the choice made to build a PHR Management app as demo for TrubiZone.
@@ -61,12 +75,13 @@ Some health apps use Bluetooth devices to collect personal health information su
 
 In the third study, another 22 apps, which send information over the Internet, are randomly selected from the same top 1080 apps and used to understand the seriousness of the threat considering the sensitive information sent. The 22 apps are analysed to understand what information is effectively being sent over the Internet and the conclusion is that when used as intended these apps gather, store and transmit a variety of sensitive user data which includes at least personal profiles, health sensor data, lifestyle data, medical information browsing history and third-party app data (e.g. Facebook account information). Figure \ref{fig:sensitivedistribution} shows the distribution of sensitive information in the 22 apps. The consequences of data breaches, information disclosure or tempering with sensitive health data depends on the type, sensitivity and volume of the data breached, but it is clear that profiling, medical identity theft and healthcare decision-making errors are possible consequences. This is way the authors suggest the use of encryption for communication and storage and encourage developers to create a set of security and privacy guidelines that offer a baseline for protection.
 
-\begin{figure}[hb!]
+\begin{figure}[t!]
   \centering
   \includegraphics[width=0.95\textwidth]{img/sensitivedistribution.jpg}
   \caption{Sensitive information distribution for study 3 (taken from  He et al. \cite{he2014security})}
   \label{fig:sensitivedistribution}
 \end{figure}
+%\FloatBarrier
 
 % EM QUE O TRABALHO ME AJUDOU
 The work by He, Dongjing, et al. \cite{he2014security} helped in understanding what are the most common attack surfaces when considering mHealth applications on Android and it also helped assessing the security risks inherent to applications which handle privacy sensitive information. This paper generally describes the state-of-the-art of security in commercial mobile health apps and pinpoints what should be fixed in order to build better and more secure application for the healthcare industry. It is clear that developers focus much more on building feature-full applications rather than secure applications and this is way it is important to build a framework which allows developers to completely focus on the features they want to provide without having to focus heavily on security. We believe that building a developer framework over ARM's TrustZone technology is a good solution because with TrustZone is possible to fully enjoy the potential of the hardware already available in most mobile devices. This technology will be described in section \ref{sec:trustzone}. 
