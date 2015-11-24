@@ -13,6 +13,7 @@ This section presents the related work for this project and characterizes the ma
 The first part focuses on describing the attack surfaces of mHealth apps, the most common threats and their seriousness, present a few publicly available unsecure mHealth apps as well as some compliance recommendations that app developers should follow to avoid unnecessary security risks when handling sensitive health information. The second part of this sections describes the state-of-the-art of mobile security with a particular focus on the Android Operating System and how developers can build secure applications with a trusting \ac{OS} and security mechanisms built upon the application layer. The third part of the related work describes TrustZone, a hardware technology available in most modern \ac{ARM} processors which supports execution of two isolated worlds, a hardware-protected secure world and a normal world. Besides describing the technology, this sections also presents previous work developed using TrustZone and how these previous contributions may be helpful in achieving the main goals of this project. 
 
 \subsection{mHealth}
+\label{sec:mhealth}
 
 As discussed above, mobile devices are increasing in number at astonishing rates and with this growth the mobile market becomes cheap and accessible. This motivates the shift from mainframe systems, located in the facilities of healthcare providers, to apps on mobile devices as well as storage in shared cloud services. This accessibility also motivates the private sector in building more healthcare applications to support both patients and healthcare agents. Thus, the mobile health market is becoming a competitive market and one which is increasingly handling more sensitive data.
 
@@ -88,7 +89,7 @@ The work by He, Dongjing, et al. \cite{he2014security} helped in understanding w
 
 \subsection{Mobile Security Mechanisms}
 
-This section describes the security mechanisms available for the Android platform, either from native Android or as security extensions, and how these mechanisms can be used to solve some of the problems covered in the previous section. Work by Duarte, Nuno \cite{nunoduarte} and Costa, Miguel \cite{miguelcosta} extensively describe Android's security mechanisms and divide them in seven groups: \emph{(i)} digital rights management, \emph{(ii)} access control mechanisms, \emph{(iii)} permission refinement, \emph{(iv)} application API security, \emph{(v)} privacy enhancement systems, \emph{(vi)} access control hook APIs, and \emph{(vii)} memory instrumentation. We suggests the addition of a new security mechanism: \emph{(viii)} TrustZone technology. This last mechanism is not directly related to Android but, with a significant presence in most modern smartphones, its discussion is imperative for this project. Enck et al in is work "Understanding Android security" \cite{enck2009understanding}.%as well as \textbf{MORE REFERENCES HERE}, which are good sources for information on this section of related work.
+This section describes the security mechanisms available for the Android platform, either from native Android or as security extensions, and how these mechanisms can be used to solve some of the problems covered in the previous section. Work by Duarte, Nuno \cite{nunoduarte} and Costa, Miguel \cite{miguelcosta} extensively describe Android's security mechanisms and divide them in seven groups: \emph{(i)} digital rights management, \emph{(ii)} access control mechanisms, \emph{(iii)} permission refinement, \emph{(iv)} application communication monitoring, \emph{(v)} privacy enhancement systems, \emph{(vi)} access control hook APIs, and \emph{(vii)} memory instrumentation. We suggests the addition of a new security mechanism: \emph{(viii)} TrustZone technology. This last mechanism is not directly related to Android but, with a significant presence in most modern smartphones, its discussion is imperative for this project. Enck et al in is work "Understanding Android security" \cite{enck2009understanding}.%as well as \textbf{MORE REFERENCES HERE}, which are good sources for information on this section of related work.
 
 \subsubsection{Digital Rights Management}
 The first security mechanism analysed is Digital Rights Management. This specific access control technology allows data owners to restrict if and how their data is copied and also how that data is handled once transferred to another device. The \ac{DRM} ecosystem is composed of the following entities:
@@ -121,11 +122,7 @@ Even though access control mechanisms allow isolation between different subjects
 
 \subsubsection{Permission Refinement}
 
-%problemas DONE
-%permission refinement é isto e seria fixe porque isto
-%apresentar os mesmos sistemas que o Nuno e Miguel e dizer que nao servem pelas mesmas razoes que eles dizem
-%dizer que o sistema do nuno e miguel é melhor porque faz isto e aquilo mas mesmo assim nao serve porque tem o problema do malware
-%dizer que o restricted spaces pode ser uma possivel soluçao para parte do problema, ou seja pode se pegar niso e extender, mas como é trustzone fala -se mais à frente
+%dizer que o restricted spaces pode ser uma possivel soluçao para parte do problema, ou seja pode se pegar niso e extender, mas como é trustzone fala -se mais à frente ?
 
 The Android permission mechanism is a very restrict system. At install time, a list of permissions an application specifies in its manifest file is presented to the users, which is forced into a binary decision, either granting all permissions forever or quitting the installation. This is an inflexible solution which makes it impossible for users to have full control of the permissions an application is effectively using at runtime. This inflexibility even allows apps to use the device's resources, authorized by the user at install time, whenever the app wishes without the user's knowledge, possibly with malicious intent. Moreover, this permission mechanism allows for some problems such as component privilege escalation, e.g., an application, which profits from displaying in-app ads, requests access to the camera and to the Internet. In this application, the ad component has access to the camera, which it should not have because there is no need for it, and furthermore the component may even escalate its privileges by leaking video through the Internet.
 
@@ -137,7 +134,24 @@ Both CRePE and MOSES suffer from a device control issue where a third party defi
 
 Even though TrUbi could be a good base for the development of this project, by allowing the development of applications which can control and enforce restrictions over less secure sensitive apps, it suffers from the same limitations as the mechanisms discussed previously. When the underlying middleware and kernel are compromised the security sensitive data may become accessible by a malicious agent because the \ac{TCB} of all these systems include all of the Android environment.
 
-\subsubsection{Application API Security}
+\subsubsection{Application Communication Monitoring}
+
+Another problematic mechanism in Android is the way applications interact with each other. Some problems were already described in section \ref{sec:mhealth} regarding vulnerable mobile health applications. Two attacks will be described in this section, followed by systems developed to mitigate such attacks on Android. The two attacks described are called \emph{Confused Deputy Attacks} and \emph{Collusion Attacks} and are represented in Figure \ref{fig:communicationattacks}. Confused deputy attacks basically consist of unprivileged applications taking advantage of other applications’ publicly accessible APIs to perform malicious actions. Collusion attacks consist of an app which might not have permission to perform an operation is still be able to perform it if there exists another app belonging to the same developer, installed on the user’s device, with the permission to perform said operation. This happens because Android’s permission system is based on UIDs.
+
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=0.95\textwidth]{img/communicationattacks.png}
+	\caption{Confused deputy attack (a); Collusion attack (b) - (taken from Duarte \cite{nunoduarte})}
+	\label{fig:communicationattacks}
+\end{figure}
+
+Confused deputy attacks allow applications to use resources without explicitly specifying the necessary permission to do so. A simple example is of an app that exposes a service on its API allowing another app to receive photos directly from the device's camera. With this the second app, without specifying the camera permission, can access this sensor without the user's knowledge. If this second app is malicious and has access to the Internet, then it is clear the severity of the problem which may lead to sensitive information being leaked. This problem generally happens because of poor or negligence application development.
+
+A system  called Saint \cite{ongtang2012semantically} was created to specify which apps can access the public APIs of another app. This is done by allowing developers to assign appropriate security policies on their APIs. The identity of the caller apps is authenticated by the modified IPC mechanism. Other systems control this communication by extending Android’s Binder IPC mechanism, which is the main form of application inter-communication in Android. QUIRE \cite{dietz2011quire} denies access to an API if in the message exchanged between apps, which contain the full call chain context, the source of the request does not have the necessary permission to access the corresponding data.
+
+Collusion attacks are based on a malicious developer building a legitimate application with permissions such as microphone access and persuading the user to install another app with Internet permission. Both apps can collude to leak sensitive audio data through the Internet because Android's permission system is based on UIDs, thus, although the first app does not explicitly request Internet access, this resource is accessible because the developer has Internet access through the first app. XManDroid \cite{bugiel2011xmandroid} extendes the Android permission model in order to support policies that could constrain the way apps interact with each other. This system prevents data leakage or other types os collusion attacks by developing a graph at runtime with a representation of the apps’ interactions which is then used to regulate app inter-communication.
+
+Although these systems allow for the development of more secure mobile applications on the Android platform, by themselves these systems are not capable of building security sensitive apps and thus are not suitable for this project. 
 
 \subsubsection{Privacy Enhancement Systems}
 \label{sec:privacyenhancement}
@@ -165,8 +179,8 @@ Aqui falar sobre a tabela \ref{tab:securityMechanismsComparison} e concluir fina
 			Security Mechanism          & Confidentiality & Data Integrity & Malware \\ \hline \hline
 			Digital Rights Management   & \cmark          & \cmark         & \xmark  \\ \hline
 			Access Control Mechanisms   & \cmark          & \cmark         & \xmark  \\ \hline
-			Permission Refinement       &                 &                & \xmark  \\ \hline
-			Application API Security    &                 &                & \xmark  \\ \hline
+			Permission Refinement       & \cmark          & \cmark         & \xmark  \\ \hline
+			Application Communication   & \xmark          & \xmark         & \xmark  \\ \hline
 			Privacy Enhancement Systems &                 &                & \xmark  \\ \hline
 			Access Control Hooks        &                 &                & \xmark  \\ \hline
 			Memory Instrumentation      &                 &                & \xmark  \\ \hline

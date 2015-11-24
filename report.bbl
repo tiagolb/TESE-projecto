@@ -48,6 +48,14 @@ Adam~J Aviv, Benjamin Sapp, Matt Blaze, and Jonathan~M Smith.
 \newblock In {\em Proceedings of the 28th Annual Computer Security Applications
   Conference}, pages 41--50. ACM, 2012.
 
+\bibitem{bugiel2011xmandroid}
+Sven Bugiel, Lucas Davi, Alexandra Dmitrienko, Thomas Fischer, and Ahmad-Reza
+  Sadeghi.
+\newblock Xmandroid: A new android evolution to mitigate privilege escalation
+  attacks.
+\newblock {\em Technische Universit{\"a}t Darmstadt, Technical Report
+  TR-2011-04}, 2011.
+
 \bibitem{bugiel2011practical}
 Sven Bugiel, Lucas Davi, Alexandra Dmitrienko, Stephan Heuser, Ahmad-Reza
   Sadeghi, and Bhargava Shastry.
@@ -88,6 +96,11 @@ CVS/pharmacy.
 \newblock Cvs/pharmacy {@ONLINE}.
 \newblock
   \url{https://play.google.com/store/apps/details?id=com.cvs.launchers.cvs}.
+
+\bibitem{dietz2011quire}
+Michael Dietz, Shashi Shekhar, Yuliy Pisetsky, Anhei Shu, and Dan~S Wallach.
+\newblock Quire: Lightweight provenance for smart phone operating systems.
+\newblock In {\em USENIX Security Symposium}, page~24, 2011.
 
 \bibitem{drm}
 OMA DRM.
@@ -165,6 +178,11 @@ Muhammad Naveed, Xiaoyong Zhou, Soteris Demetriou, XiaoFeng Wang, and Carl~A
   device mis-bonding on android.
 \newblock In {\em Proceedings of the 21st Annual Network and Distributed System
   Security Symposium (NDSS)}, pages 23--26, 2014.
+
+\bibitem{ongtang2012semantically}
+Machigar Ongtang, Stephen McLaughlin, William Enck, and Patrick McDaniel.
+\newblock Semantically rich application-centric security in android.
+\newblock {\em Security and Communication Networks}, 5(6):658--673, 2012.
 
 \bibitem{peter2001integrating}
 NSA Peter~Loscocco.
