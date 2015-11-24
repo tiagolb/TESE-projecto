@@ -110,22 +110,40 @@ This mechanism can be useful for protecting personal healthcare records by restr
 
 \subsubsection{Access Control Mechanisms}
 
-Access control mechanisms is a security model in which subjects (e.g. user, processes, threads, etc.) can perform actions on the system, namely on resources (e.g. files, sensors, etc.), typically called objects. Android follows a type of access control references as \ac{DAC}, heritage from it's Linux based kernel. In a \ac{DAC} system the data owner is responsible for the data and thus determines who can access the data he owns. In a Linux systems, one can image a system administrator creating several files and allowing access to these files according to certain permissions. In this example, a subject with the specified permissions may access the file like its owner intended. In Android we can think of a similar example, since an application can create and store files in the filesystem, thus becoming the sole owner of these files, it can allow access to these files to any other application it wishes.
+Access control mechanisms is a security model in which subjects (e.g. user, processes, threads, etc.) can perform actions on the system, namely on resources (e.g. files, sensors, etc.), typically called objects. Android follows a type of access control referenced as \ac{DAC}, heritage from it's Linux based kernel. In a \ac{DAC} system the data owner is responsible for this data and thus determines who can access to it. In a Linux system, one can imagine a system administrator creating several files and allowing access to these files according to certain permissions. In this example, a subject with the specified permissions may access the file like its owner intended. In Android we can think of a similar example, since an application can create and store files in the filesystem, thus becoming the sole owner of these files, it can allow access to these files to any other application it wishes.
 
-Although Android inherits the \ac{DAC} from its Linux ancestry, most other resources in Android follow \ac{MAC} policies. In \ac{MAC}, subjects are much more restricted in determining who has access to their resources. An example of this from the physical security field are the levels: confidential, secret and top secret. These labels are the only resource available to define the level of clearance of subjects or to classify data. If a subject attempts to access a classified piece of data a verification is done to assess if this subject's security level matches (or is above) that of the classified piece of data. Similarly in Android, once a subject attempts to access an object, it triggers a policy evaluation by the kernel, which assesses whether the access may be granted. The advantage of this strict system is its robustness, because subjects cannot override or modify the security policy. In Android, applications must specify in their manifests the permissions they require at runtime and after the installation neither applications nor users have any control over the access policies.
+Although Android inherits the \ac{DAC} from its Linux ancestry, most other resources in Android follow \ac{MAC} policies. In \ac{MAC}, subjects are much more restricted in determining who has access to their resources. An example of this, from the physical security field, are the levels: confidential, secret and top secret. These labels are the only concept available to define the level of clearance of subjects or to classify data. When a subject attempts to access a classified piece of data a verification is done to assess if this subject's security level matches (or is above) that of the classified piece of data. Similarly, in Android once a subject attempts to access an object, it triggers a policy evaluation by the kernel, which assesses whether the access may be granted. The advantage of this strict system is its robustness, because subjects cannot override or modify the security policy. In Android, applications must specify in their manifests the permissions they require at runtime and after the installation neither applications nor users have any control over the access policies.
 
 %Reescrever esta frase por mim
-Because \ac{MAC} is robust, several systems were created over the years to extend Android's access control model. SEAndroid \cite{smalley2013security} solves problems related to resources complying with the \ac{DAC} mechanism. The authors ported SELinux \cite{peter2001integrating} to provide \ac{MAC} at the kernel layer. The kernel was then modified to support a new \ac{MAC} policy (e.g., filesystem, IPC) and a new middleware layer (MMAC) created to extend \ac{MAC} to Android's Binder IPC. TrustDroid \cite{bugiel2011practical} extends the \ac{MAC} mechanism to all the platform's resources (e.g., filesystem which complied with DAC) inorder to isolate different domains' sensitive information.
+Because \ac{MAC} is robust, several systems were created over the years to extend \ac{MAC}'s access control model to other Android resources. SEAndroid \cite{smalley2013security} solves problems related to resources complying with the \ac{DAC} mechanism. The authors ported SELinux \cite{peter2001integrating} to provide \ac{MAC} at the kernel layer. The kernel was then modified to support a new \ac{MAC} policy (e.g., filesystem, IPC) and a new middleware layer (MMAC) was created to extend \ac{MAC} to Android's Binder IPC. TrustDroid \cite{bugiel2011practical} extends the \ac{MAC} mechanism to all the platform's resources (e.g., filesystem which complied with DAC) in order to isolate different domains' sensitive information.
 
 Even though access control mechanisms allow isolation between different subjects in a system, thus enforcing the confidentiality and integrity needed for this project, it still relies on the premise that the underlying middleware and kernel are secure. With this assumption sensitive data may be at risk when the \ac{TCB} is compromised. For this reason access control mechanisms are not sufficient to ensure the security needs of this project.  
 
 \subsubsection{Permission Refinement}
 
+%problemas DONE
+%permission refinement é isto e seria fixe porque isto
+%apresentar os mesmos sistemas que o Nuno e Miguel e dizer que nao servem pelas mesmas razoes que eles dizem
+%dizer que o sistema do nuno e miguel é melhor porque faz isto e aquilo mas mesmo assim nao serve porque tem o problema do malware
+%dizer que o restricted spaces pode ser uma possivel soluçao para parte do problema, ou seja pode se pegar niso e extender, mas como é trustzone fala -se mais à frente
+
+The Android permission mechanism is a very restrict system. At install time, a list of permissions an application specifies in its manifest file is presented to the users, which is forced into a binary decision, either granting all permissions forever or quitting the installation. This is an inflexible solution which makes it impossible for users to have full control of the permissions an application is effectively using at runtime. This inflexibility even allows apps to use the device's resources, authorized by the user at install time, whenever the app wishes without the user's knowledge, possibly with malicious intent. Moreover, this permission mechanism allows for some problems such as component privilege escalation, e.g., an application, which profits from displaying in-app ads, requests access to the camera and to the Internet. In this application, the ad component has access to the camera, which it should not have because there is no need for it, and furthermore the component may even escalate its privileges by leaking video through the Internet.
+
+Over the years many systems solved some of the problems inherent to permission refinement. APEX \cite{nauman2010apex} modified Android's permission model to allow users to specify the assignment of permissions to each app, both at install and runtime. Permission Tracker \cite{kern2012permission} allows users to be informed on how the permissions are used at runtime and offers the possibility of revoking these permissions at runtime. Furthermore, a user can specify which permissions are of interest so they can be notified of every permission access and decide whether to grant or deny that access. Compac \cite{wang2014compac} also restrains application access to certain permissions, but does so at a different granularity, i.e., considering applications as groups of components and preventing component privilege escalation.
+
+These systems improve upon the original Android permission model but requires manual configuration by the user. A more useful solution would be to use a context-aware system to handle the permissions at runtime. This way it may be possible to, without manual configuration, restrict permissions to all applications running along side a security sensitive application, thus isolating the sensitive application and avoiding possible leaks by shared resources. Several permission refinement context-aware systems exist. Trusted third parties can use CRePE \cite{conti2011crepe} to enforce security policies on another devices whilst, for example, the employees' mobile devices are inside the company, but have no privileges otherwise. Similarly, MOSES \cite{russello2012moses} enforces domain isolation through the concept of security profiles. MOSES can switch security profiles based on pre-established conditions, e.g., GPS coordinates and time. When switching from a personal (less restrictive) profile to a professional (more restrictive) one, MOSES terminates and prevents the execution of applications not allowed to run in the new enforced profile. Additionally, MOSES leverages TaintDroid \cite{enck2014taintdroid} (covered in Section \ref{sec:privacyenhancement}) to prevent apps from one profile to access data belonging to another.
+
+Both CRePE and MOSES suffer from a device control issue where a third party defines a policy that cannot be revoked by the user. Moreover, a user has no way to deny the enforcement of a third party policy. Duarte \cite{nunoduarte} and Costa \cite{miguelcosta} developed a system called TrUbi, built on top of ASM \cite{heuser2014asm} (covered in Section \ref{sec:accesscontrolhooks}), which solves the problems mentioned and presents a developer friendly framework for the development of sensitive permission refinement applications.
+
+Even though TrUbi could be a good base for the development of this project, by allowing the development of applications which can control and enforce restrictions over less secure sensitive apps, it suffers from the same limitations as the mechanisms discussed previously. When the underlying middleware and kernel are compromised the security sensitive data may become accessible by a malicious agent because the \ac{TCB} of all these systems include all of the Android environment.
+
 \subsubsection{Application API Security}
 
 \subsubsection{Privacy Enhancement Systems}
+\label{sec:privacyenhancement}
 
 \subsubsection{Access Control Hook APIs}
+\label{sec:accesscontrolhooks}
 
 \subsubsection{Memory Instrumentation}
 
@@ -142,17 +160,17 @@ Aqui falar sobre a tabela \ref{tab:securityMechanismsComparison} e concluir fina
 	\caption{Comparison between security mechanisms with and without a compromised Operating System (Android).}
 	\label{tab:securityMechanismsComparison}
 	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{|l|l|l|l|l|}
+		\begin{tabular}{|l||l|l|l|l|}
 			\hline
-			Security Mechanism          & Confidentiality & Data Integrity & Availability & Malware \\ \hline
-			Digital Rights Management   & \cmark          & \cmark         & \cmark       & \xmark  \\ \hline
-			Access Control Mechanisms   &                 &                &              & \xmark  \\ \hline
-			Permission Refinement       &                 &                &              & \xmark  \\ \hline
-			Application API Security    &                 &                &              & \xmark  \\ \hline
-			Privacy Enhancement Systems &                 &                &              & \xmark  \\ \hline
-			Access Control Hooks        &                 &                &              & \xmark  \\ \hline
-			Memory Instrumentation      &                 &                &              & \xmark  \\ \hline
-			TrustZone Technology        & \cmark          & \cmark         & \cmark       & \cmark  \\ \hline
+			Security Mechanism          & Confidentiality & Data Integrity & Malware \\ \hline \hline
+			Digital Rights Management   & \cmark          & \cmark         & \xmark  \\ \hline
+			Access Control Mechanisms   & \cmark          & \cmark         & \xmark  \\ \hline
+			Permission Refinement       &                 &                & \xmark  \\ \hline
+			Application API Security    &                 &                & \xmark  \\ \hline
+			Privacy Enhancement Systems &                 &                & \xmark  \\ \hline
+			Access Control Hooks        &                 &                & \xmark  \\ \hline
+			Memory Instrumentation      &                 &                & \xmark  \\ \hline
+			TrustZone Technology        & \cmark          & \cmark         & \cmark  \\ \hline
 		\end{tabular}
 	}
 \end{table}

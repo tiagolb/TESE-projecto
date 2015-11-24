@@ -73,6 +73,11 @@ Erika Chin, Adrienne~Porter Felt, Kate Greenwood, and David Wagner.
 \newblock In {\em Proceedings of the 9th international conference on Mobile
   systems, applications, and services}, pages 239--252. ACM, 2011.
 
+\bibitem{conti2011crepe}
+Mauro Conti, Vu~Thien~Nga Nguyen, and Bruno Crispo.
+\newblock Crepe: Context-related policy enforcement for android.
+\newblock In {\em Information Security}, pages 331--345. Springer, 2011.
+
 \bibitem{miguelcosta}
 Miguel Costa.
 \newblock {SecMos - Mobile Operating System Security}.
@@ -91,8 +96,16 @@ OMA DRM.
 
 \bibitem{nunoduarte}
 Nuno Duarte.
-\newblock {On The Effectiveness of Trust Leases}.
+\newblock {On The Effectiveness of Trust Leases in Securing Mobile
+  Applications}.
 \newblock Master's thesis, Instituto Superior Técnico, Portugal, 2015.
+
+\bibitem{enck2014taintdroid}
+William Enck, Peter Gilbert, Seungyeop Han, Vasant Tendulkar, Byung-Gon Chun,
+  Landon~P Cox, Jaeyeon Jung, Patrick McDaniel, and Anmol~N Sheth.
+\newblock Taintdroid: an information-flow tracking system for realtime privacy
+  monitoring on smartphones.
+\newblock {\em ACM Transactions on Computer Systems (TOCS)}, 32(2):5, 2014.
 
 \bibitem{enck2009understanding}
 William Enck, Machigar Ongtang, and Patrick McDaniel.
@@ -105,6 +118,11 @@ Dongjing He, Muhammad Naveed, Carl~A Gunter, and Klara Nahrstedt.
 \newblock In {\em AMIA Annual Symposium Proceedings}, volume 2014, page 645.
   American Medical Informatics Association, 2014.
 
+\bibitem{heuser2014asm}
+Stephan Heuser, Adwait Nadkarni, William Enck, and Ahmad-Reza Sadeghi.
+\newblock Asm: A programmable interface for extending android security.
+\newblock In {\em Proc. 23rd USENIX Security Symposium (SEC’14)}, 2014.
+
 \bibitem{androidDRM}
 Google Inc.
 \newblock Android drm framework{@ONLINE}.
@@ -116,6 +134,12 @@ Noom Inc.
 \newblock Noom weight loss coach {@ONLINE}.
 \newblock \url{https://play.google.com/store/apps/details?id=com.wsl.noom}.
 
+\bibitem{kern2012permission}
+Michael Kern and Johannes Sametinger.
+\newblock Permission tracking in android.
+\newblock In {\em The Sixth International Conference on Mobile Ubiquitous
+  Computing, Systems, Services and Technologies UBICOMM}, pages 148--155, 2012.
+
 \bibitem{kotz2011threat}
 David Kotz.
 \newblock A threat taxonomy for mhealth privacy.
@@ -126,6 +150,13 @@ MadinSweden.
 \newblock Sleep talk recorder {@ONLINE}.
 \newblock
   \url{https://play.google.com/store/apps/details?id=com.madinsweden.sleeptalk}.
+
+\bibitem{nauman2010apex}
+Mohammad Nauman, Sohail Khan, and Xinwen Zhang.
+\newblock Apex: extending android permission model and enforcement with
+  user-defined runtime constraints.
+\newblock In {\em Proceedings of the 5th ACM Symposium on Information, Computer
+  and Communications Security}, pages 328--332. ACM, 2010.
 
 \bibitem{naveed2014inside}
 Muhammad Naveed, Xiaoyong Zhou, Soteris Demetriou, XiaoFeng Wang, and Carl~A
@@ -142,6 +173,12 @@ NSA Peter~Loscocco.
 \newblock In {\em Proceedings of the FREENIX Track:... USENIX Annual Technical
   Conference}, page~29. The Association, 2001.
 
+\bibitem{russello2012moses}
+Giovanni Russello, Mauro Conti, Bruno Crispo, and Earlence Fernandes.
+\newblock Moses: supporting operation modes on smartphones.
+\newblock In {\em Proceedings of the 17th ACM symposium on Access Control
+  Models and Technologies}, pages 3--12. ACM, 2012.
+
 \bibitem{snoreclock}
 Ralph Schiffhauer.
 \newblock Snoreclock {@ONLINE}.
@@ -152,6 +189,12 @@ Ralph Schiffhauer.
 Stephen Smalley and Robert Craig.
 \newblock Security enhanced (se) android: Bringing flexible mac to android.
 \newblock In {\em NDSS}, volume 310, pages 20--38, 2013.
+
+\bibitem{wang2014compac}
+Yifei Wang, Srinivas Hariharan, Chenxi Zhao, Jiaming Liu, and Wenliang Du.
+\newblock Compac: Enforce component-level access control in android.
+\newblock In {\em Proceedings of the 4th ACM Conference on Data and Application
+  Security and Privacy}, pages 25--36. ACM, 2014.
 
 \bibitem{webmd}
 WebMD.
