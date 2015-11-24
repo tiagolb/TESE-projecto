@@ -48,6 +48,13 @@ Adam~J Aviv, Benjamin Sapp, Matt Blaze, and Jonathan~M Smith.
 \newblock In {\em Proceedings of the 28th Annual Computer Security Applications
   Conference}, pages 41--50. ACM, 2012.
 
+\bibitem{bugiel2011practical}
+Sven Bugiel, Lucas Davi, Alexandra Dmitrienko, Stephan Heuser, Ahmad-Reza
+  Sadeghi, and Bhargava Shastry.
+\newblock Practical and lightweight domain isolation on android.
+\newblock In {\em Proceedings of the 1st ACM workshop on Security and privacy
+  in smartphones and mobile devices}, pages 51--62. ACM, 2011.
+
 \bibitem{cai2012practicality}
 Liang Cai and Hao Chen.
 \newblock {\em On the practicality of motion based keystroke inference attack}.
@@ -66,6 +73,11 @@ Erika Chin, Adrienne~Porter Felt, Kate Greenwood, and David Wagner.
 \newblock In {\em Proceedings of the 9th international conference on Mobile
   systems, applications, and services}, pages 239--252. ACM, 2011.
 
+\bibitem{miguelcosta}
+Miguel Costa.
+\newblock {SecMos - Mobile Operating System Security}.
+\newblock Master's thesis, Instituto Superior Técnico, Portugal, 2015.
+
 \bibitem{cvspharmacy}
 CVS/pharmacy.
 \newblock Cvs/pharmacy {@ONLINE}.
@@ -82,11 +94,22 @@ Nuno Duarte.
 \newblock {On The Effectiveness of Trust Leases}.
 \newblock Master's thesis, Instituto Superior Técnico, Portugal, 2015.
 
+\bibitem{enck2009understanding}
+William Enck, Machigar Ongtang, and Patrick McDaniel.
+\newblock Understanding android security.
+\newblock {\em IEEE security \& privacy}, (1):50--57, 2009.
+
 \bibitem{he2014security}
 Dongjing He, Muhammad Naveed, Carl~A Gunter, and Klara Nahrstedt.
 \newblock Security concerns in android mhealth apps.
 \newblock In {\em AMIA Annual Symposium Proceedings}, volume 2014, page 645.
   American Medical Informatics Association, 2014.
+
+\bibitem{androidDRM}
+Google Inc.
+\newblock Android drm framework{@ONLINE}.
+\newblock
+  \url{http://developer.android.com/reference/android/drm/package-summary.html}.
 
 \bibitem{noomwlc}
 Noom Inc.
@@ -112,11 +135,23 @@ Muhammad Naveed, Xiaoyong Zhou, Soteris Demetriou, XiaoFeng Wang, and Carl~A
 \newblock In {\em Proceedings of the 21st Annual Network and Distributed System
   Security Symposium (NDSS)}, pages 23--26, 2014.
 
+\bibitem{peter2001integrating}
+NSA Peter~Loscocco.
+\newblock Integrating flexible support for security policies into the linux
+  operating system.
+\newblock In {\em Proceedings of the FREENIX Track:... USENIX Annual Technical
+  Conference}, page~29. The Association, 2001.
+
 \bibitem{snoreclock}
 Ralph Schiffhauer.
 \newblock Snoreclock {@ONLINE}.
 \newblock
   \url{https://play.google.com/store/apps/details?id=de.ralphsapps.snorecontrol}.
+
+\bibitem{smalley2013security}
+Stephen Smalley and Robert Craig.
+\newblock Security enhanced (se) android: Bringing flexible mac to android.
+\newblock In {\em NDSS}, volume 310, pages 20--38, 2013.
 
 \bibitem{webmd}
 WebMD.

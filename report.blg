@@ -2,21 +2,23 @@ This is BibTeX, Version 0.99dThe top-level auxiliary file: report.aux
 The style file: plain.bst
 Database file #1: references.bib
 Warning--entry type for "sevenwaystohangyourselfwithandroid" isn't style-file defined
---line 168 of file references.bib
+--line 177 of file references.bib
 Warning--entry type for "doctoronline" isn't style-file defined
---line 175 of file references.bib
+--line 184 of file references.bib
 Warning--entry type for "recipesbyingredients" isn't style-file defined
---line 181 of file references.bib
+--line 190 of file references.bib
 Warning--entry type for "cvspharmacy" isn't style-file defined
---line 187 of file references.bib
+--line 196 of file references.bib
 Warning--entry type for "noomwlc" isn't style-file defined
---line 193 of file references.bib
+--line 202 of file references.bib
 Warning--entry type for "snoreclock" isn't style-file defined
---line 199 of file references.bib
+--line 208 of file references.bib
 Warning--entry type for "sleeptalk" isn't style-file defined
---line 205 of file references.bib
+--line 214 of file references.bib
 Warning--entry type for "webmd" isn't style-file defined
---line 211 of file references.bib
+--line 220 of file references.bib
+Warning--entry type for "androidDRM" isn't style-file defined
+--line 226 of file references.bib
 Warning--to sort, need author or key in comscore
 Warning--to sort, need author or key in fsecure
 Warning--to sort, need author or key in research2guidance
@@ -25,4 +27,5 @@ Warning--empty author in marketsandmarkets
 Warning--empty author in research2guidance
 Warning--empty author in fsecure
 Warning--empty author in comscore
-(There were 16 warnings)
+Warning--there's a number but no volume in enck2009understanding
+(There were 18 warnings)
