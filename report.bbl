@@ -127,6 +127,14 @@ F-Secure Labs.
 \newblock
   \url{https://www.f-secure.com/documents/996508/1030743/Mobile\_Threat\_Report\_Q1\_2014.pdf}.
 
+\bibitem{trustzone_whitepaper}
+ARM Limited.
+\newblock {ARM Security Technology - Building a Secure System using TrustZone
+  Technology}.
+\newblock Technical report, ARM Limited, 04 2009.
+\newblock
+  \url{http://infocenter.arm.com/help/topic/com.arm.doc.prd29-genc-009492c/PRD29-GENC-009492C\_trustzone\_security\_whitepaper.pdf}.
+
 \bibitem{marketsandmarkets}
 MarketsAndMarkets.
 \newblock { Mobile health apps \& solutions market by connected devices

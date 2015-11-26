@@ -89,7 +89,7 @@ The work by He, Dongjing, et al. \cite{he2014security} helped in understanding w
 
 \subsection{Mobile Security Mechanisms}
 
-This section describes the security mechanisms available for the Android platform, either from native Android or as security extensions, and how these mechanisms can be used to solve some of the problems covered in the previous section. Work by Duarte, Nuno \cite{nunoduarte} and Costa, Miguel \cite{miguelcosta} extensively describe Android's security mechanisms and divide them in seven groups: \emph{(i)} digital rights management, \emph{(ii)} access control mechanisms, \emph{(iii)} permission refinement, \emph{(iv)} application communication monitoring, \emph{(v)} privacy enhancement systems, \emph{(vi)} access control hook APIs, and \emph{(vii)} memory instrumentation. Although some of theses systems may not be suited for the needs of the problem we aim to solve, this section aims to be a description of the state-of-the-art regarding security on the Android platform. Moreover, to the seven groups described, we suggests the addition of a new security mechanism: \emph{(viii)} TrustZone technology. This last mechanism is not directly related to Android but, with a significant presence in most modern smartphones, its discussion is imperative for this project.%as well as \textbf{MORE REFERENCES HERE}, which are good sources for information on this section of related work.
+This section describes the security mechanisms available for the Android platform, either from native Android or as security extensions, and how these mechanisms can be used to solve some of the problems covered in the previous section. Work by Duarte, Nuno \cite{nunoduarte} and Costa, Miguel \cite{miguelcosta} extensively describe Android's security mechanisms and divide them in seven groups: \emph{(i)} digital rights management, \emph{(ii)} access control mechanisms, \emph{(iii)} permission refinement, \emph{(iv)} application communication monitoring, \emph{(v)} privacy enhancement systems, \emph{(vi)} access control hook APIs, and \emph{(vii)} memory instrumentation. Although some of theses systems may not be suited for the needs of the problem we aim to solve, this section aims to be a description of the state-of-the-art regarding security on the Android platform. Moreover, to the seven groups described, we suggests the addition of a new mechanism: \emph{(viii)} embedded security systems. This last mechanism is not directly related to Android but, with a significant presence in most modern smartphones, its discussion is imperative for this project.%as well as \textbf{MORE REFERENCES HERE}, which are good sources for information on this section of related work.
 
 \subsubsection{Digital Rights Management}
 The first security mechanism analysed is Digital Rights Management. This specific access control technology allows data owners to restrict if and how their data is copied and also how that data is handled once transferred to another device. The \ac{DRM} ecosystem is composed of the following entities:
@@ -189,13 +189,25 @@ DeepDroid \cite{wang2015deepdroid} relies on dynamic memory instrumentation to e
 
 These systems are better suited for the development of new security policies instead of being suited for the development of robust privacy-sensitive applications like the one we intend to build. Therefore, this security mechanism is not adequate for the needs of this project. Moreover, these systems still suffer from the same limitations discussed previously regarding compromised operating systems and large trusted computing base. 
 
-\subsubsection{ARM TrustZone Technology\\}
+\subsubsection{Embedded Security Systems}
 
-DESCRIÇÃO DA TRUSTZONE\\
-PORQUE PODE FUNCIONAR BEM PARA AQUI\\
-COMO É A TECH QUE PARECE MAIS PROMISSORA ENTÃO VAI TER UMA SECÇÃO SÓ PARA SI\\
+Although developing new security mechanisms for mobile platforms like Android and iOS is important, mobile security is not limited to secure software. This section describes the embedded security architectures available on the market, along with its strengths and weaknesses. A whitepaper \cite{trustzone_whitepaper} by \ac{ARM} states that security solutions for embedded applications fall into four categories, which will be explained in the remainder of this section.\\
+
+\textbf{External hardware security module} represents the classic security solution for embedded, which is the inclusion of a dedicated trusted element (e.g., a smartcard) that is outside of the main \ac{SoC}. On one hand, the main advantage of this solution is that it allows for the encapsulation of the sensitive assets inside a physical device specially designed for robust security. On the other hand, the main disadvantage is that smartcards provide only secure processing and storage functions. This means that some operations (e.g., I/O) must rely on software running outside of the security perimeter to provide the desired features. An example where this happens is when a user interacts with the system by entering a \ac{PIN}. This \ac{PIN} must be managed by the less secure software outside of the smartcard, making it vulnerable to attacks.
+
+To accomplish the goals of this project, a completely secure flow of execution is needed, this means that privacy-sensitive data must never leave the trusted secure perimeter. A system which does not support secure I/O limits greatly the functionality offered by a \ac{PHR} application, to the point where it becomes useless. For this reason we exclude the external hardware security module as a viable solution for the problem.\\
+
+\textbf{Internal hardware security module} is a security architecture which 
+
+\textbf{Software virtualization}
+
+\textbf{TrustZone}
 
 \subsubsection{Summary}
+
+
+PORQUE PODE FUNCIONAR BEM PARA AQUI\\
+COMO É A TECH QUE PARECE MAIS PROMISSORA ENTÃO VAI TER UMA SECÇÃO SÓ PARA SI\\
 
 Aqui falar sobre a tabela \ref{tab:securityMechanismsComparison} e concluir finalmente que temos que olhar para o trustzone pois é destes mecanismos o que parece mais adequado.
 
