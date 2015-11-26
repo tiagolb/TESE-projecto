@@ -6,13 +6,10 @@
 \usepackage[nolist,nohyperlinks]{acronym}
 % Maintain images and tables within their respective sections
 \usepackage[section]{placeins}
+
 \usepackage{array}
+\usepackage{multirow}
 
-\usepackage[hyphens]{url}
-\usepackage[hidelinks]{hyperref}
-\hypersetup{breaklinks=true}
-
-%\usepackage{amssymb}% http://ctan.org/pkg/amssymb
 \usepackage{pifont}% http://ctan.org/pkg/pifont
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}%
@@ -27,12 +24,12 @@
 \title{TrubiZone}
 
 \subtitle{Securing Critical Mobile Applications for Android Using ARM TrustZone}
-\author{Tiago Brito\\
+\author{Tiago Luís de Oliveira Brito\\
 Supervisor: Prof. Nuno Santos}
 
 \institute{Instituto Superior Técnico,\\
 Av. Rovisco Pais, 1049-001 Lisboa - PORTUGAL\\
-\textbf{tiago.de.olveira.brito@tecnico.ulisboa.pt}}
+\textbf{tiago.de.oliveira.brito@tecnico.ulisboa.pt}}
 
 \maketitle
 
@@ -74,11 +71,10 @@ Av. Rovisco Pais, 1049-001 Lisboa - PORTUGAL\\
 %\tableofcontents
 %\cleardoublepage
 
-
 %
 % Bibliography
 %
-\Urlmuskip=0mu plus 1mu
+%\Urlmuskip=0mu plus 1mu
 \bibliographystyle{plain}
 \addcontentsline{toc}{section}{References}
 \bibliography{references}
@@ -90,7 +86,6 @@ Av. Rovisco Pais, 1049-001 Lisboa - PORTUGAL\\
 
 % *** DEFINITION OF ACRONYMS ***
 \acrodef{PC}{Personal Computer}
-\acrodef{mHealth}{Mobile Health}
 \acrodef{OS}{Operating System}
 \acrodef{TCB}{Trusted Computing Base}
 \acrodef{LOC}{Lines Of Code}
@@ -105,5 +100,7 @@ Av. Rovisco Pais, 1049-001 Lisboa - PORTUGAL\\
 \acrodef{OMA}{Open Mobile Alliance}
 \acrodef{DAC}{Discretionary Access Control}
 \acrodef{MAC}{Mandatory Access Control}
+\acrodef{ASM}{Android Security Modules}
+\acrodef{ASF}{Android Security Framework}
 
 \end{document}
