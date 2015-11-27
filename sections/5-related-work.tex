@@ -138,6 +138,7 @@ Both CRePE and MOSES suffer from a device control issue where a third party defi
 Even though TrUbi could be a good base for the development of this project, by allowing the development of applications which can control and enforce restrictions over less secure-sensitive apps, it suffers from the same limitations as the mechanisms discussed previously. When the underlying middleware and kernel are compromised, the security sensitive data may become accessible by a malicious agent.
 
 \subsubsection{Application Communication Monitoring}
+\label{sec:appcommmonitoring}
 
 Another problematic mechanism in Android is the way applications interact with each other. Some problems were already described in section \ref{sec:mhealth} regarding vulnerable mobile health applications. Two attacks will be described in this section, followed by systems developed to mitigate such attacks on Android. The two attacks described are called \emph{Confused Deputy Attacks} and \emph{Collusion Attacks} and are represented in Figure \ref{fig:communicationattacks}. Confused deputy attacks basically consist of unprivileged applications taking advantage of other applications’ publicly accessible APIs to perform malicious actions. Collusion attacks consist of an app, which might not have permission to perform an operation, still being able to perform it if there exists another app, belonging to the same developer, installed on the user’s device with the permission to perform said operation. This happens because Android’s permission system is based on UIDs.
 
@@ -182,10 +183,11 @@ These frameworks comprise a set of hooks distributed among the kernel and middle
 TrUbi \cite{miguelcosta,nunoduarte} is built upon ASM and allows for flexible system-wide resource restriction which may be used to isolate privacy sensitive apps by killing, freezing or revoke permissions to already running applications. The limitation of TrUbi is already discussed in section \ref{sec:permissionrefinement} and is based upon the fact that the \ac{TCB} is comprised of all the Android kernel, Android middleware and extensions such as \ac{ASM}.
 
 \subsubsection{Memory Instrumentation}
+\label{sec:meminstrumentation}
 
 Memory instrumentation can be divided in two groups: static memory instrumentation and dynamic memory instrumentation. While static memory instrumentation changes already compiled bytecode, dynamic instrumentation patches running processes. In the remainder of this section the sole focus will be on dynamic memory instrumentation as it is an interesting mechanism to enforce a security model.
 
-DeepDroid \cite{wang2015deepdroid} relies on dynamic memory instrumentation to enforce fine-grained context-aware security policies for enterprise.This is done by patching several system services and tracing system calls.
+DeepDroid \cite{wang2015deepdroid} relies on dynamic memory instrumentation to enforce fine-grained context-aware security policies for enterprise. This is done by patching several system services and tracing system calls.
 
 These systems are better suited for the development of new security policies instead of being suited for the development of robust privacy-sensitive applications like the one we intend to build. Therefore, this security mechanism is not adequate for the needs of this project. Moreover, these systems still suffer from the same limitations discussed previously regarding compromised operating systems and large trusted computing base. 
 
@@ -193,24 +195,38 @@ These systems are better suited for the development of new security policies ins
 
 Although developing new security mechanisms for mobile platforms like Android and iOS is important, mobile security is not limited to secure software. This section describes the embedded security architectures available on the market, along with its strengths and weaknesses. A whitepaper \cite{trustzone_whitepaper} by \ac{ARM} states that security solutions for embedded applications fall into four categories, which will be explained in the remainder of this section.\\
 
-\textbf{External hardware security module} represents the classic security solution for embedded, which is the inclusion of a dedicated trusted element (e.g., a smartcard) that is outside of the main \ac{SoC}. On one hand, the main advantage of this solution is that it allows for the encapsulation of the sensitive assets inside a physical device specially designed for robust security. On the other hand, the main disadvantage is that smartcards provide only secure processing and storage functions. This means that some operations (e.g., I/O) must rely on software running outside of the security perimeter to provide the desired features. An example where this happens is when a user interacts with the system by entering a \ac{PIN}. This \ac{PIN} must be managed by the less secure software outside of the smartcard, making it vulnerable to attacks.
+\textbf{External hardware security modules} represent the classic security solution for embedded applications, which is the inclusion of a dedicated trusted element (e.g., a smartcard) that is outside of the main \ac{SoC}. On one hand, the main advantage of this solution is that it allows for the encapsulation of the sensitive assets inside a physical device specially designed for robust security. On the other hand, the main disadvantage is that smartcards provide only secure processing and storage functions. This means that some operations (e.g., I/O) must rely on software running outside of the security perimeter to provide the desired features. An example where this happens is when a user interacts with the system by entering a \ac{PIN}. This \ac{PIN} must be managed by the less secure software outside of the smartcard, making it vulnerable to attacks.\\
 
-To accomplish the goals of this project, a completely secure flow of execution is needed, this means that privacy-sensitive data must never leave the trusted secure perimeter. A system which does not support secure I/O limits greatly the functionality offered by a \ac{PHR} application, to the point where it becomes useless. For this reason we exclude the external hardware security module as a viable solution for the problem.\\
+%rever, muito copiado
+\textbf{Internal hardware security modules} are, contrary to the previous solution, included within the \ac{SoC}. These integrated modules are usually one of two forms: the first is a hardware block which manages cryptographic operations and key storage, and the second e a general purpose processing engine that is placed alongside the main processor, which uses custom hardware logic to prevent unauthorized access to sensitive resources.
 
-\textbf{Internal hardware security module} is a security architecture which 
+This solution has the advantage of being cheaper, having the convenience of being an integrated part of the system and offering a performance improvement over external hardware security modules like smartcards. The disadvantage is that, like the previous solution, the resources protected by the security module will eventually need to be used outside the module it self, thus making these resources vulnerable. Another disadvantage is that this design requires a separate physical processor, typically less powerful than the main processor, to a avoid sharing such an important resource with less critical modules. Extending or migrating systems built with this solution is also much harder. This is true because separation of resources must be implemented on proprietary hardware specific extensions within the \ac{SoC}.\\
 
-\textbf{Software virtualization}
+\textbf{Software virtualization} is another security mechanism which has been growing in popularity over the past years. In this software security mechanism a highly trusted management layer called hypervisor runs in a privileged mode of a general purpose processor. The hypervisor uses the \ac{MMU} to separate several independent software platforms, running each one inside a virtual machine.
 
-\textbf{TrustZone}
+There are many advantages of using this solution. The first advantage is that a compact hypervisor can be thoroughly tested to ensure, with a high degree of certainty, that software running within one virtual machine cannot influence and attack the execution of others running in parallel. Another advantage is that there is no additional hardware requirement to implement a hypervisor, thus any processor with an \ac{MMU} can be used to implement this security solution. Lastly, this solution is capable of supporting processing isolation between a secure environment and a full-blown rich operating system running in different virtual machines managed by the hypervisor. If a communication mechanisms between virtual machines is supported by the hypervisor, then a secure pipeline is established between the two virtual machines.
+
+The main problem with this approach is the isolation provided is restricted to the processor implementing the hypervisor. If all the other resources, mainly system buses, are not managed by the hypervisor, then the protection provided by the virtualization may be bypassed. Managing resources like \ac{GPUs} can be difficult to achieve without hindering the system's performance.\\
+
+\textbf{TrustZone} is a hardware architecture that extends the security throughout the system design. The TrustZone architecture was designed to mitigate the problems discussed above. This is achieved by allowing any part of the system to be made secure instead of protecting only the assets inside a secure hardware block, thus enabling end-to-end security without exposing resources to a less critical platform.\\
+
+To accomplish the goals of this project, a completely secure flow of execution is needed, this means that privacy-sensitive data must never leave the trusted security perimeter. A system which does not support secure I/O greatly limits the functionality offered by a \ac{PHR} application, to the point where it becomes useless. For this reason we exclude both the external and internal hardware security modules as viable solutions for the problem.
+
+On a different note, the virtualization solution seems promising, but with all the problems related to sharing resources such as \ac{GPUs} and other system buses, this security module can be discarded as a solution. For an application to be secure, even when the rich OS is compromised, total isolation is needed, which is not easily achievable using virtualization.
+
+TrustZone technology seems to be the most complete system of all, when considering embedded solutions, as it mitigates recurring problems from other mechanisms. Considering this, TrustZone is the most viable solution for our \ac{PHR} applications, because it allows for a complete isolation between the privacy-sensitive data and all the other non-critical logic. 
 
 \subsubsection{Summary}
 
+After describing and assessing the available technology, one can argue which mechanisms better suit the development of critical mobile applications for Android, such as our \ac{PHR} app. Some systems are clearly unsuitable for the goals of this project. Such mechanisms as application communication monitoring (section \ref{sec:appcommmonitoring}), access control hook APIs (section \ref{sec:accesscontrolhooks}) or memory instrumentation (section \ref{sec:meminstrumentation}) may be helpful in mitigating vulnerabilities caused by negligent development or for the development of new access control policies respectively, but are not sufficient to build privacy-sensitive applications. A summary of the main conclusions for the remaining systems studied is shown in table \ref{tab:securityMechanismsComparison}.
 
-PORQUE PODE FUNCIONAR BEM PARA AQUI\\
-COMO É A TECH QUE PARECE MAIS PROMISSORA ENTÃO VAI TER UMA SECÇÃO SÓ PARA SI\\
+\ac{DRM} by it self is capable of protecting data from disclosure and modification, hence it would be a great candidate for securing a privacy-sensitive application. Using access control mechanisms is possible to achieve data integrity and non-disclosure of sensitive data by restricting access to critical resources by untrusted applications, for example, by disabling Internet access to all untrusted apps one guarantees that sensitive data will not be leaked using this resource.
 
-Aqui falar sobre a tabela \ref{tab:securityMechanismsComparison} e concluir finalmente que temos que olhar para o trustzone pois é destes mecanismos o que parece mais adequado.
+With permission refinement systems, in particular with TrUbi, it is possible to isolate the execution of a critical application from the remaining apps installed on the system, for example, the \ac{PHR} app could be developed with the following premise. When the \ac{PHR} app is running all the other apps are killed and all the resources blocked. With this the app could download the health records from the healthcare provider and show the data to the user. When the user exits the application, their data is encrypted with a key generated from a user password, and only then the resources are released for the other applications. The system was completely isolated during the whole process and the data is stored with encryption (and the key, because it is generated from a user password, is not stored on the system).
 
+Although all of the above solutions are suitable for building a secure \ac{PHR} application, they do not achieve the goals of this project, because all of these mechanisms suffer from the same limitation: both the middleware and the underlying kernel are considered as \ac{TCB}. This means that if a malicious app is capable of compromising these layers, then the critical \ac{PHR} application is compromised as well, and the data it protects may be accessible by the malicious party. 
+
+The only solution for the problem described is an hardware based security mechanism. As shown in table \ref{tab:securityMechanismsComparison}, the embedded security technology, particularly TrustZone, is the only solution which works either with a trusted OS or a compromised OS. For this reason, the next section will be focused on describing the state-of-the-art, architecture and functionality of the TrustZone technology, as it is the only security mechanism suitable for the needs of this project.
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
 \begin{table}[t!]
@@ -226,8 +242,7 @@ Aqui falar sobre a tabela \ref{tab:securityMechanismsComparison} e concluir fina
 			Access Control Mechanisms           & \cmark          & \cmark         & \xmark          & \xmark            \\ \hline
 			Permission Refinement               & \cmark          & \cmark         & \xmark          & \xmark            \\ \hline
 			Privacy Enhancement Systems         & \cmark          & \cmark         & \xmark          & \xmark            \\ \hline
-			Memory Instrumentation              & \cmark          & \cmark         & \xmark          & \xmark            \\ \hline
-			TrustZone Technology                & \cmark          & \cmark         & \cmark          & \cmark            \\ \hline
+			Embedded Security Technology        & \cmark          & \cmark         & \cmark          & \cmark            \\ \hline
 		\end{tabular}
 	}
 \end{table}

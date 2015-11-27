@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  26 NOV 2015 18:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  27 NOV 2015 01:30
 entering extended mode
 **report.tex
 (report.tex
@@ -604,7 +604,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
 
-) (sections/5-related-work.tex [2]
+) (sections/4-objectives.tex [2]) (sections/5-related-work.tex
 Package acronym Info: Label `acro:ARM' newly defined as it shall be overridden
 although it is yet undefined on input line 13.
 Package acronym Info: Label `acro:PHR' newly defined as it shall be overridden
@@ -623,26 +623,28 @@ s.airpersonsmobilehealth|
 [5]
 Package acronym Info: Label `acro:DMB' newly defined as it shall be overridden
 although it is yet undefined on input line 75.
- [6] <img/sensitivedistribution.jpg, id=28, 157.3077pt x 96.1191pt>
+
+Underfull \vbox (badness 2922) has occurred while \output is active []
+
+ [6]
+<img/sensitivedistribution.jpg, id=28, 157.3077pt x 96.1191pt>
 File: img/sensitivedistribution.jpg Graphic file (type jpg)
 
 <use img/sensitivedistribution.jpg>
 Package pdftex.def Info: img/sensitivedistribution.jpg used on input line 81.
 (pdftex.def)             Requested size: 329.7663pt x 201.52893pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [7 <./img/sensitivedistribution.jpg>]
 Package acronym Info: Label `acro:OMA' newly defined as it shall be overridden
 although it is yet undefined on input line 108.
- [8]
+
+[8]
 Package acronym Info: Label `acro:DAC' newly defined as it shall be overridden
 although it is yet undefined on input line 114.
 Package acronym Info: Label `acro:MAC' newly defined as it shall be overridden
 although it is yet undefined on input line 116.
  [9] [10]
-Overfull \hbox (9.25034pt too wide) in paragraph at lines 142--143
- \OT1/cmr/bx/n/10 2.2.4 Ap-pli-ca-tion Com-mu-ni-ca-tion Mon-i-tor-ing[] \OT1/c
+Overfull \hbox (9.25034pt too wide) in paragraph at lines 143--144
+ \OT1/cmr/bx/n/10 3.2.4 Ap-pli-ca-tion Com-mu-ni-ca-tion Mon-i-tor-ing[] \OT1/c
 mr/m/n/10 An-other prob-lem-atic mech-
  []
 
@@ -650,46 +652,66 @@ mr/m/n/10 An-other prob-lem-atic mech-
 File: img/communicationattacks.png Graphic file (type png)
 
 <use img/communicationattacks.png>
-Package pdftex.def Info: img/communicationattacks.png used on input line 152.
+Package pdftex.def Info: img/communicationattacks.png used on input line 153.
 (pdftex.def)             Requested size: 329.7663pt x 114.70308pt.
  [12 <./img/communicationattacks.png>]
 Package acronym Info: Label `acro:ASM' newly defined as it shall be overridden
-although it is yet undefined on input line 180.
+although it is yet undefined on input line 181.
 Package acronym Info: Label `acro:ASF' newly defined as it shall be overridden
-although it is yet undefined on input line 180.
+although it is yet undefined on input line 181.
 
 [13]
-Overfull \hbox (5.39244pt too wide) in paragraph at lines 194--195
- \OT1/cmr/bx/n/10 2.2.8 Em-bed-ded Se-cu-rity Sys-tems[] \OT1/cmr/m/n/10 Al-tho
+Overfull \hbox (5.39244pt too wide) in paragraph at lines 196--197
+ \OT1/cmr/bx/n/10 3.2.8 Em-bed-ded Se-cu-rity Sys-tems[] \OT1/cmr/m/n/10 Al-tho
 ugh de-vel-op-ing new se-cu-rity mech-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
 
  []
 
 Package acronym Info: Label `acro:SoC' newly defined as it shall be overridden
-although it is yet undefined on input line 196.
+although it is yet undefined on input line 198.
 Package acronym Info: Label `acro:PIN' newly defined as it shall be overridden
-although it is yet undefined on input line 196.
+although it is yet undefined on input line 198.
 
 Underfull \hbox (badness 10000) in paragraph at lines 198--199
 
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 209--211
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
 
  []
 
-) (report.bbl [15]
+Package acronym Info: Label `acro:MMU' newly defined as it shall be overridden
+although it is yet undefined on input line 205.
+Package acronym Info: Label `acro:GPUs' newly defined as it shall be overridden
+
+although it is yet undefined on input line 209.
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--212
+
+ []
+
+
+Underfull \vbox (badness 1102) has occurred while \output is active []
+
+ [15]
+[16]) (sections/6-architecture.tex) (sections/7-evaluation.tex)
+(sections/8-conclusions.tex) (report.bbl [17]
 Underfull \hbox (badness 10000) in paragraph at lines 54--59
 \OT1/cmr/m/n/9 http://www.comscore.com/Insights/Presentations-and-Whitepapers/2
 015/2015-
  []
 
-
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 124--129
 []\OT1/cmr/m/n/9 F-Secure Labs.  Mo-bile Threat Re-port.  Tech-ni-
  []
@@ -717,28 +739,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 131--137
 92c/PRD29-
  []
 
-[16] [17]) [18] (report.aux) ) 
+[19]) [20] (report.aux) ) 
 Here is how much of TeX's memory you used:
- 3731 strings out of 493673
- 50183 string characters out of 3141529
- 126663 words of memory out of 3000000
- 7003 multiletter control sequences out of 15000+200000
+ 3755 strings out of 493673
+ 50607 string characters out of 3141529
+ 126781 words of memory out of 3000000
+ 7015 multiletter control sequences out of 15000+200000
  9936 words of font info for 35 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 33i,10n,22p,2014b,270s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti1
-0.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.p
-fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on report.pdf (18 pages, 312845 bytes).
+ 33i,11n,22p,2014b,270s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.p
+fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb
+><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on report.pdf (20 pages, 321745 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
+ 109 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
