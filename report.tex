@@ -41,6 +41,11 @@ Av. Rovisco Pais, 1049-001 Lisboa - PORTUGAL\\
 \renewcommand*\l@author[2]{}
 \renewcommand*\l@title[2]{}
 \makeatletter
+\renewcommand\subsubsection{\@startsection{subsubsection}{2}{\z@}%
+	{-18\p@ \@plus -4\p@ \@minus -4\p@}%
+	{8\p@ \@plus 4\p@ \@minus 4\p@}%
+	{\normalfont\normalsize\bfseries\boldmath
+		\rightskip=\z@ \@plus 8em\pretolerance=10000 }}
 
 %\cleardoublepage
 \input{sections/1-abstract.tex}

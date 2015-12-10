@@ -12,14 +12,25 @@ This section presents the related work and characterizes the main contributions 
 
 The first part focuses on describing the attack surfaces of mHealth apps, the most common threats and their seriousness, present a few publicly available insecure mHealth apps as well as some compliance recommendations app developers should follow to avoid unnecessary security risks when handling sensitive health information. The second part of this sections describes the state-of-the-art of mobile security with a particular focus on the Android Operating System and how developers can build secure applications with a trusting \ac{OS} and security mechanisms built upon the application layer. The third part of the related work describes TrustZone, a hardware technology available in most modern \ac{ARM} processors which supports execution of two isolated worlds, a hardware-protected secure world and a normal world. Besides describing the technology, this sections also presents previous work developed using TrustZone and how these contributions may be helpful in achieving the main goals of this project. 
 
-\subsection{mHealth}
+\subsection{Studies in Mobile Health Security}
 \label{sec:mhealth}
 
-As discussed above, mobile devices are increasing in number at astonishing rates, and with this growth the mobile market becomes cheap and accessible. This motivates the shift from mainframe systems, located in the facilities of healthcare providers, to apps on mobile devices as well as storage in shared cloud services. This accessibility also motivates the private sector in building more healthcare applications to support both patients and professionals. Thus, the mobile health market is becoming a competitive market and one which is increasingly handling more sensitive data.
+% A REPETIR UM BOCADO O QUE JÁ FOI DITO NA INTRO...
+As discussed above, mobile devices are increasing in number at astonishing rates, and with this growth the mobile market becomes cheap and accessible. This motivates the shift from mainframe systems, located in the facilities of healthcare providers, to apps on mobile devices as well as storage in shared cloud services. This accessibility also motivates the private sector in building more mobile healthcare applications to support both patients and professionals. Thus, the mobile health market is becoming a competitive market and one which is increasingly handling more sensitive data.
+
+% # DIZER O QUE SE VAI FALAR NESTA SECÇÃO
+The following sections describe work done in assessing the current security state of commercial mobile health applications. Kotz, David \cite{kotz2011threat} defines a threat taxonomy for mHealth and categorizes threats in three main categories: \emph{Identity Threats}, \emph{Access Threats} and \emph{Disclosure Threats}. He, Dongjing, et al. \cite{he2014security} analyse several mHealth applications available in Android's app store contributing to the understanding of security and privacy risk on the Android platform. In this paper, three studies were made with the following goals:
+\begin{itemize}
+	%\item \textbf{Study 1: What are the potential attack surfaces?}
+	%\item \textbf{Study 2: How widespread is the threat?}
+	%\item \textbf{Study 3: How serious is the threat?}
+	\item Study 1: What are the potential attack surfaces?
+	\item Study 2: How widespread is the threat?
+	\item Study 3: How serious is the threat?
+\end{itemize}
 
 % THREAT TAXONOMY
-Kotz, David \cite{kotz2011threat} defines a threat taxonomy for mHealth. In this paper the author categorizes threats in three main categories: \emph{Identity Threats}, \emph{Access Threats} and \emph{Disclosure Threats}.
-
+\subsubsection{Threat Taxonomy for Mobile Health Applications}
 Identity threats are described as mis-use of patient identities and include cases where a patient may lose (or share) their identity credentials, allowing malicious agents to access their respective \ac{PHR}. \emph{Insiders} (authorized \ac{PHR} users, staff of the \ac{PHR} organization or staff of other mHealth support systems) may also use patient identities for medical fraud or for medical identity theft, and \emph{outsiders} may be able to observe patient identity or location from communications.
 
 Access threats are described as unauthorized access to \ac{PHR} and include cases where the patient, which controls the data, may allow broader-than-intended access or disclosure of information, \emph{insiders} who may snoop or modify patient data with intents other than improving the healthcare of the patient, and even \emph{outsiders} which, by breaking into patient records, may leak or modify this data.
@@ -32,21 +43,8 @@ This work by Kotz, David \cite{kotz2011threat} helped in understanding what thre
 
 This survey considers essential accounting for privacy in the design and implementation of any mHealth system, given the sensitivity of the data collected. A developer may use the list of privacy properties provided by this article as a check-list to be considered in any design. Furthermore, a set of questions is left open for researchers to improve the efficiency and effect of these properties. It is also mentioned that privacy challenges identified by this article need to be addressed with urgency, because mHealth devices and systems are being deployed now, and retrofitting privacy protections is far more difficult than building them in from the start.
 
-% SECURITY CONCERNS MHEALTH ANDROID
-He, Dongjing, et al. \cite{he2014security} analyse several mHealth applications available in Android's app store contributing to the understanding of security and privacy risk on the Android platform. In this paper, three studies were made with the following goals:
-
-\begin{itemize}
-	\item \textbf{Study 1: What are the potential attack surfaces?}
-	\item \textbf{Study 2: How widespread is the threat?}
-	\item \textbf{Study 3: How serious is the threat?}
-\end{itemize}
-
-% AQUI ESTOU A DIZER TBM QUE ESCOLHI A APPLICACAO A FAZER POR CAUSA DESTES NUMEROS
-In the first study, 160 apps are analysed to find evidence of security threats. From analysing previous literature \cite{zhou2013identity,naveed2014inside,aviv2012practicality,cai2012practicality,chin2011analyzing,fsecure}, seven attack surfaces are determined to be in need of protection. Those seven attack surfaces are shown in table \ref{tab:attacksurfaces}. The authors also document that the 160 apps studied target two different audiences: 129 (81.65\%) are for patients, 32 (20.25\%) are for healthcare professionals and the remaining 3 (1.90\%) are targeted for both. Most apps targated for patients (60\%) are in the Life Management category followed by apps that manage and synchronize user health information (\ac{PHR} Management), which occupy nearly half (46.88\%) of these apps. These numbers are a good indicator of what data is handled by most commercial mHealth apps available and motivate the choice made to build a \ac{PHR} Management app as demo app for TrubiZone.
-
-A few examples of vulnerable applications are also revealed during this study. Regarding unencrypted information sent over the Internet, Doctor Online \footnote{https://play.google.com/store/apps/details?id=com.airpersons.airpersonsmobilehealth} (patients can talk to doctors online) and Recipes by Ingredients \footnote{https://play.google.com/store/apps/details?id=com.abMobile.recipebyingredient} send unencrypted sensitive information, including the user's email and password, in clear text. With regard to logging sensitive information, the study pinpoints CVS/pharmacy \footnote{https://play.google.com/store/apps/details?id=com.cvs.launchers.cvs}, which logs the prescription refill details from user inputs, including name, email address, store number, and Rx number and also logs user login credentials in a debug log message. A malicious party can use this information to view user profiles and prescription history, which could support medical identity theft. In addition, it is even possible to do online pharmacy shopping with user's stored credit card information.
-
-Further applications are given as example for exposing sensitive data. Noom Weight Loss Coach \footnote{https://play.google.com/store/apps/details?id=com.wsl.noom} reveals user workout history by exposing its Content Providers to external apps, which means any app can access the exposed Content Providers without declaring any permission. Finally, this first study concludes with the example of sleep monitoring apps, such as SnoreClock \footnote{https://play.google.com/store/apps/details?id=de.ralphsapps.snorecontrol} and Sleep Talk Recorder \footnote{https://play.google.com/store/apps/details?id=com.madinsweden.sleeptalk}, which store the sleep records of users as unencrypted audio files on external storage. With read permission for the SD card, as well as internet permission, a malicious app can read a user's sleep recordings and even send them to remote servers.
+\subsubsection{Potential Attack Surface of Commercial Mobile Health Applications}
+In the first study by He, Dongjing, et al. \cite{he2014security}, 160 apps are analysed to find evidence of security threats. From analysing previous literature \cite{zhou2013identity,naveed2014inside,aviv2012practicality,cai2012practicality,chin2011analyzing,fsecure}, seven attack surfaces are determined to be in need of protection. Those seven attack surfaces are shown in table \ref{tab:attacksurfaces}. The authors also document that the 160 apps studied target two different audiences: 129 (81.65\%) are for patients, 32 (20.25\%) are for healthcare professionals and the remaining 3 (1.90\%) are targeted for both. Most apps targated for patients (60\%) are in the Life Management category followed by apps that manage and synchronize user health information (\ac{PHR} Management), which occupy nearly half (46.88\%) of these apps. These numbers are a good indicator of what data is handled by most commercial mHealth apps available and motivate the choice made to build a \ac{PHR} Management app as demo app for TrubiZone.
 
 \begin{table}[t]
 	\caption {Description of attack surface (taken from He et al. \cite{he2014security})}
@@ -64,6 +62,11 @@ Further applications are given as example for exposing sensitive data. Noom Weig
 	\end{tabular}
 \end{table}
 
+A few examples of vulnerable applications are also revealed during this study. Regarding unencrypted information sent over the Internet, Doctor Online \footnote{https://play.google.com/store/apps/details?id=com.airpersons.airpersonsmobilehealth} (patients can talk to doctors online) and Recipes by Ingredients \footnote{https://play.google.com/store/apps/details?id=com.abMobile.recipebyingredient} send unencrypted sensitive information, including the user's email and password, in clear text. With regard to logging sensitive information, the study pinpoints CVS/pharmacy \footnote{https://play.google.com/store/apps/details?id=com.cvs.launchers.cvs}, which logs the prescription refill details from user inputs, including name, email address, store number, and Rx number and also logs user login credentials in a debug log message. A malicious party can use this information to view user profiles and prescription history, which could support medical identity theft. In addition, it is even possible to do online pharmacy shopping with user's stored credit card information.
+
+Further applications are given as example for exposing sensitive data. Noom Weight Loss Coach \footnote{https://play.google.com/store/apps/details?id=com.wsl.noom} reveals user workout history by exposing its Content Providers to external apps, which means any app can access the exposed Content Providers without declaring any permission. Finally, this first study concludes with the example of sleep monitoring apps, such as SnoreClock \footnote{https://play.google.com/store/apps/details?id=de.ralphsapps.snorecontrol} and Sleep Talk Recorder \footnote{https://play.google.com/store/apps/details?id=com.madinsweden.sleeptalk}, which store the sleep records of users as unencrypted audio files on external storage. With read permission for the SD card, as well as internet permission, a malicious app can read a user's sleep recordings and even send them to remote servers.
+
+\subsubsection{Severity of Attacks to Mobile Health Applications}
 In the second study, 27 of the top 1080 free apps from the Medical and Health \& Fitness categories on Google Play were analysed according to their vulnerabilities. From this analysis, three attack surfaces are identified as the most important ones: \emph{Internet}, \emph{Third Party Services} and \emph{Logging}. Only 7 of these 27 apps use the Internet to effectively send medical information over to remote servers. It is important to understand if the information sent over the Internet is protected. To achieve this, the authors captured network traffic and concluded that only 57.1\% (4/7) of these apps use encrypted communication and the remaining 42.9\% (3/7) send unencrypted sensitive health information. Among the unencrypted contents sent by these 3 apps are emails, usernames and passwords. This study also concludes that 85.7\% (6/7) of these apps are hosted and store the recorded data on third party servers. This is an economical and scalable solution for mobile applications, but storing sensitive health records on third party servers can have serious implications, mostly due to app users not being aware that their data is being stored on third party servers and because these users are incapable of telling if this data is stored encrypted in such a way that hosting companies do not have access to it.
 
 Some health apps use Bluetooth devices to collect personal health information such as heart rate, respiration, pulse oximetry, electrocardiogram (ECG), blood pressure, body weight, body temperature, quality of sleep and exercise activities. Naveed et al. \cite{naveed2014inside} show how a malicious app can stealthily collect user data from an Android device or spoof it and inject fake data into the original device's app, in what is called an \ac{DMB} attack. One of the 27 apps analysed in this study connects to external health sensors and uses default PIN code 0000, which makes it vulnerable to the \ac{DMB} attack.
@@ -78,32 +81,13 @@ In the third study, another 22 apps, which send information over the Internet, a
   \caption{Sensitive information distribution for study 3 (taken from  He et al. \cite{he2014security})}
   \label{fig:sensitivedistribution}
 \end{figure}
-%\FloatBarrier
 
 % EM QUE O TRABALHO ME AJUDOU
 The work by He, Dongjing, et al. \cite{he2014security} helped in understanding what are the most common attack surfaces when considering mHealth applications on Android and it also helped assessing the security risks inherent to applications handling privacy-sensitive information. This paper generally describes the state-of-the-art of security in commercial mobile health apps and pinpoints what should be fixed in order to build better and more secure application for the healthcare industry. It is clear that developers focus much more on building feature-full applications rather than secure apps and this is why it is important to build a framework which allows developers to completely focus on the features they want to provide without having to focus heavily on security. % We believe that building a developer framework over ARM's TrustZone technology is a good solution because with TrustZone is possible to fully enjoy the potential of the hardware already available in most mobile devices. This technology will be described in section \ref{sec:trustzone}. 
 
-\subsection{Mobile Security Mechanisms}
+\subsection{General-Purpose Mobile Security Mechanisms}
 
 This section describes the security mechanisms available for the Android platform, either from native Android or as security extensions, and how these mechanisms can be used to solve some of the problems covered in the previous section. Work by Duarte, Nuno \cite{nunoduarte} and Costa, Miguel \cite{miguelcosta} extensively describe Android's security mechanisms and divide them in seven groups: \emph{(i)} digital rights management, \emph{(ii)} access control mechanisms, \emph{(iii)} permission refinement, \emph{(iv)} application communication monitoring, \emph{(v)} privacy enhancement systems, \emph{(vi)} access control hook APIs, and \emph{(vii)} memory instrumentation. Although some of theses systems may not be suited for the needs of the problem we intend to solve, this section aims to be a description of the state-of-the-art regarding security on the Android platform. Moreover, to the seven groups described, we suggest the addition of a new mechanism: \emph{(viii)} embedded security systems. This mechanism is not directly related to Android but, with a significant presence in most modern smartphones, its discussion is imperative for the project.%as well as \textbf{MORE REFERENCES HERE}, which are good sources for information on this section of related work.
-
-\subsubsection{Digital Rights Management}
-The first security mechanism analysed is Digital Rights Management. This specific access control technology allows data owners to restrict if and how their data is copied and also how that data is handled once transferred to another device. The \ac{DRM} ecosystem is composed of the following entities:
-
-% estruturar melhor esta lista
-\begin{itemize}
-	\item \emph{User} - human user of the DRM Content
-	\item \emph{Content Issuer} - entity that delivers the content
-	\item \emph{Rights Issuer} - entity responsible for assigning permissions and constraints to \ac{DRM} content
-	\item \emph{Rights Object} - XML document generated by a Rights Issuer expressing the restrictions associated to the content.
-	\item \emph{\ac{DRM} Agent} - trusted entity responsible for enforcing permissions and constraints upon the \ac{DRM} content
-\end{itemize}
-
-\ac{DRM} can be used to protect proprietary software, hardware or general content. The most common application for \ac{DRM} nowadays is music and video games, because these represent highly valuable intellectual property. To understand how \ac{DRM} works in the context of mHealth one can suggest a simple example of a \ac{PHR} mobile health application. In this scenario, the healthcare provider (e.g. a hospital) would be the \emph{content issuer}, and it would use a \emph{rights issuer} to assign the restrictions imposed upon the \ac{DRM} content, which in this case would be the personal health record of a patient, when this content is transferred to the patient's device. When using \ac{DRM}, the patient is limited to access the content through a \emph{\ac{DRM} Agent}.
-
-The \ac{OMA} developed a DRM standard \cite{drm} which defines the format of the content delivered to DRM Agents, as well as the way this content can be transferred from the Content Issuer to the DRM Agent. Android provides an extensible DRM framework, called Android DRM Framework \footnote{http://developer.android.com/reference/android/drm/package-summary.html}, allowing application developers to enable their apps to manage rights-protected content by complying with one of the supported DRM schemes (specific mechanisms, enforced by DRM Agents, to handle particular types of files).
-
-This mechanism can be useful for protecting personal healthcare records by restricting the way data can be copied and handled. For this project however, DRM is not enough to ensure the confidentiality, integrity and availability of the sensitive data because it may fail to do so when the operating system is compromised with a malicious agent.
 
 \subsubsection{Access Control Mechanisms}
 
@@ -113,9 +97,9 @@ Although Android inherits the \ac{DAC} from its Linux ancestry, most other resou
 
 Because \ac{MAC} is robust, several systems were created over the years to extend \ac{MAC}'s access control model to other Android resources. SEAndroid \cite{smalley2013security} solves problems related to resources complying with the \ac{DAC} mechanism. The authors ported SELinux \cite{peter2001integrating} to provide \ac{MAC} at the kernel layer. The kernel was then modified to support a new \ac{MAC} policy (e.g., filesystem, IPC) and a new middleware layer (MMAC) was created to extend \ac{MAC} to Android's Binder IPC. TrustDroid \cite{bugiel2011practical} extends the \ac{MAC} mechanism to all the platform's resources (e.g., filesystem which complied with DAC) in order to isolate different domains' sensitive information.
 
-Even though access control mechanisms allow isolation between different subjects in a system, thus enforcing the confidentiality and integrity needed for this project, it still relies on the premise that the underlying middleware and kernel are secure. With this assumption, sensitive data may be at risk when the \ac{TCB} is compromised. For this reason, access control mechanisms are not sufficient to ensure the security needs of this project.  
+Even though access control mechanisms allow isolation between different subjects in a system, thus enforcing the confidentiality and integrity needed for this project, it still relies on the premise that the underlying middleware and kernel are secure. With this assumption, sensitive data may be at risk when the \ac{TCB} is compromised. For this reason, access control mechanisms are not sufficient to ensure the security needs of this project.
 
-\subsubsection{Permission Refinement}
+\paragraph{Permission Refinement}
 \label{sec:permissionrefinement}
 
 The Android permission mechanism is a very restrict system. At install time, a list of permissions an application specifies in its manifest file is shown to the user, which is forced into a binary decision, either granting all permissions or quitting the installation. This is an inflexible solution, which makes it impossible for users to have full control of the permissions an application is effectively using at runtime. This inflexibility allows apps to use the device's resources whenever the app wishes without the user's knowledge, possibly with malicious intent. Moreover, this permission mechanism allows for some problems such as component privilege escalation. An example of this is when an application, which profits from displaying in-app ads, requests access to the camera and to the Internet. In this case, the ad component has access to the camera, which it should not have because there is no need for it, and furthermore the component may even escalate its privileges by leaking video through the Internet.
@@ -124,9 +108,29 @@ Over the years many systems solved some of the problems inherent to permission r
 
 These systems improve upon the original Android permission model, but require manual configuration by the user. A more useful solution would be to use a context-aware system to handle the permissions at runtime. This way it may be possible to, without manual configuration, restrict permissions to all applications running along side a security sensitive application, thus isolating this application and avoiding possible leaks by shared resources. Several context-aware permission refinement systems exist. Trusted third parties can use CRePE \cite{conti2011crepe} to enforce security policies on another devices whilst, for example, the employees' mobile devices are inside the company, but have no privileges otherwise. Similarly, MOSES \cite{russello2012moses} enforces domain isolation through the concept of security profiles. MOSES can switch security profiles based on pre-established conditions (e.g., GPS coordinates and time). When switching from a personal (less restrictive) profile to a professional (more restrictive) one, MOSES terminates and prevents the execution of applications not allowed to run in the new enforced profile. Additionally, MOSES leverages TaintDroid \cite{enck2014taintdroid} (covered in Section \ref{sec:privacyenhancement}) to prevent apps from one profile to access data belonging to another.
 
+%AQUI O TRUBI TEM QUE SAIR
 Both CRePE and MOSES suffer from a device control issue where a third party defines a policy that cannot be revoked by the user. Moreover, a user has no way to deny the enforcement of a third party policy. Duarte \cite{nunoduarte} and Costa \cite{miguelcosta} developed a system called TrUbi, built on top of ASM \cite{heuser2014asm} (covered in Section \ref{sec:accesscontrolhooks}), which solves the problems mentioned and presents a developer friendly framework for the development of sensitive permission refinement applications.
 
 Even though TrUbi could be a good base for the development of this project, by allowing the development of applications which can control and enforce restrictions over less secure-sensitive apps, it suffers from the same limitations as the mechanisms discussed previously. When the underlying middleware and kernel are compromised, the security sensitive data may become accessible by a malicious agent.
+
+\paragraph{Access Control Hook APIs}
+\label{sec:accesscontrolhooks}
+
+A trend from previous work on mobile security is clearly noticeable: most security extensions require modifying and adding components to the kernel and middleware layers in order to implement new security models. Some frameworks have been built to ease the development process by allowing developers to easily create security models as ordinary apps whilst benefiting from a full callback system capable of notifying the security enforcement applications of accesses and requests to some of the apps' resources of interest.
+
+These frameworks comprise a set of hooks distributed among the kernel and middleware layers, which can be registered by a secure application. When a hook is activated it triggers a callback from the Hook API module, which in turn is forwarded to the app for verification. The app then decides if the operation that triggered the activation of the hook may or may not proceed. The main advantage of frameworks such as \ac{ASM} \cite{heuser2014asm} and \ac{ASF} \cite{backes2014android} is the flexibility and freedom given to developers in choosing whatever resources to manage.
+
+%TEM QUE SAIR DAQUI IR PARA BAIXO
+TrUbi \cite{miguelcosta,nunoduarte} is built upon ASM and allows for flexible system-wide resource restriction, which may be used to isolate privacy-sensitive apps by killing, freezing or revoking permissions to running applications. The limitation of TrUbi is already discussed in section \ref{sec:permissionrefinement} and is based upon the fact that the \ac{TCB} is comprised of all the Android kernel, Android middleware and extensions such as \ac{ASM}.
+
+\paragraph{Memory Instrumentation}
+\label{sec:meminstrumentation}
+
+Memory instrumentation can be divided in two groups: static memory instrumentation and dynamic memory instrumentation. While static memory instrumentation changes already compiled bytecode, dynamic instrumentation patches running processes. In the remainder of this section the sole focus will be on dynamic memory instrumentation as it is an interesting mechanism to enforce new security models.
+
+DeepDroid \cite{wang2015deepdroid} relies on dynamic memory instrumentation to enforce fine-grained context-aware security policies for enterprise. This is done by patching several system services and tracing system calls. But this system is better suited for the development of new security policies instead of suiting the development of robust privacy-sensitive applications like the one we intend to build.
+
+Therefore, this security mechanism is not adequate for the needs of this project. Moreover, these systems still suffer from the same limitations discussed previously regarding compromised operating systems and large trusted computing bases. 
 
 \subsubsection{Application Communication Monitoring}
 \label{sec:appcommmonitoring}
@@ -169,25 +173,26 @@ Despite these limitations, TaintDroid was used by the research community as a bu
 
 Although these systems aim at protecting users' privacy they focus on detecting and preventing data leakage instead of providing a framework for developers to build privacy-sensitive applications. Even if a good framework for privacy-sensitive app development existed the limitation discussed before would still persist. If the middleware or kernel layers become compromised then all systems dependent of these will be compromised as well.
 
-\subsubsection{Access Control Hook APIs}
-\label{sec:accesscontrolhooks}
+\subsubsection{Embedded Security Systems} % TEE
 
-A trend from previous work on mobile security is clearly noticeable: most security extensions require modifying and adding components to the kernel and middleware layers in order to implement new security models. Some frameworks have been built to ease the development process by allowing developers to easily create security models as ordinary apps whilst benefiting from a full callback system capable of notifying the security enforcement applications of accesses and requests to some of the apps' resources of interest.
+\paragraph{Digital Rights Management} The first security mechanism analysed is Digital Rights Management. This specific access control technology allows data owners to restrict if and how their data is copied and also how that data is handled once transferred to another device. The \ac{DRM} ecosystem is composed of the following entities:
 
-These frameworks comprise a set of hooks distributed among the kernel and middleware layers, which can be registered by a secure application. When a hook is activated it triggers a callback from the Hook API module, which in turn is forwarded to the app for verification. The app then decides if the operation that triggered the activation of the hook may or may not proceed. The main advantage of frameworks such as \ac{ASM} \cite{heuser2014asm} and \ac{ASF} \cite{backes2014android} is the flexibility and freedom given to developers in choosing whatever resources to manage.
+% estruturar melhor esta lista
+\begin{itemize}
+	\item \emph{User} - human user of the DRM Content
+	\item \emph{Content Issuer} - entity that delivers the content
+	\item \emph{Rights Issuer} - entity responsible for assigning permissions and constraints to \ac{DRM} content
+	\item \emph{Rights Object} - XML document generated by a Rights Issuer expressing the restrictions associated to the content.
+	\item \emph{\ac{DRM} Agent} - trusted entity responsible for enforcing permissions and constraints upon the \ac{DRM} content
+\end{itemize}
 
-TrUbi \cite{miguelcosta,nunoduarte} is built upon ASM and allows for flexible system-wide resource restriction, which may be used to isolate privacy-sensitive apps by killing, freezing or revoking permissions to running applications. The limitation of TrUbi is already discussed in section \ref{sec:permissionrefinement} and is based upon the fact that the \ac{TCB} is comprised of all the Android kernel, Android middleware and extensions such as \ac{ASM}.
+\ac{DRM} can be used to protect proprietary software, hardware or general content. The most common application for \ac{DRM} nowadays is music and video games, because these represent highly valuable intellectual property. To understand how \ac{DRM} works in the context of mHealth one can suggest a simple example of a \ac{PHR} mobile health application. In this scenario, the healthcare provider (e.g. a hospital) would be the \emph{content issuer}, and it would use a \emph{rights issuer} to assign the restrictions imposed upon the \ac{DRM} content, which in this case would be the personal health record of a patient, when this content is transferred to the patient's device. When using \ac{DRM}, the patient is limited to access the content through a \emph{\ac{DRM} Agent}.
 
-\subsubsection{Memory Instrumentation}
-\label{sec:meminstrumentation}
+The \ac{OMA} developed a DRM standard \cite{drm} which defines the format of the content delivered to DRM Agents, as well as the way this content can be transferred from the Content Issuer to the DRM Agent. Android provides an extensible DRM framework, called Android DRM Framework \footnote{http://developer.android.com/reference/android/drm/package-summary.html}, allowing application developers to enable their apps to manage rights-protected content by complying with one of the supported DRM schemes (specific mechanisms, enforced by DRM Agents, to handle particular types of files).
 
-Memory instrumentation can be divided in two groups: static memory instrumentation and dynamic memory instrumentation. While static memory instrumentation changes already compiled bytecode, dynamic instrumentation patches running processes. In the remainder of this section the sole focus will be on dynamic memory instrumentation as it is an interesting mechanism to enforce new security models.
+This mechanism can be useful for protecting personal healthcare records by restricting the way data can be copied and handled. For this project however, DRM is not enough to ensure the confidentiality, integrity and availability of the sensitive data because it may fail to do so when the operating system is compromised with a malicious agent.
 
-DeepDroid \cite{wang2015deepdroid} relies on dynamic memory instrumentation to enforce fine-grained context-aware security policies for enterprise. This is done by patching several system services and tracing system calls. But this system is better suited for the development of new security policies instead of suiting the development of robust privacy-sensitive applications like the one we intend to build.
-
-Therefore, this security mechanism is not adequate for the needs of this project. Moreover, these systems still suffer from the same limitations discussed previously regarding compromised operating systems and large trusted computing bases. 
-
-\subsubsection{Embedded Security Systems}
+%TEE
 
 Although developing new security mechanisms for mobile platforms like Android and iOS is important, mobile security is not limited to secure software. This section describes the embedded security architectures available on the market, along with its strengths and weaknesses. A whitepaper \cite{trustzone_whitepaper} by \ac{ARM} states that security solutions for embedded applications fall into four categories, which will be explained in the remainder of this section.\\
 
@@ -245,12 +250,14 @@ The only solution for the problem described is an hardware based security mechan
 \end{table}
 
 % TRUSTZONE
-\subsection{TrustZone}
+\subsection{TrustZone-based Mobile Security Systems}
 \label{sec:trustzone}
 
-O QUE É A TRUSTZONE\\
-A ARQUITECTURA DA TRUSTZONE\\
-O TRABALHO PREVIAMENTE EFECTUADO COM TRUSTZONE (COM E SEM A PLACA)
+%O QUE É A TRUSTZONE\\
+FALAR EXCLUSIVAMENTE EM SISTEMAS TRUSTZONE\\
+COMO FUNCIONAM\\
+PONTOS FORTES\\
+PONTOS FRACOS\\
 
 
 
