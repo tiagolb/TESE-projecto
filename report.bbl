@@ -45,6 +45,11 @@ Mauro Conti, Vu~Thien~Nga Nguyen, and Bruno Crispo.
 \newblock Crepe: Context-related policy enforcement for android.
 \newblock In {\em Information Security}, pages 331--345. Springer, 2011.
 
+\bibitem{miguelcosta}
+Miguel Costa.
+\newblock {SecMos - Mobile Operating System Security}.
+\newblock Master's thesis, Instituto Superior Técnico, Portugal, 2015.
+
 \bibitem{dietz2011quire}
 Michael Dietz, Shashi Shekhar, Yuliy Pisetsky, Anhei Shu, and Dan~S Wallach.
 \newblock Quire: Lightweight provenance for smart phone operating systems.
@@ -104,14 +109,6 @@ F-Secure Labs.
 \newblock Technical report, F-Secure Labs., 03 2014.
 \newblock
   \url{https://www.f-secure.com/documents/996508/1030743/Mobile\_Threat\_Report\_Q1\_2014.pdf}.
-
-\bibitem{trustzone_whitepaper}
-ARM Limited.
-\newblock {ARM Security Technology - Building a Secure System using TrustZone
-  Technology}.
-\newblock Technical report, ARM Limited, 04 2009.
-\newblock
-  \url{http://infocenter.arm.com/help/topic/com.arm.doc.prd29-genc-009492c/PRD29-GENC-009492C\_trustzone\_security\_whitepaper.pdf}.
 
 \bibitem{marketsandmarkets}
 MarketsAndMarkets.
