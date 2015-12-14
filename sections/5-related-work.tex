@@ -207,9 +207,8 @@ FALAR DA ARQUITECTURA; HARDWARE E SOFTWARE FEATURES DA TRUSTZONE
 %This mechanism can be useful for protecting personal healthcare records by restricting the way data can be copied and handled. For this project however, DRM is not enough to ensure the confidentiality, integrity and availability of the sensitive data because it may fail to do so when the operating system is compromised with a malicious agent.
 
 
-After describing and assessing the available technology, one can argue which mechanisms better suit the development of critical mobile applications for Android, such as our \ac{PHR} app. Some mechanisms are clearly unsuitable for the goals of this project. Application communication monitoring (section \ref{sec:appcommmonitoring}), access control hook APIs (section \ref{sec:accesscontrolhooks}) or memory instrumentation (section \ref{sec:meminstrumentation}) may be helpful in mitigating vulnerabilities caused by negligent development or for the development of new access control policies respectively, but are not sufficient to build privacy-sensitive applications. A summary of the main conclusions for the remaining systems studied is shown in table \ref{tab:securityMechanismsComparison}.
-
-\ac{DRM} by it self is capable of protecting data from disclosure and modification, hence it would be a great candidate for securing a privacy-sensitive application. Using access control mechanisms is possible to achieve data integrity and non-disclosure of sensitive data by restricting access to critical resources by untrusted applications, for example, by disabling Internet access to all untrusted apps one guarantees that sensitive data will not be leaked using this resource.
+After describing and assessing the available technology, one can argue which mechanisms better suit the development of critical mobile applications for Android, such as our \ac{PHR} app. Some mechanisms are clearly unsuitable for the goals of this project. %Application communication monitoring (section \ref{sec:appcommmonitoring}), access control hook APIs (section \ref{sec:accesscontrolhooks}) or memory instrumentation (section \ref{sec:meminstrumentation}) may be helpful in mitigating vulnerabilities caused by negligent development or for the development of new access control policies respectively, but are not sufficient to build privacy-sensitive applications.
+A summary of the main conclusions for the remaining systems studied is shown in table \ref{tab:securityMechanismsComparison}.
 
 Although all of the above solutions are suitable for building a secure \ac{PHR} application, they do not achieve the goals of this project, because all of these mechanisms suffer from the same limitation: both the middleware and the underlying kernel are considered as \ac{TCB}. This means that if a malicious app is capable of compromising these layers, then the critical \ac{PHR} application is compromised as well, and the data it protects may be accessible by the malicious party. 
 
@@ -222,15 +221,20 @@ The only solution for the problem described is an hardware based security mechan
 	\caption{Comparison between security mechanisms with and without a compromised Operating System (Android).}
 	\label{tab:securityMechanismsComparison}
 	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{|l||l|l|l|l|}
+		\begin{tabular}{|P{5cm}||P{2.3cm}|P{2.3cm}|P{2.3cm}|P{2.3cm}|}
 			\hline
 			\multirow{2}{*}{Security Mechanism} & \multicolumn{2}{c|}{Trusted OS}  & \multicolumn{2}{c|}{Compromised OS} \\ \cline{2-5}
-			                                    & Confidentiality & Data Integrity & Confidentiality & Data Integrity    \\ \hline \hline
-			Digital Rights Management           & \cmark          & \cmark         & \xmark          & \xmark            \\ \hline
-			Access Control Mechanisms           & \cmark          & \cmark         & \xmark          & \xmark            \\ \hline
-			Permission Refinement               & \cmark          & \cmark         & \xmark          & \xmark            \\ \hline
+				                                & Confidentiality & Data Integrity & Confidentiality & Data Integrity    \\ \hline \hline
+			Access Control Mechanisms			& \cmark 		  & \cmark         & \xmark          & \xmark            \\ \hline
+			App Communication Monitoring    	& \xmark          & \xmark         & \xmark          & \xmark            \\ \hline
 			Privacy Enhancement Systems         & \cmark          & \cmark         & \xmark          & \xmark            \\ \hline
-			Embedded Security Technology        & \cmark          & \cmark         & \cmark          & \cmark            \\ \hline
+			Digital Rights Management           & \cmark          & \cmark         & \xmark          & \xmark            \\ \hline
+			TrUbi					            & \cmark          & \cmark         & \xmark          & \xmark            \\ \hline
+			External Hardware Security	        & \cmark          & \cmark         & \cmark          & \cmark            \\ \hline
+			Internal Hardware Security	        & \cmark          & \cmark         & \cmark          & \cmark            \\ \hline
+			Software Virtualization		        & \cmark          & \cmark         & \cmark          & \cmark            \\ \hline
+			TrustZone        					& \cmark          & \cmark         & \cmark          & \cmark            \\ \hline
+
 		\end{tabular}
 	}
 \end{table}
