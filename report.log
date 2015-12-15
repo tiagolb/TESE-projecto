@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  14 DEC 2015 17:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  15 DEC 2015 09:25
 entering extended mode
 **report.tex
 (report.tex
@@ -524,7 +524,11 @@ LaTeX Font Info:    Try loading font information for U+psy on input line 64.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\upsy.fd"
 File: upsy.fd 2001/06/04 font definitions for U/psy.
-)) (report.aux)
+)) (report.aux
+
+LaTeX Warning: Label `fig:relwork' multiply defined.
+
+)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
@@ -537,8 +541,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count136
 \scratchdimen=\dimen148
@@ -656,33 +659,39 @@ rces, and AppFence [15]
  []
 
 Package acronym Info: Label `acro:DRM' newly defined as it shall be overridden
-although it is yet undefined on input line 165.
+although it is yet undefined on input line 166.
 Package acronym Info: Label `acro:OMA' newly defined as it shall be overridden
-although it is yet undefined on input line 178.
+although it is yet undefined on input line 179.
 [12]
 Package acronym Info: Label `acro:SoC' newly defined as it shall be overridden
-although it is yet undefined on input line 182.
+although it is yet undefined on input line 184.
 Package acronym Info: Label `acro:PIN' newly defined as it shall be overridden
-although it is yet undefined on input line 182.
+although it is yet undefined on input line 184.
  [13]
 Package acronym Info: Label `acro:MMU' newly defined as it shall be overridden
-although it is yet undefined on input line 186.
+although it is yet undefined on input line 188.
 Package acronym Info: Label `acro:GPUs' newly defined as it shall be overridden
 
-although it is yet undefined on input line 188.
- [14]
-Underfull \hbox (badness 10000) in paragraph at lines 248--252
+although it is yet undefined on input line 190.
+ <img/trustzone.pdf, id=61, 690.17848pt x 440.84702pt>
+File: img/trustzone.pdf Graphic file (type pdf)
+
+<use img/trustzone.pdf>
+Package pdftex.def Info: img/trustzone.pdf used on input line 196.
+(pdftex.def)             Requested size: 277.69987pt x 177.37833pt.
+ [14] [15 <./img/trustzone.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 257--261
 
  []
 
-[15]) (sections/6-architecture.tex) (sections/7-evaluation.tex)
-(sections/8-conclusions.tex) (report.bbl
+) (sections/6-architecture.tex) (sections/7-evaluation.tex)
+(sections/8-conclusions.tex) (report.bbl [16]
 Underfull \hbox (badness 10000) in paragraph at lines 37--42
 \OT1/cmr/m/n/9 http://www.comscore.com/Insights/Presentations-and-Whitepapers/2
 015/2015-
  []
 
-[16]
+
 Underfull \hbox (badness 10000) in paragraph at lines 107--112
 []\OT1/cmr/m/n/9 F-Secure Labs.  Mo-bile Threat Re-port.  Tech-ni-
  []
@@ -692,29 +701,51 @@ Underfull \hbox (badness 10000) in paragraph at lines 107--112
 \OT1/cmr/m/n/9 cal re-port, F-Secure Labs., 03 2014.  https://www.f-
  []
 
-[17]) [18] (report.aux) ) 
+
+Underfull \hbox (badness 2181) in paragraph at lines 114--120
+[]\OT1/cmr/m/n/9 ARM Lim-ited.  ARM Se-cu-rity Tech-nol-ogy - Build-ing a Se-cu
+re Sys-tem
+ []
+
+
+Underfull \hbox (badness 2119) in paragraph at lines 114--120
+\OT1/cmr/m/n/9 us-ing Trust-Zone Tech-nol-ogy.  Tech-ni-cal re-port, ARM Lim-it
+ed, 04 2009.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--120
+\OT1/cmr/m/n/9 http://infocenter.arm.com/help/topic/com.arm.doc.prd29-genc-0094
+92c/PRD29-
+ []
+
+[17]) [18] (report.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3739 strings out of 493673
- 50228 string characters out of 3141529
- 131756 words of memory out of 3000000
- 7000 multiletter control sequences out of 15000+200000
+ 3746 strings out of 493673
+ 50372 string characters out of 3141529
+ 132800 words of memory out of 3000000
+ 7006 multiletter control sequences out of 15000+200000
  10295 words of font info for 36 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  33i,11n,22p,1552b,288s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmbxti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-r7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.p
-fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb
-><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on report.pdf (18 pages, 334792 bytes).
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on report.pdf (18 pages, 352687 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
+ 148 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
