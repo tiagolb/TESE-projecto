@@ -198,8 +198,7 @@ The main problem with this approach is the isolation provided is restricted to t
 	\label{fig:trustzone_architecture}
 \end{figure}
 
-FALAR DA ARQUITECTURA; HARDWARE E SOFTWARE FEATURES DA TRUSTZONE
-%A whitepaper \cite{trustzone_whitepaper} by ARM describes the architecture
+TrustZone's hardware and software architecture is described in a whitepaper~\cite{trustzone_whitepaper} by ARM. In a TrustZone-enabled system, a physical processor provides two virtual cores, one considered non-secure and the other secure, as well as a robust context switching mechanism known as monitor mode. The NS bit sent on the main system bus identifies which of the virtual core performed an instruction or data access. Several software architectures can be implemented on the software stack of a TrustZone-enabled processor, but the most powerful one is a dedicated operating system in the secure world, as shown in Figure~\ref{fig:trustzone_architecture}. This design allows for concurrent execution of multiple secure world applications and services that are completely independent of the normal world environment, thus even if the normal world is sabotaged, the secure world executes as expected, without being compromised. Moreover, if the secure world kernel is small and correctly implemented, security applications can execute at the same time without needing to trust each other. The kernel design can enforce the logical isolation of secure tasks from each other, preventing one secure task from tampering with the memory space of another.
 
 \subsubsection{Summary}
 
@@ -221,6 +220,8 @@ Although all of the above solutions are suitable for building a secure \ac{PHR} 
 
 The only solution for the problem described is an hardware based security mechanism. As shown in table \ref{tab:securityMechanismsComparison}, the embedded security technology, particularly TrustZone, is the only solution which works either with a trusted OS and a compromised OS. For this reason, the next section will focus on describing the state-of-the-art, architecture and functionality of TrustZone technology, as it is the only security mechanism suitable for the needs of this project.
 
+To accomplish the goals of this project, a completely secure flow of execution is needed, this means that privacy-sensitive data must never leave the trusted security perimeter. A system which does not support secure I/O greatly limits the functionality offered by a \ac{PHR} application, to the point where it becomes useless. For this reason we exclude both the external and internal hardware security modules as viable solutions for the problem. On a different note, the virtualization solution seems promising, but with all the problems related to sharing resources such as \ac{GPUs} and other system buses, this security module can be discarded as a solution. For an application to be secure, even when the rich OS is compromised, total isolation is needed, which is not easily achievable using virtualization by it self. TrustZone technology seems to be the most complete system of all the embedded solutions, as it mitigates recurring problems from other mechanisms. Considering this, TrustZone is the most viable solution for our \ac{PHR} application, because it allows for a complete isolation between the privacy-sensitive data and all the other non-critical logic.
+
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
 \begin{table}[t!]
@@ -231,7 +232,7 @@ The only solution for the problem described is an hardware based security mechan
 		\begin{tabular}{|P{5cm}||P{2.3cm}|P{2.3cm}|P{2.3cm}|P{2.3cm}|}
 			\hline
 			\multirow{2}{*}{Security Mechanism} & \multicolumn{2}{c|}{Trusted OS}  & \multicolumn{2}{c|}{Compromised OS} \\ \cline{2-5}
-				                                & Confidentiality & Data Integrity & Confidentiality & Data Integrity    \\ \hline \hline
+			& Confidentiality & Data Integrity & Confidentiality & Data Integrity    \\ \hline \hline
 			Access Control Mechanisms			& \cmark 		  & \cmark         & \xmark          & \xmark            \\ \hline
 			App Communication Monitoring    	& \xmark          & \xmark         & \xmark          & \xmark            \\ \hline
 			Privacy Enhancement Systems         & \cmark          & \cmark         & \xmark          & \xmark            \\ \hline
@@ -241,12 +242,10 @@ The only solution for the problem described is an hardware based security mechan
 			Internal Hardware Security	        & \cmark          & \cmark         & \cmark          & \cmark            \\ \hline
 			Software Virtualization		        & \cmark          & \cmark         & \cmark          & \cmark            \\ \hline
 			TrustZone        					& \cmark          & \cmark         & \cmark          & \cmark            \\ \hline
-
+			
 		\end{tabular}
 	}
 \end{table}
-
-To accomplish the goals of this project, a completely secure flow of execution is needed, this means that privacy-sensitive data must never leave the trusted security perimeter. A system which does not support secure I/O greatly limits the functionality offered by a \ac{PHR} application, to the point where it becomes useless. For this reason we exclude both the external and internal hardware security modules as viable solutions for the problem. On a different note, the virtualization solution seems promising, but with all the problems related to sharing resources such as \ac{GPUs} and other system buses, this security module can be discarded as a solution. For an application to be secure, even when the rich OS is compromised, total isolation is needed, which is not easily achievable using virtualization by it self. TrustZone technology seems to be the most complete system of all the embedded solutions, as it mitigates recurring problems from other mechanisms. Considering this, TrustZone is the most viable solution for our \ac{PHR} application, because it allows for a complete isolation between the privacy-sensitive data and all the other non-critical logic. 
 
 
 % TRUSTZONE
