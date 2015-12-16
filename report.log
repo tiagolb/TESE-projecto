@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  15 DEC 2015 17:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  16 DEC 2015 23:11
 entering extended mode
 **report.tex
 (report.tex
@@ -573,11 +573,6 @@ although it is yet undefined on input line 26.
 Package acronym Info: Label `acro:TCB' newly defined as it shall be overridden
 although it is yet undefined on input line 26.
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--27
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
@@ -587,7 +582,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--35
 
  []
 
-[2]) (sections/5-related-work.tex
+) (sections/5-related-work.tex [2]
 Overfull \hbox (0.59029pt too wide) in paragraph at lines 30--31
 \OT1/cmr/m/n/10 in three main cat-e-gories: \OT1/cmr/m/it/10 Iden-tity Threats\
 OT1/cmr/m/n/10 , \OT1/cmr/m/it/10 Ac-cess Threats \OT1/cmr/m/n/10 and \OT1/cmr/
@@ -596,135 +591,138 @@ m/it/10 Dis-clo-sure Threats\OT1/cmr/m/n/10 .
 
 Package acronym Info: Label `acro:PHR' newly defined as it shall be overridden
 although it is yet undefined on input line 32.
-[3] [4]
-Overfull \hbox (1.10948pt too wide) in paragraph at lines 52--63
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
+
+ []
+
+
+Overfull \hbox (1.10948pt too wide) in paragraph at lines 51--62
 [][] 
  []
 
 
-Overfull \hbox (11.83037pt too wide) in paragraph at lines 65--65
+Overfull \hbox (11.83037pt too wide) in paragraph at lines 64--64
  [][]\OT1/cmr/m/n/9 https://play.google.com/store/apps/details?id=com.airperson
 s.airpersonsmobilehealth| 
  []
 
-[5]
-Package acronym Info: Label `acro:DMB' newly defined as it shall be overridden
-although it is yet undefined on input line 70.
-
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
-
- []
-
-[6] <img/sensitivedistribution.jpg, id=28, 157.3077pt x 96.1191pt>
+[4] [5] <img/sensitivedistribution.jpg, id=25, 157.3077pt x 96.1191pt>
 File: img/sensitivedistribution.jpg Graphic file (type jpg)
 
 <use img/sensitivedistribution.jpg>
-Package pdftex.def Info: img/sensitivedistribution.jpg used on input line 78.
+Package pdftex.def Info: img/sensitivedistribution.jpg used on input line 71.
 (pdftex.def)             Requested size: 295.05711pt x 180.31668pt.
- [7 <./img/sensitivedistribution.jpg>]
-<img/relwork.pdf, id=33, 621.52202pt x 305.7021pt>
+Package acronym Info: Label `acro:DMB' newly defined as it shall be overridden
+although it is yet undefined on input line 76.
+ [6 <./img/sensitivedistribution.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
+<img/relwork.pdf, id=29, 621.52202pt x 305.7021pt>
 File: img/relwork.pdf Graphic file (type pdf)
  <use img/relwork.pdf>
-Package pdftex.def Info: img/relwork.pdf used on input line 93.
+Package pdftex.def Info: img/relwork.pdf used on input line 92.
 (pdftex.def)             Requested size: 225.62817pt x 110.97626pt.
 Package acronym Info: Label `acro:DAC' newly defined as it shall be overridden
-although it is yet undefined on input line 103.
+although it is yet undefined on input line 102.
+
+[7]
 Package acronym Info: Label `acro:MAC' newly defined as it shall be overridden
 although it is yet undefined on input line 105.
-
-[8 <./img/relwork.pdf>] [9]
+ [8 <./img/relwork.pdf>]
 Package acronym Info: Label `acro:ASM' newly defined as it shall be overridden
-although it is yet undefined on input line 124.
+although it is yet undefined on input line 123.
 Package acronym Info: Label `acro:ASF' newly defined as it shall be overridden
-although it is yet undefined on input line 124.
-Package acronym Info: Label `acro:IPC' newly defined as it shall be overridden
-although it is yet undefined on input line 136.
+although it is yet undefined on input line 123.
+ [9]
+Package acronym Info: Label `acro:DRM' newly defined as it shall be overridden
+although it is yet undefined on input line 128.
+Package acronym Info: Label `acro:OMA' newly defined as it shall be overridden
+although it is yet undefined on input line 141.
  [10]
+Package acronym Info: Label `acro:IPC' newly defined as it shall be overridden
+although it is yet undefined on input line 150.
+
 <img/communicationattacks.png, id=50, 657.95813pt x 228.855pt>
 File: img/communicationattacks.png Graphic file (type png)
 
 <use img/communicationattacks.png>
-Package pdftex.def Info: img/communicationattacks.png used on input line 145.
+Package pdftex.def Info: img/communicationattacks.png used on input line 158.
 (pdftex.def)             Requested size: 329.7663pt x 114.70308pt.
 Package acronym Info: Label `acro:IMEI' newly defined as it shall be overridden
 
-although it is yet undefined on input line 152.
+although it is yet undefined on input line 165.
  [11 <./img/communicationattacks.png>]
-Overfull \hbox (0.71046pt too wide) in paragraph at lines 158--159
-\OT1/cmr/m/n/10 Taint-Droid to sup-port a big-ger num-ber of in-for-ma-tion sou
-rces, and AppFence [15]
- []
-
-Package acronym Info: Label `acro:DRM' newly defined as it shall be overridden
-although it is yet undefined on input line 166.
-Package acronym Info: Label `acro:OMA' newly defined as it shall be overridden
-although it is yet undefined on input line 179.
-[12]
 Package acronym Info: Label `acro:SoC' newly defined as it shall be overridden
-although it is yet undefined on input line 184.
+although it is yet undefined on input line 180.
 Package acronym Info: Label `acro:PIN' newly defined as it shall be overridden
-although it is yet undefined on input line 184.
- [13]
+although it is yet undefined on input line 180.
+
+[12]
 Package acronym Info: Label `acro:MMU' newly defined as it shall be overridden
-although it is yet undefined on input line 188.
+although it is yet undefined on input line 184.
 Package acronym Info: Label `acro:GPUs' newly defined as it shall be overridden
 
-although it is yet undefined on input line 190.
- <img/trustzone.pdf, id=61, 690.17848pt x 440.84702pt>
+although it is yet undefined on input line 186.
+ [13] <img/trustzone.pdf, id=61, 690.17848pt x 440.84702pt>
 File: img/trustzone.pdf Graphic file (type pdf)
 
 <use img/trustzone.pdf>
-Package pdftex.def Info: img/trustzone.pdf used on input line 196.
+Package pdftex.def Info: img/trustzone.pdf used on input line 192.
 (pdftex.def)             Requested size: 277.69987pt x 177.37833pt.
- [14] [15 <./img/trustzone.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 256--260
+Package acronym Info: Label `acro:TEE' newly defined as it shall be overridden
+although it is yet undefined on input line 201.
+ [14 <./img/trustzone.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 236--240
 
  []
 
-) (sections/6-architecture.tex) (sections/7-evaluation.tex [16])
+[15]) (sections/6-architecture.tex) (sections/7-evaluation.tex)
 (sections/8-conclusions.tex) (report.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 37--42
 \OT1/cmr/m/n/9 http://www.comscore.com/Insights/Presentations-and-Whitepapers/2
 015/2015-
  []
 
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 107--112
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 99--104
 []\OT1/cmr/m/n/9 F-Secure Labs.  Mo-bile Threat Re-port.  Tech-ni-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--112
+Underfull \hbox (badness 10000) in paragraph at lines 99--104
 \OT1/cmr/m/n/9 cal re-port, F-Secure Labs., 03 2014.  https://www.f-
  []
 
 
-Underfull \hbox (badness 2181) in paragraph at lines 114--120
+Underfull \hbox (badness 2181) in paragraph at lines 106--112
 []\OT1/cmr/m/n/9 ARM Lim-ited.  ARM Se-cu-rity Tech-nol-ogy - Build-ing a Se-cu
 re Sys-tem
  []
 
 
-Underfull \hbox (badness 2119) in paragraph at lines 114--120
+Underfull \hbox (badness 2119) in paragraph at lines 106--112
 \OT1/cmr/m/n/9 us-ing Trust-Zone Tech-nol-ogy.  Tech-ni-cal re-port, ARM Lim-it
 ed, 04 2009.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 114--120
+Underfull \hbox (badness 10000) in paragraph at lines 106--112
 \OT1/cmr/m/n/9 http://infocenter.arm.com/help/topic/com.arm.doc.prd29-genc-0094
 92c/PRD29-
  []
 
-[18]) [19] (report.aux) ) 
+[17]) [18] (report.aux) ) 
 Here is how much of TeX's memory you used:
  3748 strings out of 493673
- 50428 string characters out of 3141529
- 131769 words of memory out of 3000000
+ 50378 string characters out of 3141529
+ 133810 words of memory out of 3000000
  7008 multiletter control sequences out of 15000+200000
  10295 words of font info for 36 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 33i,11n,22p,1552b,288s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,11n,22p,1509b,288s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
 amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsf
@@ -736,9 +734,9 @@ r7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.p
 fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on report.pdf (19 pages, 354114 bytes).
+Output written on report.pdf (18 pages, 351014 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
+ 148 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

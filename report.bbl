@@ -84,14 +84,6 @@ Stephan Heuser, Adwait Nadkarni, William Enck, and Ahmad-Reza Sadeghi.
 \newblock Asm: A programmable interface for extending android security.
 \newblock In {\em Proc. 23rd USENIX Security Symposium (SEC’14)}, 2014.
 
-\bibitem{hornyack2011these}
-Peter Hornyack, Seungyeop Han, Jaeyeon Jung, Stuart Schechter, and David
-  Wetherall.
-\newblock These aren't the droids you're looking for: retrofitting android to
-  protect data from imperious applications.
-\newblock In {\em Proceedings of the 18th ACM conference on Computer and
-  communications security}, pages 639--652. ACM, 2011.
-
 \bibitem{kern2012permission}
 Michael Kern and Johannes Sametinger.
 \newblock Permission tracking in android.
@@ -165,12 +157,6 @@ Giovanni Russello, Mauro Conti, Bruno Crispo, and Earlence Fernandes.
 \newblock Moses: supporting operation modes on smartphones.
 \newblock In {\em Proceedings of the 17th ACM symposium on Access Control
   Models and Technologies}, pages 3--12. ACM, 2012.
-
-\bibitem{schreckling2013kynoid}
-Daniel Schreckling, Johannes K{\"o}stler, and Matthias Schaff.
-\newblock Kynoid: real-time enforcement of fine-grained, user-defined, and
-  data-centric security policies for android.
-\newblock {\em Information Security Technical Report}, 17(3):71--80, 2013.
 
 \bibitem{shebaro2014identidroid}
 Bilal Shebaro, Oluwatosin Ogunwuyi, Daniele Midi, and Elisa Bertino.
