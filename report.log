@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  16 DEC 2015 23:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  17 DEC 2015 14:59
 entering extended mode
 **report.tex
 (report.tex
@@ -674,19 +674,25 @@ Package pdftex.def Info: img/trustzone.pdf used on input line 192.
 (pdftex.def)             Requested size: 277.69987pt x 177.37833pt.
 Package acronym Info: Label `acro:TEE' newly defined as it shall be overridden
 although it is yet undefined on input line 201.
- [14 <./img/trustzone.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 236--240
-
+ [14 <./img/trustzone.pdf>] [15]
+Overfull \hbox (12.72937pt too wide) in paragraph at lines 243--244
+[]\OT1/cmr/m/n/10 EXPLICAR RE-SUM-I-DA-MENTE EM QUE SE BA-SEIA CADA UMA DESTAS
  []
 
-[15]) (sections/6-architecture.tex) (sections/7-evaluation.tex)
+
+Overfull \hbox (2.86832pt too wide) in paragraph at lines 282--308
+\OT1/cmr/m/n/10 FALAR QUE TO-DOS T[]EM TCB PE-QUENA, QUASE TO-DOS N[]AO DISPONI
+-
+ []
+
+[16] [17]) (sections/6-architecture.tex) (sections/7-evaluation.tex)
 (sections/8-conclusions.tex) (report.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 37--42
 \OT1/cmr/m/n/9 http://www.comscore.com/Insights/Presentations-and-Whitepapers/2
 015/2015-
  []
 
-[16]
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 99--104
 []\OT1/cmr/m/n/9 F-Secure Labs.  Mo-bile Threat Re-port.  Tech-ni-
  []
@@ -714,12 +720,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--112
 92c/PRD29-
  []
 
-[17]) [18] (report.aux) ) 
+[19]) [20] (report.aux) ) 
 Here is how much of TeX's memory you used:
- 3748 strings out of 493673
- 50378 string characters out of 3141529
- 133810 words of memory out of 3000000
- 7008 multiletter control sequences out of 15000+200000
+ 3749 strings out of 493673
+ 50420 string characters out of 3141529
+ 139808 words of memory out of 3000000
+ 7009 multiletter control sequences out of 15000+200000
  10295 words of font info for 36 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  33i,11n,22p,1509b,288s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -734,9 +740,9 @@ r7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.p
 fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on report.pdf (18 pages, 351014 bytes).
+Output written on report.pdf (20 pages, 356931 bytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
+ 155 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

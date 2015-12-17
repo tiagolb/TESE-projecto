@@ -228,16 +228,86 @@ To accomplish the goals of this project, a completely secure flow of execution i
 \end{table}
 
 
+%TO PRINT
+\newpage
 % TRUSTZONE
 \subsection{TrustZone-based Mobile Security Systems}
-\label{sec:trustzone}
 
-%O QUE É A TRUSTZONE\\
-FALAR EXCLUSIVAMENTE EM SISTEMAS TRUSTZONE\\
-COMO FUNCIONAM\\
-PONTOS FORTES\\
-PONTOS FRACOS\\
+%FALAR EXCLUSIVAMENTE EM SISTEMAS TRUSTZONE\\
+%COMO FUNCIONAM\\
+%PONTOS FORTES\\
+%PONTOS FRACOS\\
 
+Over the last few years, several TrustZone-based systems were implemented by the research community. Most of these systems focus on particular problems such as secure two-phase authentication or cryptographic key generation. But despite particularly built for a specific purpose, some of these systems describe and solve problems that may be significant for most critical mobile applications, and specially for the \ac{PHR} app considered in this project. The following subsections describe systems which support interesting TrustZone features useful for most critical mobile applications. These features are secure input-output, secure storage, secure world-switching and secure inter-world communication.
+
+EXPLICAR RESUMIDAMENTE EM QUE SE BASEIA CADA UMA DESTAS FEATURES
+
+\subsubsection{Secure I/O Systems}
+
+TRUSTOTP, TRUSTICE, TRUSTDUMP\\
+DROIDVAULT (serial console)\\
+ADATTESTER\\
+TRUSTUI\\
+VERIUI\\
+SECRYPT VIDEO?\\
+GENODE?
+
+\subsubsection{Secure Storage Systems}
+
+TRUSTOTP, TRUSTICE, TRUSTDUMP\\
+DROIDVAULT\\
+TLR\\
+SECRYPT VIDEO
+
+\subsubsection{Secure World Switching}
+
+TRUSTOTP, TRUSTICE, TRUSTDUMP (interrupts)\\
+OS OUTROS USAM SOFTWARE INTERRUPTS QUE PODEM SER ALVO DE DOS ATTACKS
+
+\subsubsection{Secure Inter-World Communication}
+
+DROIDVAULT\\
+ANDIX\\
+RESTRICTED SPACES\\
+TLR
+
+\subsubsection{Open-Source Systems and Frameworks}
+
+ANDIX\\
+GENODE\\
+mais?
+
+\subsubsection{Summary}
+
+FALAR QUE TODOS TÊM TCB PEQUENA, QUASE TODOS NÃO DISPONIBILIZAM O CODIGO E ALGUNS FUNCIONAM NA NOSSA PLACA O QUE SIGNIFICA QUE ELA SUPORTA O QUE PROCURO. NO FIM O IDEAL ERA TER UM SISTEMA COMO O TRUSTOTP PARA BASE MAS DEPOIS DE VARIAS TENTATIVAS DE CONTACTO INFELIZES NAO NOS FOI DISPONIBILIZADO O CODIGO NEM QUALQUER INSIGHT SOBRE O PROJECTO.
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[t!]
+	\centering
+	\caption{Comparison between security mechanisms with and without a compromised Operating System (Android).}
+	\label{tab:trustzonesystemscomparison}
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|P{2.8cm}||P{2.3cm}|P{2.3cm}|P{2.3cm}|P{2.3cm}|P{2.3cm}|}
+			\hline
+			TrustZone-Enabled Systems 		& Secure I/O	& Secure Storage	& Secure World-Switching	& Inter-World Communication 	& Open-Source \\ \hline \hline
+			TrustOTP						& \cmark 		& \cmark    		& \cmark          			& \xmark 						& \xmark \\ \hline
+			TrustICE						& \cmark 		& \cmark    		& \cmark          			& \xmark 						& \xmark \\ \hline
+			TrustDump						& \cmark 		& \cmark    		& \cmark          			& \xmark 						& \xmark \\ \hline
+			DroidVault					    & \cmark    	& \cmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
+			AdAttester					    & \cmark    	& \cmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
+			TrustUI					        & \cmark    	& \xmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
+			VeriUI					        & \cmark    	& \xmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
+			Genode						    & \cmark    	& \cmark    		& \cmark          			& \cmark 						& \cmark \\ \hline
+			TLR							    & \xmark    	& \cmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
+			SECRYPT Video					& \cmark   		& \cmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
+			Andix OS        				& \xmark    	& \cmark    		& \xmark          			& \cmark 						& \cmark \\ \hline
+			Restricted Spaces  				& \xmark    	& \xmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
+		\end{tabular}
+	}
+\end{table}
+
+%TO PRINT
+\newpage
 
 
 
