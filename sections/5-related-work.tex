@@ -171,10 +171,12 @@ Some systems use a different approach to solve the same problem. Dynamic taint a
 %Despite these limitations, TaintDroid was used by the research community as a building block for other privacy enhancement systems. Kynoid~\cite{schreckling2013kynoid} extends TaintDroid to support a bigger number of information sources, and AppFence~\cite{hornyack2011these} provides a mechanism to block data made available by the user for on-device use only to be transmitted over the network and allows for high level data to be substituted by shadowed data.
 
 \subsubsection{Trusted Execution Environments}
+\label{sec:tee}
 
 Trusted execution environments are isolated environments that provide a higher level of security than full-blown rich mobile operating systems by guaranteeing code and data to be loaded inside a small protected execution space.
 
 % ISTO TEM QUE SAIR
+% OU ENTAO EXPLICAR UM POUCO MELHOR QUE ESTA DENTRO DESTA CATEGORIA PORQUE O OBJECTIVO É REDUZIR A TCB DO SISTEMA DE UMA FORMA DINAMICA
 \paragraph{\textbf{TrUbi}} is a system developed by Duarte \cite{nunoduarte} and Costa \cite{miguelcosta} built on top of ASM \cite{heuser2014asm} allows for flexible system-wide resource restriction, which may be used to isolate privacy-sensitive apps by killing, freezing or revoking permissions to running applications. With TrUbi it is possible to isolate the execution of a critical application from the remaining apps installed on the system, for example, the \ac{PHR} app could be developed with the following premise. When the \ac{PHR} app is running, all the other apps are killed and all the resources blocked. The app could then download the health records from the healthcare provider and show the data to the user. When the user exits the application, their data is encrypted with a key generated from a user password, and only then the resources are released for the other applications. The system was completely isolated during the whole process and the data is stored with encryption (and the key, because it is generated from a user password, is not stored on the system).
 
 \paragraph{\textbf{External hardware security modules}} represent the classic security solution for embedded applications, which is the inclusion of a dedicated trusted element (e.g., a smartcard) that is outside of the main \ac{SoC}. On one hand, the main advantage of this solution is that it allows for the encapsulation of sensitive assets inside a physical device specially designed for robust security. On the other hand, the main disadvantage is that smartcards provide only secure processing and storage functions. This means that some operations (e.g., I/O) must rely on software running outside of the security perimeter to provide the desired features. An example where this happens is when a user interacts with the system by entering a \ac{PIN}. This \ac{PIN} must be managed by the less secure software outside of the smartcard, making it vulnerable to attacks.
@@ -227,87 +229,108 @@ To accomplish the goals of this project, a completely secure flow of execution i
 	}
 \end{table}
 
-
-%TO PRINT
-\newpage
 % TRUSTZONE
 \subsection{TrustZone-based Mobile Security Systems}
 
-%FALAR EXCLUSIVAMENTE EM SISTEMAS TRUSTZONE\\
-%COMO FUNCIONAM\\
-%PONTOS FORTES\\
-%PONTOS FRACOS\\
+The research community has been experimenting with trusted execution environments in order to achieve better solutions for common security problems, such as two-factor authentication or cryptographic key generation. Among the available \ac{TEE} supported architectures, ARM's TrustZone is the one which has been used the most by researchers and companies world-wide, this is because the deployment potential for these new security applications is tremendous, as most modern ARM processors support this technology.
 
-Over the last few years, several TrustZone-based systems were implemented by the research community. Most of these systems focus on particular problems such as secure two-phase authentication or cryptographic key generation. But despite particularly built for a specific purpose, some of these systems describe and solve problems that may be significant for most critical mobile applications, and specially for the \ac{PHR} app considered in this project. The following subsections describe systems which support interesting TrustZone features useful for most critical mobile applications. These features are secure input-output, secure storage, secure world-switching and secure inter-world communication.
+%COPIADO, REVER
+Several \ac{TEE} software stack implementations have been designed since the concept was formalized around 2007 by the OMTP standardization forum, which issued a set of security requirements on functionality a TEE should support. The GlobalPlatform organization went a step further by defining standard APIs: on the one hand, the TEE internal APIs that a Trusted Application can rely on, and on the other hand, the communication interfaces that rich OS software can use to interact with its Trusted Applications. It is worth noting that, because the TEE threat model assumes that nothing coming from the rich OS is trustworthy, the designer of a TA (Trusted Application) must assume that the rich-OS-side client of the TA may not be legitimate.
 
-EXPLICAR RESUMIDAMENTE EM QUE SE BASEIA CADA UMA DESTAS FEATURES
+When surveying the literature, it is clear that TrustZone-based systems can be divided in two separate groups: \ac{GPFR}, and special-purpose \ac{TA}. \ac{GPFR} represent tool kits for building secure special-purpose operating systems or runtimes, which allow the development of Trusted Applications. Special-purpose \ac{TA} are secure applications, built on top of \ac{GPFR} systems, which are executed in the trusted execution environment to achieve a specific security property. With a more thorough analysis, one can divide each of these categories even further, with regards to trusted user interface (UI). Trusted UI is a \ac{TEE} feature capable of ensuring that the correct information is displayed to the user and that this information is secure from the risk of, for instance, password logging, as well as allowing logs and statement information to be securely displayed to the user.
 
-\subsubsection{Secure I/O Systems}
+For this reason, this section categorizes TrustZone-enabled systems into four subsections: \emph{(i)} GPFR with Untrusted UI, \emph{(ii)} TA with Untrusted UI, \emph{(iii)} GPFR with Trusted UI and \emph{(iv)} TA with Trusted UI.
 
-TRUSTOTP, TRUSTICE, TRUSTDUMP\\
-DROIDVAULT (serial console)\\
-ADATTESTER\\
-TRUSTUI\\
-VERIUI\\
-SECRYPT VIDEO?\\
-GENODE?
+% ESTES NOMES ESTAO ESQUISITOS, PERGUNTAR AO PROF POR OUTRO NOME
+\subsubsection{GPFR with Untrusted UI}
 
-\subsubsection{Secure Storage Systems}
+Most of the \ac{TEE} software stack implementations have similar architectures (similar to the one shown in section~\ref{sec:tee}). This architecture is generally composed of a small trusted kernel running in the isolated secure world of TrustZone-enabled processors, a normal world user space client API and a kernel TEE device driver used to communicate between worlds. OP-TEE~\footnote{https://wiki.linaro.org/WorkingGroups/Security/OP-TEE} and AndixOS~\cite{fitzekandix} are \ac{TEE} implementations which share this general architecture. Although these systems use TrustZone's hardware based isolation to ensure that applications running inside the secure world are not tempered by a compromised rich OS, there are some limitations regarding the applications it can support, this is because these systems were implemented %TCB
 
-TRUSTOTP, TRUSTICE, TRUSTDUMP\\
-DROIDVAULT\\
-TLR\\
-SECRYPT VIDEO
+ObC~\cite{kostiainen2012board} Originalmente nao foi para trustzone, no entanto foi posteriormente adaptada
 
-\subsubsection{Secure World Switching}
+TLR~\cite{santos2011trusted}
 
-TRUSTOTP, TRUSTICE, TRUSTDUMP (interrupts)\\
-OS OUTROS USAM SOFTWARE INTERRUPTS QUE PODEM SER ALVO DE DOS ATTACKS
+\subsubsection{TA with Untrusted UI}
 
-\subsubsection{Secure Inter-World Communication}
+Android Key Store~\footnote{http://developer.android.com/training/articles/keystore.html} The encryption/decryption of the keystore is handled by the keystore service, which in turn links with a Hardware Abstraction Layer module called "keymaster". The AOSP provides a sofware ("softkeymaster") implementation, but device vendors can offer support for hardware based protected storage, if available. On ARM architectures, this linked to the ARM "TrustZone".
 
-DROIDVAULT\\
-ANDIX\\
-RESTRICTED SPACES\\
-TLR
+DroidVault~\cite{li2014droidvault}
 
-\subsubsection{Open-Source Systems and Frameworks}
+Brasser et al.~\cite{brasserregulating}
 
-ANDIX\\
-GENODE\\
-mais?
+Samsung KNOX~\cite{knox_whitepaper} isto devia ter secure UI mas nao vi isso explicito e nao esquecer de mudar isto para um cite de technical paper.
 
-\subsubsection{Summary}
+\subsubsection{GPFR with Trusted UI}
 
-FALAR QUE TODOS TÊM TCB PEQUENA, QUASE TODOS NÃO DISPONIBILIZAM O CODIGO E ALGUNS FUNCIONAM NA NOSSA PLACA O QUE SIGNIFICA QUE ELA SUPORTA O QUE PROCURO. NO FIM O IDEAL ERA TER UM SISTEMA COMO O TRUSTOTP PARA BASE MAS DEPOIS DE VARIAS TENTATIVAS DE CONTACTO INFELIZES NAO NOS FOI DISPONIBILIZADO O CODIGO NEM QUALQUER INSIGHT SOBRE O PROJECTO.
-% Please add the following required packages to your document preamble:
-% \usepackage{graphicx}
+SierraTEE~\footnote{http://www.openvirtualization.org/}
+
+Genode~\footnote{http://genode.org/}
+
+T6~\footnote{https://www.trustkernel.com/products/tee/t6.html}
+
+Open-TEE~\cite{mcgillion2015open} diz que cumpre as especificações de device da globalPlatform que inclui trusted UI
+Trusted UI a ser extendido pela comunidade
+
+TrustICE~\cite{sun2015trustice}
+\subsubsection{TA with Trusted UI}
+
+TrustOTP~\cite{sun2015trustotp}
+
+TrustDump~\cite{sun2015reliable}
+
+AdAttester~\cite{li2015adattester}
+
+TrustUI~\cite{li2014building}
+
 \begin{table}[t!]
 	\centering
-	\caption{Comparison between security mechanisms with and without a compromised Operating System (Android).}
+	\caption{TrustZone-based system categorization.}
 	\label{tab:trustzonesystemscomparison}
-	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{|P{2.8cm}||P{2.3cm}|P{2.3cm}|P{2.3cm}|P{2.3cm}|P{2.3cm}|}
-			\hline
-			TrustZone-Enabled Systems 		& Secure I/O	& Secure Storage	& Secure World-Switching	& Inter-World Communication 	& Open-Source \\ \hline \hline
-			TrustOTP						& \cmark 		& \cmark    		& \cmark          			& \xmark 						& \xmark \\ \hline
-			TrustICE						& \cmark 		& \cmark    		& \cmark          			& \xmark 						& \xmark \\ \hline
-			TrustDump						& \cmark 		& \cmark    		& \cmark          			& \xmark 						& \xmark \\ \hline
-			DroidVault					    & \cmark    	& \cmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
-			AdAttester					    & \cmark    	& \cmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
-			TrustUI					        & \cmark    	& \xmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
-			VeriUI					        & \cmark    	& \xmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
-			Genode						    & \cmark    	& \cmark    		& \cmark          			& \cmark 						& \cmark \\ \hline
-			TLR							    & \xmark    	& \cmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
-			SECRYPT Video					& \cmark   		& \cmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
-			Andix OS        				& \xmark    	& \cmark    		& \xmark          			& \cmark 						& \cmark \\ \hline
-			Restricted Spaces  				& \xmark    	& \xmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
-		\end{tabular}
-	}
+	%\resizebox{\textwidth}{!}{%
+	\begin{tabular}{ c|c|c| }
+		\multicolumn{1}{c}{} 	& \multicolumn{1}{c}{Untrusted UI} 	& \multicolumn{1}{c}{Trusted UI} \\ \cline{2-3}
+		\multirow{4}{*}{TAs} 	& Android Key Store						& TrustOTP \\
+								& DroidVault 							& TrustDump \\
+								& Restricted Spaces ****				& AdAttester \\
+								& 			 							& TrustUI \\
+								\cline{2-3}
+		\multirow{8}{*}{GPFR}	& TLK									& Genode \\
+								& OP-TEE 								& T6 \\
+								& Mobicore								& TrustICE \\
+								& Samsung Knox							& SierraTEE \\
+								& TLR 									& \\
+								& Andix OS 								& \\
+								& Nokia ObC								& \\
+		\cline{2-3}
+	\end{tabular}
+	%}
 \end{table}
 
-%TO PRINT
-\newpage
+%% Please add the following required packages to your document preamble:
+%% \usepackage{graphicx}
+%\begin{table}[t!]
+%	\centering
+%	\caption{Comparison between security mechanisms with and without a compromised Operating System (Android).}
+%	\label{tab:trustzonesystemscomparison}
+%	\resizebox{\textwidth}{!}{%
+%		\begin{tabular}{|P{2.8cm}||P{2.3cm}|P{2.3cm}|P{2.3cm}|P{2.3cm}|P{2.3cm}|}
+%			\hline
+%			TrustZone-Enabled Systems 		& Secure I/O	& Secure Storage	& Secure World-Switching	& Inter-World Communication 	& Open-Source \\ \hline \hline
+%			TrustOTP						& \cmark 		& \cmark    		& \cmark          			& \xmark 						& \xmark \\ \hline
+%			TrustICE						& \cmark 		& \cmark    		& \cmark          			& \xmark 						& \xmark \\ \hline
+%			TrustDump						& \cmark 		& \cmark    		& \cmark          			& \xmark 						& \xmark \\ \hline
+%			DroidVault					    & \cmark    	& \cmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
+%			AdAttester					    & \cmark    	& \cmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
+%			TrustUI					        & \cmark    	& \xmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
+%			VeriUI					        & \cmark    	& \xmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
+%			Genode						    & \cmark    	& \cmark    		& \cmark          			& \cmark 						& \cmark \\ \hline
+%			TLR							    & \xmark    	& \cmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
+%			SECRYPT Video					& \cmark   		& \cmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
+%			Andix OS        				& \xmark    	& \cmark    		& \xmark          			& \cmark 						& \cmark \\ \hline
+%			Restricted Spaces  				& \xmark    	& \xmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
+%		\end{tabular}
+%	}
+%\end{table}
 
 
 

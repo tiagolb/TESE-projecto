@@ -18,6 +18,11 @@ Alastair~R Beresford, Andrew Rice, Nicholas Skehin, and Ripduman Sohan.
 \newblock In {\em Proceedings of the 12th Workshop on Mobile Computing Systems
   and Applications}, pages 49--54. ACM, 2011.
 
+\bibitem{brasserregulating}
+Ferdinand Brasser, Daeyoung Kim, Christopher Liebchen, Vinod Ganapathy, Liviu
+  Iftode, and Ahmad-Reza Sadeghi.
+\newblock Regulating smart personal devices in restricted spaces.
+
 \bibitem{bugiel2011xmandroid}
 Sven Bugiel, Lucas Davi, Alexandra Dmitrienko, Thomas Fischer, and Ahmad-Reza
   Sadeghi.
@@ -73,6 +78,11 @@ William Enck, Peter Gilbert, Seungyeop Han, Vasant Tendulkar, Byung-Gon Chun,
   monitoring on smartphones.
 \newblock {\em ACM Transactions on Computer Systems (TOCS)}, 32(2):5, 2014.
 
+\bibitem{fitzekandix}
+Andreas Fitzek, Florian Achleitner, Johannes Winter, and Daniel Hein.
+\newblock The andix research os-arm trustzone meets industrial control systems
+  security.
+
 \bibitem{he2014security}
 Dongjing He, Muhammad Naveed, Carl~A Gunter, and Klara Nahrstedt.
 \newblock Security concerns in android mhealth apps.
@@ -90,6 +100,11 @@ Michael Kern and Johannes Sametinger.
 \newblock In {\em The Sixth International Conference on Mobile Ubiquitous
   Computing, Systems, Services and Technologies UBICOMM}, pages 148--155, 2012.
 
+\bibitem{kostiainen2012board}
+Kari Kostiainen et~al.
+\newblock On-board credentials: an open credential platform for mobile devices.
+\newblock 2012.
+
 \bibitem{kotz2011threat}
 David Kotz.
 \newblock A threat taxonomy for mhealth privacy.
@@ -102,6 +117,27 @@ F-Secure Labs.
 \newblock
   \url{https://www.f-secure.com/documents/996508/1030743/Mobile\_Threat\_Report\_Q1\_2014.pdf}.
 
+\bibitem{li2015adattester}
+Wenhao Li, Haibo Li, Haibo Chen, and Yubin Xia.
+\newblock Adattester: Secure online mobile advertisement attestation using
+  trustzone.
+\newblock In {\em Proceedings of the 13th Annual International Conference on
+  Mobile Systems, Applications, and Services}, pages 75--88. ACM, 2015.
+
+\bibitem{li2014building}
+Wenhao Li, Mingyang Ma, Jinchen Han, Yubin Xia, Binyu Zang, Cheng-Kang Chu, and
+  Tieyan Li.
+\newblock Building trusted path on untrusted device drivers for mobile devices.
+\newblock In {\em Proceedings of 5th Asia-Pacific Workshop on Systems}, page~8.
+  ACM, 2014.
+
+\bibitem{li2014droidvault}
+Xiaolei Li, Hong Hu, Guangdong Bai, Yaoqi Jia, Zhenkai Liang, and Pratiksha
+  Saxena.
+\newblock Droidvault: A trusted data vault for android devices.
+\newblock In {\em Engineering of Complex Computer Systems (ICECCS), 2014 19th
+  International Conference on}, pages 29--38. IEEE, 2014.
+
 \bibitem{trustzone_whitepaper}
 ARM Limited.
 \newblock {ARM Security Technology - Building a Secure System using TrustZone
@@ -109,6 +145,13 @@ ARM Limited.
 \newblock Technical report, ARM Limited, 04 2009.
 \newblock
   \url{http://infocenter.arm.com/help/topic/com.arm.doc.prd29-genc-009492c/PRD29-GENC-009492C\_trustzone\_security\_whitepaper.pdf}.
+
+\bibitem{knox_whitepaper}
+Samsung Electronics~Co. Ltd.
+\newblock {Samsung KNOX - White Paper : An Overview of Samsung KNOX}.
+\newblock Technical report, Samsung Electronics Co. Ltd., 04 2013.
+\newblock
+  \url{http://www.samsung.com/es/business-images/resource/white-paper/2014/02/Samsung\_KNOX\_whitepaper-0.pdf}.
 
 \bibitem{marketsandmarkets}
 MarketsAndMarkets.
@@ -118,6 +161,11 @@ MarketsAndMarkets.
   reference) – global trends \& forecast to 2018}.
 \newblock Technical report, MarketsAndMarkets, 09 2013.
 \newblock \url{http://marketsandmarkets.com/}.
+
+\bibitem{mcgillion2015open}
+Brian McGillion, Tanel Dettenborn, Thomas Nyman, and N.~Asokan.
+\newblock {Open-TEE} -- an open virtual trusted execution environment.
+\newblock Technical report, Aalto University, 2015.
 
 \bibitem{nauman2010apex}
 Mohammad Nauman, Sohail Khan, and Xinwen Zhang.
@@ -158,6 +206,13 @@ Giovanni Russello, Mauro Conti, Bruno Crispo, and Earlence Fernandes.
 \newblock In {\em Proceedings of the 17th ACM symposium on Access Control
   Models and Technologies}, pages 3--12. ACM, 2012.
 
+\bibitem{santos2011trusted}
+Nuno Santos, Himanshu Raj, Stefan Saroiu, and Alec Wolman.
+\newblock Trusted language runtime (tlr): enabling trusted applications on
+  smartphones.
+\newblock In {\em Proceedings of the 12th Workshop on Mobile Computing Systems
+  and Applications}, pages 21--26. ACM, 2011.
+
 \bibitem{shebaro2014identidroid}
 Bilal Shebaro, Oluwatosin Ogunwuyi, Daniele Midi, and Elisa Bertino.
 \newblock Identidroid: Android can finally wear its anonymous suit.
@@ -167,6 +222,26 @@ Bilal Shebaro, Oluwatosin Ogunwuyi, Daniele Midi, and Elisa Bertino.
 Stephen Smalley and Robert Craig.
 \newblock Security enhanced (se) android: Bringing flexible mac to android.
 \newblock In {\em NDSS}, volume 310, pages 20--38, 2013.
+
+\bibitem{sun2015reliable}
+He~Sun, Kun Sun, Yuewu Wang, and Jiwu Jing.
+\newblock Reliable and trustworthy memory acquisition on smartphones.
+\newblock {\em Information Forensics and Security, IEEE Transactions on},
+  10(12):2547--2561, 2015.
+
+\bibitem{sun2015trustotp}
+He~Sun, Kun Sun, Yuewu Wang, and Jiwu Jing.
+\newblock Trustotp: Transforming smartphones into secure one-time password
+  tokens.
+\newblock In {\em Proceedings of the 22nd ACM SIGSAC Conference on Computer and
+  Communications Security}, pages 976--988. ACM, 2015.
+
+\bibitem{sun2015trustice}
+He~Sun, Kun Sun, Yuewu Wang, Jiwu Jing, and Haining Wang.
+\newblock Trustice: Hardware-assisted isolated computing environments on mobile
+  devices.
+\newblock In {\em Dependable Systems and Networks (DSN), 2015 45th Annual
+  IEEE/IFIP International Conference on}, pages 367--378. IEEE, 2015.
 
 \bibitem{wang2015deepdroid}
 Xueqiang Wang, Kun Sun, Yuewu Wang, and Jiwu Jing.
