@@ -235,7 +235,9 @@ To accomplish the goals of this project, a completely secure flow of execution i
 The research community has been experimenting with trusted execution environments in order to achieve better solutions for common security problems, such as two-factor authentication or cryptographic key generation. Among the available \ac{TEE} supported architectures, ARM's TrustZone is the one which has been used the most by researchers and companies world-wide, this is because the deployment potential for these new security applications is tremendous, as most modern ARM processors support this technology.
 
 %COPIADO, REVER
-Several \ac{TEE} software stack implementations have been designed since the concept was formalized around 2007 by the OMTP standardization forum, which issued a set of security requirements on functionality a TEE should support. The GlobalPlatform organization went a step further by defining standard APIs: on the one hand, the TEE internal APIs that a Trusted Application can rely on, and on the other hand, the communication interfaces that rich OS software can use to interact with its Trusted Applications. It is worth noting that, because the TEE threat model assumes that nothing coming from the rich OS is trustworthy, the designer of a TA (Trusted Application) must assume that the rich-OS-side client of the TA may not be legitimate.
+Several \ac{TEE} software stack implementations have been designed since the concept was formalized around 2007 by the OMTP standardization forum, which issued a set of security requirements on functionality a TEE should support. The GlobalPlatform~\footnote{https://www.globalplatform.org/} organization went a step further by defining standard APIs: on the one hand, the TEE internal APIs that a Trusted Application can rely on, and on the other hand, the communication interfaces that rich OS software can use to interact with its Trusted Applications. It is worth noting that, because the TEE threat model assumes that nothing coming from the rich OS is trustworthy, the designer of a TA (Trusted Application) must assume that the rich-OS-side client of the TA may not be legitimate.
+
+% DIZER TBM QUE SER COMPLIANT COM ESSAS APIS PERMITEM QUE TRUSTED APPS CONSTRUIDAS SOBRE UM TEE FUNCIONAM NOUTRO QUE SUPORTE A API
 
 When surveying the literature, it is clear that TrustZone-based systems can be divided in two separate groups: \ac{GPFR}, and special-purpose \ac{TA}. \ac{GPFR} represent tool kits for building secure special-purpose operating systems or runtimes, which allow the development of Trusted Applications. Special-purpose \ac{TA} are secure applications, built on top of \ac{GPFR} systems, which are executed in the trusted execution environment to achieve a specific security property. With a more thorough analysis, one can divide each of these categories even further, with regards to trusted user interface (UI). Trusted UI is a \ac{TEE} feature capable of ensuring that the correct information is displayed to the user and that this information is secure from the risk of, for instance, password logging, as well as allowing logs and statement information to be securely displayed to the user.
 
@@ -244,34 +246,35 @@ For this reason, this section categorizes TrustZone-enabled systems into four su
 % ESTES NOMES ESTAO ESQUISITOS, PERGUNTAR AO PROF POR OUTRO NOME
 \subsubsection{GPFR with Untrusted UI}
 
-Most of the \ac{TEE} software stack implementations have similar architectures (similar to the one shown in section~\ref{sec:tee}). This architecture is generally composed of a small trusted kernel running in the isolated secure world of TrustZone-enabled processors, a normal world user space client API and a kernel TEE device driver used to communicate between worlds. OP-TEE~\footnote{https://wiki.linaro.org/WorkingGroups/Security/OP-TEE} and AndixOS~\cite{fitzekandix} are \ac{TEE} implementations which share this general architecture. Although these systems use TrustZone's hardware based isolation to ensure that applications running inside the secure world are not tempered by a compromised rich OS, there are some limitations regarding the applications it can support, this is because these systems were implemented %TCB
+Most of the \ac{TEE} software stack implementations have similar architectures (similar to the one shown in section~\ref{sec:tee}). This architecture is generally composed of a small trusted kernel running in the isolated secure world of TrustZone-enabled processors, a normal world user space client API and a kernel TEE device driver used to communicate between worlds. OP-TEE~\footnote{https://wiki.linaro.org/WorkingGroups/Security/OP-TEE}, TLK\footnote{http://www.w3.org/2012/webcrypto/webcrypto-next-workshop/papers/webcrypto2014\_submission\_25.pdf}, TLR~\cite{santos2011trusted} and AndixOS~\cite{fitzekandix} are \ac{TEE} implementations which share this general architecture. Although these systems use TrustZone's hardware based isolation to ensure that applications running inside the secure world are not tempered by a compromised rich OS, they were implemented with the goal of reducing the \ac{TCB} in order to ensure a less vulnerable system. there are some limitations regarding the applications it can support.
 
-ObC~\cite{kostiainen2012board} Originalmente nao foi para trustzone, no entanto foi posteriormente adaptada
+A reduced \ac{TCB} means that most features of standard mobile operating systems are not supported, for instance, in AndixOS the secure world kernel lacks drivers for peripherals such as the touchscreen or code to control the framebuffer, thus it it is not capable of supporting trusted UI. The same limitations are present in both TLR and OP-TEE. Instead, these sytems support an RPC-like mechanism for in-between-world communication, secure persistence storage and basic cryptographic systems allowing for the development of simple trusted applications.
 
-TLR~\cite{santos2011trusted}
+% COLOCAR AQUI UM EXEMPLO DE ALGUM DOS SISTEMAS ACIMA, POR EXEMPLO DO TLR ?
+
+On-board Credentials (ObC)~\cite{kostiainen2012board} is another \ac{TEE} system which supports the development of secure credential and authentication mechanisms. Originally developed for Nokia mobile devices using the TI M-Shield technology, and later ported to ARM's TrustZone, it suffers from the same limitation described above.
 
 \subsubsection{TA with Untrusted UI}
 
-Android Key Store~\footnote{http://developer.android.com/training/articles/keystore.html} The encryption/decryption of the keystore is handled by the keystore service, which in turn links with a Hardware Abstraction Layer module called "keymaster". The AOSP provides a sofware ("softkeymaster") implementation, but device vendors can offer support for hardware based protected storage, if available. On ARM architectures, this linked to the ARM "TrustZone".
+Trusted Applications are built on top of secure runtimes in order to minimize and mitigate the impact of the normal world on its execution. This subsection describes trusted applications built using runtimes which do not support trusted UI, or TAs which do not require trusted UI to correctly perform its function. Some trusted applications use custom TEEs to fully control the underlying hardware and design specific security solution which may not be supported by generic secure runtimes. 
 
-DroidVault~\cite{li2014droidvault}
+%REVER PARA FACILITAR A LEITURA
+Brasser et al.~\cite{brasserregulating} designed a minimalistic runtime to support the bare minimum necessary for their trusted application to work. This system leverages Android in the normal world and allows for third parties (hosts) to regulate how users (guests) use their devices (e.g., manage their devices’ resources), while in a specific space. This system comprises of authentication and communication mechanisms between guest's secure world and hosts, remote memory operations (reads retrieve certain normal world kernel pages and writes change certain page configurations, e.g., uninstall peripheral drivers, either pointing their interfaces to NULL, or by pointing them to dummy drivers, that just return error codes) and other common features supported by most TEE such as secure boot through TrustZone, with secure world component integrity checks, and world switches based on software interrupts. %COMO SE PODE VER NAO PRECISA DE SECURE UI, dar o exemplo do paper(da figura)?
 
-Brasser et al.~\cite{brasserregulating}
+Other trusted applications are built using generic runtimes and frameworks. DroidVault~\cite{li2014droidvault} introduces the notion of data vault as a protective measure for sensitive data on Android mobile devices. To achieve this, DroidVault adopts the memory manager and interrupt handler from Open Virtualization's SierraTEE~\footnote{http://www.openvirtualization.org/} and is implemented with a data protection manager, encryption library and a port of a lightweight SSL/TLS library called PolarSSL~\footnote{https://polarssl.org/}. Much like the trusted application described above, DroidVault supports world switching through software interrupts and secure boot and even inter-world communication. With this TA a user can securely download a sensitive file from an authority and securely store it in the untrusted Android OS, because secure storage space is limited, and allows an app to process sensitive data but only through data protection managers signed by the data owner running inside the secure world. This system supports trusted input/output by using a secure keyboard and serial console, but because we are interested in trusted user interfaces similar to those offered by mobile operating systems we decided to consider this system as not supporting trusted UI. 
 
-Samsung KNOX~\cite{knox_whitepaper} isto devia ter secure UI mas nao vi isso explicito e nao esquecer de mudar isto para um cite de technical paper.
+Android Key Store~\footnote{http://developer.android.com/training/articles/keystore.html} is another security service in Android. This service allows for cryptographic keys to be stored in a container (keystore), so its extraction from the device becomes difficult and so they can be used for common cryptographic operations. The encryption and decryption of the container is handled by the keystore service, which in turn links with a hardware abstraction layer module called "keymaster". The android open source project (AOSP) provides a sofware implementation of this module called "softkeymaster", but device vendors can offer support for hardware based protected storage when available by using TrustZone.
 
 \subsubsection{GPFR with Trusted UI}
 
-SierraTEE~\footnote{http://www.openvirtualization.org/}
+In this section we describe TEE frameworks and runtimes with support for trusted UI. As referenced before, GlobalPlatform defined standard APIs for the communication between the rich OS running in the normal world and the secure OS, but this organization also defined device specifications which TEEs must comply to in order to be certified. Included in these device specifications is a trusted UI clause, meaning that every TEE which complies with GlobalPlatform's device specifications must support trusted UI. SierraTEE~\footnote{http://www.openvirtualization.org/}, T6~\footnote{https://www.trustkernel.com/products/tee/t6.html} and Open-TEE~\cite{mcgillion2015open} comply with this standard, and for this reason allow the development of trusted applications with secure user interfaces.
+Open-TEE's trusted UI feature is being developed by the community as it was not originally supported.
 
-Genode~\footnote{http://genode.org/}
-
-T6~\footnote{https://www.trustkernel.com/products/tee/t6.html}
-
-Open-TEE~\cite{mcgillion2015open} diz que cumpre as especificações de device da globalPlatform que inclui trusted UI
-Trusted UI a ser extendido pela comunidade
-
-TrustICE~\cite{sun2015trustice}
+The Genode OS Framework~\footnote{http://genode.org/} is a tool kit for building highly secure special-purpose operating systems to be executed in TrustZone-enabled processors. Genode implements a framebuffer and input drivers to be used by the secure kernel, thus trusted applications running on top of Genode-based TEEs can offer trusted user interfaces. TrustICE~\cite{sun2015trustice} is an isolation framework to provide isolated computing environments (ICEs) on mobile devices. A lot of similar solutions provide isolated computing environments using ARM's TrustZone by allowing code to be executed in the secure world, generally in the form of trusted applications. TrustICE aims at creating ICEs in the normal world domain rather than in the secure world. For this reason, TrustICE' architecture is slightly different for those described before.
+% SHOW FIGURE HERE
+% EXPLAIN HOW THIS IS DONE BRIEFLY
+% TALK ABOUT THE SECURE UI
+% FALAR DO EXEMPLO QUE ELES IMPLEMENTARAM
 \subsubsection{TA with Trusted UI}
 
 TrustOTP~\cite{sun2015trustotp}
@@ -280,8 +283,12 @@ TrustDump~\cite{sun2015reliable}
 
 AdAttester~\cite{li2015adattester}
 
-TrustUI~\cite{li2014building}
+Samsung KNOX~\cite{knox_whitepaper} É PARECIDO COM O ANTERIOR MAS MAIS ORIENTADO PARA ENTERPRISE BYOD COM SUMSUNG - MOSTRAR ALGUNS EXEMPLOS DE UTILIZAÇAO APRESENTADOS NO WHITEPAPER ASSIM COMO OS MECHANISMOS QUE USA PARA OS POR EM PRATICA
+%isto devia ter secure UI mas nao vi isso explicito
 
+TrustUI~\cite{li2014building}\\
+
+CONCLUSAOZITA
 \begin{table}[t!]
 	\centering
 	\caption{TrustZone-based system categorization.}
@@ -289,18 +296,21 @@ TrustUI~\cite{li2014building}
 	%\resizebox{\textwidth}{!}{%
 	\begin{tabular}{ c|c|c| }
 		\multicolumn{1}{c}{} 	& \multicolumn{1}{c}{Untrusted UI} 	& \multicolumn{1}{c}{Trusted UI} \\ \cline{2-3}
-		\multirow{4}{*}{TAs} 	& Android Key Store						& TrustOTP \\
-								& DroidVault 							& TrustDump \\
-								& Restricted Spaces ****				& AdAttester \\
-								& 			 							& TrustUI \\
+		\multirow{5}{*}{TAs} 	&									& \\
+								& Android Key Store					& TrustOTP \\
+								& DroidVault 						& TrustDump \\
+								& Brasser et al.					& AdAttester \\
+								& 									& TrustUI \\
+								&									& Samsung Knox\\
+								&									& \\
 								\cline{2-3}
-		\multirow{8}{*}{GPFR}	& TLK									& Genode \\
-								& OP-TEE 								& T6 \\
-								& Mobicore								& TrustICE \\
-								& Samsung Knox							& SierraTEE \\
-								& TLR 									& \\
-								& Andix OS 								& \\
-								& Nokia ObC								& \\
+		\multirow{5}{*}{GPFR}	&									& \\
+								& TLK								& Genode \\
+								& OP-TEE 							& T6 \\
+								& Andix OS							& TrustICE \\
+								& Nokia ObC							& SierraTEE \\
+								& TLR 								& \\
+								&									& \\
 		\cline{2-3}
 	\end{tabular}
 	%}
