@@ -29,41 +29,38 @@ To protect sensitive data on mobile apps developers rely on mechanisms such as a
 
 \subsection{Goals}
 
-Restrições\\
+%Restrições\\
 
-Contribuições\\
+%Contribuições\\
 
 % A discutir melhor depois do trabalho relacionado, comentar por agora?
 % ** OBJECTIVES ** 
-%Thus, the goal of this project is to fill the security gap in the mobile application market by proposing TrubiZone, a development system with a small, dedicated \ac{TCB} which, by using ARM TrustZone technology, allows app developers to execute parts of the application logic in a trusted environment isolated from the \ac{OS}, which in turn supports the development of secure mobile applications independent from a full blown platform and its inherent vulnerabilities.
+The goal of this project is to fill in the security gap in the mobile application market by proposing TrubiZone, a development system with a small, dedicated \ac{TCB} which, by using ARM TrustZone technology, allows app developers to securely display sensitive content in several formats. With TrubiZone the user is guaranteed  to access non-compromised data which is isolated from a rich OS environment such as Android.
 %
 %% RESTRICTIONS
-%To avoid the limitations referenced above the final implementation must guarantee the following requirements:
+To support the features referenced above, the final implementation must guarantee the following requirements:
 %
-%\paragraph*{\textbf{Assure Security Policies\\}}
-%TrubiZone must guarantee the fundamental security properties of confidentiality, integrity and authenticity, on which every high level security application can be built on.
-%
-%\paragraph*{\textbf{I/O Support\\}}
-%To allow the development of realistic mobile applications I/O interaction must be supported, while trying to maintain a small, compact \ac{TCB}.
-%
-%\paragraph*{\textbf{Support for General Applications\\}}
-%The implementation should run general applications instead of dedicated and specifically crafted apps. To support this restriction TrubiZone must execute applications built using modern high-level languages with components such as garbage collection and strong typing.
-%
-%\paragraph*{\textbf{Developer Friendly\\}}
-%Developers must be able to easily specify the security properties required and the security-sensitive app logic to transparently run in the trusted environment. This allows developers to focus on the logic and design of said application rather than mobile security mechanisms.\\
+\paragraph*{\textbf{Assure Security Policies\\}} TrubiZone must guarantee the fundamental security properties of confidentiality, integrity and authenticity, on which every high level security application can be built on.
+
+\paragraph*{\textbf{Trusted UI\\}} To allow the development of realistic mobile applications, secure user interfaces must be supported, while trying to maintain a small, compact \ac{TCB}.
+
+\paragraph*{\textbf{Support for General Applications\\}} The implementation should run general applications instead of dedicated and specifically crafted apps. To support this restriction TrubiZone must execute applications built using standard trusted execution environment APIs.
+
+\paragraph*{\textbf{Developer Friendly\\}} Developers must be able to easily specify the security properties required and the security-sensitive app logic to transparently run in the trusted environment. This allows developers to focus on the logic and design of said application rather than mobile security mechanisms.\\\\
 %
 %% APPLICATION SPECIFICATION
 %TrubiZone will be based on Genode~\footnote{http://genode.org/index} running along side Android and implemented upon a Freescale i.MX53 START development board~\footnote{http://www.freescale.com/products/arm-processors/i.mx-applications-processors-based-on-arm-cores/i.mx53-processors/i.mx53-quick-start-board:IMX53QSB}, which supports ARM's TrustZone. To illustrate TrubiZone's functionality a \ac{mHealth} will be implemented.\\
 %
 %
 %% CONTRIBUTIONS **
-%In summary this work expects to contribute with:
-%\begin{itemize}
-%	\item The design of a novel security system, based on TrustZone, for development of secure mobile applications.
-%	\item Implementation, on a development board, of a prototype of this new security framework.
-%	\item Implementation of a mobile health application using the prototyped framework.
-%	\item Assessment of the prototype and \ac{mHealth} app.
-%\end{itemize}
+In summary this work expects to contribute with:
+\begin{itemize}
+	\item The design of a novel security system, based on TrustZone, for development of secure mobile applications.
+	\item Implementation, on a development board, of a prototype of this new security framework.
+	\item Implementation of a mobile health application using the prototyped framework.
+	\item Assessment of the prototype and mobile health app.
+\end{itemize}
+
 %
 %% ORGANIZATION **
-The remainder of this document proceeds as follows. Section 2 highlights the related work on mobile health security, general-purpose mobile security mechanisms and TrustZone-based systems. Section 3 highlights the architecture of TrubiZone. Section 4 highlights the evaluation methodology and implementation followed by Section 5 which describes the work plan for this project. And Section 6 concludes this work.
+The remainder of this document proceeds as follows. Section~\ref{sec:relatedWork} highlights the related work on mobile health security, general-purpose mobile security mechanisms and TrustZone-based systems. Section~\ref{sec:architecture} highlights the architecture of TrubiZone. Section~\ref{sec:evaluation} highlights the evaluation methodology and implementation followed by Section~\ref{sec:workplan} which describes the work plan for this project. And Section~\ref{sec:conclusion} concludes this work.

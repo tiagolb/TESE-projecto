@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  20 DEC 2015 23:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  21 DEC 2015 21:21
 entering extended mode
 **report.tex
 (report.tex
@@ -572,137 +572,141 @@ Package acronym Info: Label `acro:OS' newly defined as it shall be overridden
 although it is yet undefined on input line 26.
 Package acronym Info: Label `acro:TCB' newly defined as it shall be overridden
 although it is yet undefined on input line 26.
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--33
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--35
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 49--57
 
  []
 
-) (sections/5-related-work.tex [2]
-Overfull \hbox (0.59029pt too wide) in paragraph at lines 30--31
+) (sections/5-related-work.tex [3]
+Overfull \hbox (0.59029pt too wide) in paragraph at lines 31--32
 \OT1/cmr/m/n/10 in three main cat-e-gories: \OT1/cmr/m/it/10 Iden-tity Threats\
 OT1/cmr/m/n/10 , \OT1/cmr/m/it/10 Ac-cess Threats \OT1/cmr/m/n/10 and \OT1/cmr/
 m/it/10 Dis-clo-sure Threats\OT1/cmr/m/n/10 . 
  []
 
 Package acronym Info: Label `acro:PHR' newly defined as it shall be overridden
-although it is yet undefined on input line 32.
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 36--37
+although it is yet undefined on input line 33.
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
 
  []
 
-
-Overfull \hbox (1.10948pt too wide) in paragraph at lines 51--62
+[4]
+Overfull \hbox (1.10948pt too wide) in paragraph at lines 52--63
 [][] 
  []
 
 
-Overfull \hbox (11.83037pt too wide) in paragraph at lines 64--64
+Overfull \hbox (11.83037pt too wide) in paragraph at lines 65--65
  [][]\OT1/cmr/m/n/9 https://play.google.com/store/apps/details?id=com.airperson
 s.airpersonsmobilehealth| 
  []
 
-[4] [5] <img/sensitivedistribution.jpg, id=25, 157.3077pt x 96.1191pt>
+[5] <img/sensitivedistribution.jpg, id=26, 157.3077pt x 96.1191pt>
 File: img/sensitivedistribution.jpg Graphic file (type jpg)
 
 <use img/sensitivedistribution.jpg>
-Package pdftex.def Info: img/sensitivedistribution.jpg used on input line 71.
+Package pdftex.def Info: img/sensitivedistribution.jpg used on input line 72.
 (pdftex.def)             Requested size: 295.05711pt x 180.31668pt.
 Package acronym Info: Label `acro:DMB' newly defined as it shall be overridden
-although it is yet undefined on input line 76.
- [6 <./img/sensitivedistribution.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
+although it is yet undefined on input line 77.
+ [6]
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
-<img/relwork.pdf, id=29, 621.52202pt x 305.7021pt>
+[7 <./img/sensitivedistribution.jpg>]
+<img/relwork.pdf, id=34, 621.52202pt x 305.7021pt>
 File: img/relwork.pdf Graphic file (type pdf)
  <use img/relwork.pdf>
-Package pdftex.def Info: img/relwork.pdf used on input line 92.
+Package pdftex.def Info: img/relwork.pdf used on input line 93.
 (pdftex.def)             Requested size: 225.62817pt x 110.97626pt.
 Package acronym Info: Label `acro:DAC' newly defined as it shall be overridden
-although it is yet undefined on input line 102.
+although it is yet undefined on input line 103.
 
-[7]
+[8 <./img/relwork.pdf>]
 Package acronym Info: Label `acro:MAC' newly defined as it shall be overridden
-although it is yet undefined on input line 105.
- [8 <./img/relwork.pdf>]
-Package acronym Info: Label `acro:ASM' newly defined as it shall be overridden
-although it is yet undefined on input line 123.
-Package acronym Info: Label `acro:ASF' newly defined as it shall be overridden
-although it is yet undefined on input line 123.
+although it is yet undefined on input line 106.
  [9]
+Package acronym Info: Label `acro:ASM' newly defined as it shall be overridden
+although it is yet undefined on input line 124.
+Package acronym Info: Label `acro:ASF' newly defined as it shall be overridden
+although it is yet undefined on input line 124.
 Package acronym Info: Label `acro:DRM' newly defined as it shall be overridden
-although it is yet undefined on input line 128.
-Package acronym Info: Label `acro:OMA' newly defined as it shall be overridden
-although it is yet undefined on input line 141.
+although it is yet undefined on input line 129.
  [10]
+Package acronym Info: Label `acro:OMA' newly defined as it shall be overridden
+although it is yet undefined on input line 142.
 Package acronym Info: Label `acro:IPC' newly defined as it shall be overridden
-although it is yet undefined on input line 150.
-
-<img/communicationattacks.png, id=50, 657.95813pt x 228.855pt>
+although it is yet undefined on input line 151.
+ [11]
+<img/communicationattacks.png, id=53, 657.95813pt x 228.855pt>
 File: img/communicationattacks.png Graphic file (type png)
 
 <use img/communicationattacks.png>
-Package pdftex.def Info: img/communicationattacks.png used on input line 158.
+Package pdftex.def Info: img/communicationattacks.png used on input line 159.
 (pdftex.def)             Requested size: 329.7663pt x 114.70308pt.
 Package acronym Info: Label `acro:IMEI' newly defined as it shall be overridden
 
-although it is yet undefined on input line 165.
- [11 <./img/communicationattacks.png>]
+although it is yet undefined on input line 166.
+ [12 <./img/communicationattacks.png>]
 Package acronym Info: Label `acro:SoC' newly defined as it shall be overridden
-although it is yet undefined on input line 182.
+although it is yet undefined on input line 183.
 Package acronym Info: Label `acro:PIN' newly defined as it shall be overridden
-although it is yet undefined on input line 182.
+although it is yet undefined on input line 183.
 
-[12]
+[13]
 Package acronym Info: Label `acro:MMU' newly defined as it shall be overridden
-although it is yet undefined on input line 186.
+although it is yet undefined on input line 187.
 Package acronym Info: Label `acro:GPUs' newly defined as it shall be overridden
 
-although it is yet undefined on input line 188.
- [13] <img/trustzone.pdf, id=61, 690.17848pt x 440.84702pt>
+although it is yet undefined on input line 189.
+ <img/trustzone.pdf, id=61, 690.17848pt x 440.84702pt>
 File: img/trustzone.pdf Graphic file (type pdf)
 
 <use img/trustzone.pdf>
-Package pdftex.def Info: img/trustzone.pdf used on input line 194.
+Package pdftex.def Info: img/trustzone.pdf used on input line 195.
 (pdftex.def)             Requested size: 277.69987pt x 177.37833pt.
+ [14]
 Package acronym Info: Label `acro:TEE' newly defined as it shall be overridden
-although it is yet undefined on input line 203.
- [14 <./img/trustzone.pdf>] [15]
+although it is yet undefined on input line 204.
+ [15 <./img/trustzone.pdf>] [16]
 Package acronym Info: Label `acro:GPFR' newly defined as it shall be overridden
 
-although it is yet undefined on input line 242.
+although it is yet undefined on input line 243.
 Package acronym Info: Label `acro:TA' newly defined as it shall be overridden
-although it is yet undefined on input line 242.
+although it is yet undefined on input line 243.
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--249
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
  [][]\OT1/cmr/m/n/9 http://www.w3.org/2012/webcrypto/webcrypto-next-
  []
 
-[16] [17] [18] <img/trustICE.pdf, id=112, 712.58218pt x 308.5929pt>
+[17] [18] <img/trustICE.pdf, id=112, 712.58218pt x 308.5929pt>
 File: img/trustICE.pdf Graphic file (type pdf)
 
 <use img/trustICE.pdf>
-Package pdftex.def Info: img/trustICE.pdf used on input line 279.
+Package pdftex.def Info: img/trustICE.pdf used on input line 280.
 (pdftex.def)             Requested size: 277.69987pt x 120.26128pt.
- [19 <./img/trustICE.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [19] [20 <./img/trustICE.pdf>])
+(sections/6-architecture.tex [21]) (sections/7-evaluation.tex
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+ [][]\OT1/cmr/m/n/9 http://www.freescale.com/products/arm-processors/i.mx-appli
+cations-processors-
+ []
 
- [20])
-(sections/6-architecture.tex) (sections/7-evaluation.tex [21])
-(sections/8-conclusions.tex) (report.bbl
+
+Overfull \hbox (2.79372pt too wide) in paragraph at lines 16--19
+\OT1/cmr/m/n/10 ports ARM's Trust-Zone. To il-lus-trate Tru-bi-Zone's func-tion
+-al-ity a Per-sonal Health
+ []
+
+[22]) (sections/8-conclusions.tex) (report.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 42--47
 \OT1/cmr/m/n/9 http://www.comscore.com/Insights/Presentations-and-Whitepapers/2
 015/2015-
  []
 
-[22]
+[23]
 Underfull \hbox (badness 10000) in paragraph at lines 114--119
 []\OT1/cmr/m/n/9 F-Secure Labs.  Mo-bile Threat Re-port.  Tech-ni-
  []
@@ -742,29 +746,29 @@ Underfull \hbox (badness 1087) in paragraph at lines 150--155
 ce/white-
  []
 
-[23]) [24] (report.aux) ) 
+[24] [25]) [26] (report.aux) ) 
 Here is how much of TeX's memory you used:
- 3791 strings out of 493673
- 51085 string characters out of 3141529
- 133977 words of memory out of 3000000
- 7050 multiletter control sequences out of 15000+200000
+ 3801 strings out of 493673
+ 51247 string characters out of 3141529
+ 133023 words of memory out of 3000000
+ 7060 multiletter control sequences out of 15000+200000
  10295 words of font info for 36 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  33i,11n,22p,2106b,288s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmbxti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-r7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.p
-fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb
-><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on report.pdf (24 pages, 391824 bytes).
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmbxti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti1
+0.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.p
+fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on report.pdf (26 pages, 396882 bytes).
 PDF statistics:
- 209 PDF objects out of 1000 (max. 8388607)
+ 216 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

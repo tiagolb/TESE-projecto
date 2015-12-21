@@ -5,14 +5,25 @@
 % 
 % (1/2pgs)
 \section{Implementation and Evaluation}
+\label{sec:evaluation}
 
-Explain how you are going to show your results (statistical data, cpu performance etc). Answer the following questions:
-\begin{itemize}
-  \item Why is this solution going to be better than others.
-  \item How am I going to defend that it is better.
-\end{itemize}
+%Explain how you are going to show your results (statistical data, cpu performance etc). Answer the following questions:
+%\begin{itemize}
+%  \item Why is this solution going to be better than others.
+%  \item How am I going to defend that it is better.
+%\end{itemize}
+
+\paragraph{Implementation:}TrubiZone will run along side Android and implemented upon a Freescale i.MX53 QUICK START BOARD development board~\footnote{http://www.freescale.com/products/arm-processors/i.mx-applications-processors-based-on-arm-cores/i.mx53-processors/i.mx53-quick-start-board:IMX53QSB}, which supports ARM's TrustZone. To illustrate TrubiZone's functionality a Personal Health Record management mobile application will be implemented. This applications allows a user to display, store and edit his personal health information securely, without this sensitive information ever being exposed to a untrusted rich OS such as Android.
+% ESTA FRASE QUE SE SEGUE NA ARQUITECTURA?
+To allow for a more flexible development environment using TrubiZone, we expect to support sensitive applications built using GlobalPlatform's API.
+
+\paragraph{Evaluation:}To evaluate TrubiZone we measure the performance overhead for displaying, storing and editing sensitive files as well as compare the development process for the PHR mHealth app using TrubiZone and a similar app built on top of Android. The performance can be measured by using the performance monitor available in the Cortex-A8 processor to count the CPU cycles and then convert the cycles to time by multiplying 1 \emph{ns / cycle}. By conducting each experiment for each of the use cases described several times and averaging the value we can compare this value taken for TrubiZone with the value measured in the same conditions for a similar applications without using the secure system.
+
+%For the power consumption measurements we may use Monsoon Power Monitor~\footnote{https://www.msoon.com/LabEquipment/PowerMonitor/} and compare the consumption of power when TrubiZone is running, when it is not running and when a similar application is running outside TrubiZone.
+
 
 \section{Future Work Plan}
+\label{sec:workplan}
 
 Future work is scheduled as follows:
 
