@@ -13,11 +13,15 @@
 %  \item How am I going to defend that it is better.
 %\end{itemize}
 
-\paragraph{Implementation:}TrubiZone will run along side Android and implemented upon a Freescale i.MX53 QUICK START BOARD development board~\footnote{http://www.freescale.com/products/arm-processors/i.mx-applications-processors-based-on-arm-cores/i.mx53-processors/i.mx53-quick-start-board:IMX53QSB}, which supports ARM's TrustZone. To illustrate TrubiZone's functionality a Personal Health Record management mobile application will be implemented. This applications allows a user to display, store and edit his personal health information securely, without this sensitive information ever being exposed to a untrusted rich OS such as Android.
+\paragraph{Implementation:}\emph{TrubiZone} will run along side Android and will be implemented upon a Freescale i.MX53 Quick Start Board development board~\footnote{http://www.freescale.com/products/arm-processors/i.mx-applications-processors-based-on-arm-cores/i.mx53-processors/i.mx53-quick-start-board:IMX53QSB}, which supports ARM's TrustZone. To illustrate \emph{TrubiZone}'s functionality a Personal Health Record management mobile application will be implemented. This applications allows a user to display, store and edit his personal health information securely, without this sensitive information ever being exposed to a untrusted rich OS such as Android.
 % ESTA FRASE QUE SE SEGUE NA ARQUITECTURA?
 To allow for a more flexible development environment using TrubiZone, we expect to support sensitive applications built using GlobalPlatform's API.
 
-\paragraph{Evaluation:}To evaluate TrubiZone we measure the performance overhead for displaying, storing and editing sensitive files as well as compare the development process for the PHR mHealth app using TrubiZone and a similar app built on top of Android. The performance can be measured by using the performance monitor available in the Cortex-A8 processor to count the CPU cycles and then convert the cycles to time by multiplying 1 \emph{ns / cycle}. By conducting each experiment for each of the use cases described several times and averaging the value we can compare this value taken for TrubiZone with the value measured in the same conditions for a similar applications without using the secure system.
+% DIZER QUE COMO IMX53 NAO APRESENTA NMI (INTERRUPTS SEGUROS) TEM QUE SE FAZER O QUE ESTÁ NO PAPER DO TRUSTOTP
+
+% TALVEZ OLHAR PARA O PAPER DO TRUSTOTP TBM PARA VER COISAS SOBRE AS DRIVERS E FRAMEBUFFERS
+
+\paragraph{Evaluation:}To evaluate \emph{TrubiZone} we measure the performance overhead for displaying, storing and editing sensitive files as well as compare the development process for the PHR mHealth app using TrubiZone and a similar app built on top of Android. The performance can be measured by using the performance monitor available in the Cortex-A8 processor to count the CPU cycles and then convert the cycles to time by multiplying 1 \emph{ns / cycle}. By conducting each experiment for each of the use cases described several times and averaging the value we can compare this value taken for \emph{TrubiZone} with the value measured in the same conditions for a similar applications without using the secure system.
 
 %For the power consumption measurements we may use Monsoon Power Monitor~\footnote{https://www.msoon.com/LabEquipment/PowerMonitor/} and compare the consumption of power when TrubiZone is running, when it is not running and when a similar application is running outside TrubiZone.
 
@@ -28,12 +32,12 @@ To allow for a more flexible development environment using TrubiZone, we expect 
 Future work is scheduled as follows:
 
 \begin{itemize}
-	\item January 9 - March 29: Detailed design and implementation of the
+	\item January 9 - March 25: Detailed design and implementation of the
 	proposed architecture, including preliminary tests.
-	\item March 30 - May 3: Perform the complete experimental evaluation
+	\item March 26 - May 1: Perform the complete experimental evaluation
 	of the results.
-	\item May 4 - May 23: Write a paper describing the project.
-	\item May 24 - June 15: Finish the writing of the dissertation.
+	\item May 2 - May 10: Write a paper describing the project.
+	\item May 11 - June 15: Finish the writing of the dissertation.
 	\item June 15: Deliver the MSc dissertation.
 \end{itemize}
 

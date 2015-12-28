@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  21 DEC 2015 21:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  28 DEC 2015 02:26
 entering extended mode
 **report.tex
 (report.tex
@@ -688,25 +688,22 @@ File: img/trustICE.pdf Graphic file (type pdf)
 Package pdftex.def Info: img/trustICE.pdf used on input line 280.
 (pdftex.def)             Requested size: 277.69987pt x 120.26128pt.
  [19] [20 <./img/trustICE.pdf>])
-(sections/6-architecture.tex [21]) (sections/7-evaluation.tex
+(sections/6-architecture.tex [21] [22]
+Package acronym Info: Label `acro:DPM' newly defined as it shall be overridden
+although it is yet undefined on input line 19.
+ [23]) (sections/7-evaluation.tex
 Underfull \hbox (badness 10000) in paragraph at lines 16--16
  [][]\OT1/cmr/m/n/9 http://www.freescale.com/products/arm-processors/i.mx-appli
 cations-processors-
  []
 
-
-Overfull \hbox (2.79372pt too wide) in paragraph at lines 16--19
-\OT1/cmr/m/n/10 ports ARM's Trust-Zone. To il-lus-trate Tru-bi-Zone's func-tion
--al-ity a Per-sonal Health
- []
-
-[22]) (sections/8-conclusions.tex) (report.bbl
+[24]) (sections/8-conclusions.tex) (report.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 42--47
 \OT1/cmr/m/n/9 http://www.comscore.com/Insights/Presentations-and-Whitepapers/2
 015/2015-
  []
 
-[23]
+[25]
 Underfull \hbox (badness 10000) in paragraph at lines 114--119
 []\OT1/cmr/m/n/9 F-Secure Labs.  Mo-bile Threat Re-port.  Tech-ni-
  []
@@ -746,12 +743,12 @@ Underfull \hbox (badness 1087) in paragraph at lines 150--155
 ce/white-
  []
 
-[24] [25]) [26] (report.aux) ) 
+[26] [27]) [28] (report.aux) ) 
 Here is how much of TeX's memory you used:
- 3801 strings out of 493673
- 51247 string characters out of 3141529
- 133023 words of memory out of 3000000
- 7060 multiletter control sequences out of 15000+200000
+ 3806 strings out of 493673
+ 51289 string characters out of 3141529
+ 133065 words of memory out of 3000000
+ 7065 multiletter control sequences out of 15000+200000
  10295 words of font info for 36 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  33i,11n,22p,2106b,288s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -766,9 +763,9 @@ cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 mr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti1
 0.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.p
 fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on report.pdf (26 pages, 396882 bytes).
+Output written on report.pdf (28 pages, 404142 bytes).
 PDF statistics:
- 216 PDF objects out of 1000 (max. 8388607)
+ 222 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
