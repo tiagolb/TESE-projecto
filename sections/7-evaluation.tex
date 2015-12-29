@@ -7,21 +7,30 @@
 \section{Implementation and Evaluation}
 \label{sec:evaluation}
 
+This section describes the implementation details of the solution as well as how the system is going to be evaluated.
+
+\subsection{Implementation}
+
+\emph{TrubiZone} will run along side Android and will be implemented upon a Freescale i.MX53 Quick Start Board development board~\footnote{http://www.freescale.com/products/arm-processors/i.mx-applications-processors-based-on-arm-cores/i.mx53-processors/i.mx53-quick-start-board:IMX53QSB}, which supports ARM's TrustZone. To illustrate \emph{TrubiZone}'s functionality a Personal Health Record management mobile application will be implemented. This applications allows a user to display, store and edit his personal health information securely, without this sensitive information ever being exposed to an untrusted rich OS such as Android.
+
+%% ISTO DEVE ESTAR NA IMPLEMENTAÇÂO?
+%% ==== MOBILE HEALTH APP EXEMPLO ====
+%\subsection{Personal Health Records Application}
+%%FALAR DA APP DE PROTOTIPO, UM FICHEIRO JÁ CIFRADO COM UM PAR DE CHAVES É SACADO USANDO O UNTRUSTED OS. O USER ACEDE À APP ANDROID QUE FAZ A PONTE ENTRE OS DOIS MUNDOS E MANDA LER AQUELE FICHEIRO, O MUNDO SEGURO TOMA CONTA DA MEMORIA E DISPLAY E VAI BUSCAR O FICHEIRO INDICADO. JÁ NO MUNDO SEGURO DECIFRA O FICHEIRO E MOSTRA-O AO UTILIZADOR. O UTILIZADOR PODE EDITAR O FICHEIRO E MANDAR GUARDÁ-LO E DÁ-SE ORIGEM AO PRCESSO INVERSO, EM QUE O MUNDO SEGURO PEGA NO FICHEIRO E CIFRA-O, GUARDA-O NA ZONA DE MEMORIA E RETORNA AO MUNDO INSEGURO QUE PROCEDE A FAZER A STORAGE DESSE FICHEIRO.
+
+% DIZER QUE COMO IMX53 NAO APRESENTA NMI (INTERRUPTS SEGUROS) TEM QUE SE FAZER O QUE ESTÁ NO PAPER DO TRUSTOTP
+
+% TALVEZ OLHAR PARA O PAPER DO TRUSTOTP TBM PARA VER COISAS SOBRE AS DRIVERS E FRAMEBUFFERS
+
+\subsection{Evaluation}
+
 %Explain how you are going to show your results (statistical data, cpu performance etc). Answer the following questions:
 %\begin{itemize}
 %  \item Why is this solution going to be better than others.
 %  \item How am I going to defend that it is better.
 %\end{itemize}
 
-\paragraph{Implementation:}\emph{TrubiZone} will run along side Android and will be implemented upon a Freescale i.MX53 Quick Start Board development board~\footnote{http://www.freescale.com/products/arm-processors/i.mx-applications-processors-based-on-arm-cores/i.mx53-processors/i.mx53-quick-start-board:IMX53QSB}, which supports ARM's TrustZone. To illustrate \emph{TrubiZone}'s functionality a Personal Health Record management mobile application will be implemented. This applications allows a user to display, store and edit his personal health information securely, without this sensitive information ever being exposed to a untrusted rich OS such as Android.
-% ESTA FRASE QUE SE SEGUE NA ARQUITECTURA?
-To allow for a more flexible development environment using TrubiZone, we expect to support sensitive applications built using GlobalPlatform's API.
-
-% DIZER QUE COMO IMX53 NAO APRESENTA NMI (INTERRUPTS SEGUROS) TEM QUE SE FAZER O QUE ESTÁ NO PAPER DO TRUSTOTP
-
-% TALVEZ OLHAR PARA O PAPER DO TRUSTOTP TBM PARA VER COISAS SOBRE AS DRIVERS E FRAMEBUFFERS
-
-\paragraph{Evaluation:}To evaluate \emph{TrubiZone} we measure the performance overhead for displaying, storing and editing sensitive files as well as compare the development process for the PHR mHealth app using TrubiZone and a similar app built on top of Android. The performance can be measured by using the performance monitor available in the Cortex-A8 processor to count the CPU cycles and then convert the cycles to time by multiplying 1 \emph{ns / cycle}. By conducting each experiment for each of the use cases described several times and averaging the value we can compare this value taken for \emph{TrubiZone} with the value measured in the same conditions for a similar applications without using the secure system.
+To evaluate \emph{TrubiZone} we measure the performance overhead for displaying, storing and editing sensitive files as well as compare the development process for the PHR mHealth app using TrubiZone and a similar app built on top of Android. The performance can be measured by using the performance monitor available in the Cortex-A8 processor to count the CPU cycles and then convert the cycles to time by multiplying 1 \emph{ns / cycle}. By conducting each experiment for each of the use cases described several times and averaging the value we can compare this value taken for \emph{TrubiZone} with the value measured in the same conditions for a similar applications without using the secure system.
 
 %For the power consumption measurements we may use Monsoon Power Monitor~\footnote{https://www.msoon.com/LabEquipment/PowerMonitor/} and compare the consumption of power when TrubiZone is running, when it is not running and when a similar application is running outside TrubiZone.
 
