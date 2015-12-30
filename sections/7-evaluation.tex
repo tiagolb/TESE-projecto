@@ -13,10 +13,11 @@ This section describes the implementation details of the solution as well as how
 
 \emph{TrubiZone} will run along side Android and will be implemented upon a Freescale i.MX53 Quick Start Board development board~\footnote{http://www.freescale.com/products/arm-processors/i.mx-applications-processors-based-on-arm-cores/i.mx53-processors/i.mx53-quick-start-board:IMX53QSB}, which supports ARM's TrustZone. To illustrate \emph{TrubiZone}'s functionality a Personal Health Record management mobile application will be implemented. This applications allows a user to display, store and edit his personal health information securely, without this sensitive information ever being exposed to an untrusted rich OS such as Android.
 
-%% ISTO DEVE ESTAR NA IMPLEMENTAÇÂO?
+%% ISTO DEVE ESTAR NA ARQUITECTURA?
 %% ==== MOBILE HEALTH APP EXEMPLO ====
 %\subsection{Personal Health Records Application}
-%%FALAR DA APP DE PROTOTIPO, UM FICHEIRO JÁ CIFRADO COM UM PAR DE CHAVES É SACADO USANDO O UNTRUSTED OS. O USER ACEDE À APP ANDROID QUE FAZ A PONTE ENTRE OS DOIS MUNDOS E MANDA LER AQUELE FICHEIRO, O MUNDO SEGURO TOMA CONTA DA MEMORIA E DISPLAY E VAI BUSCAR O FICHEIRO INDICADO. JÁ NO MUNDO SEGURO DECIFRA O FICHEIRO E MOSTRA-O AO UTILIZADOR. O UTILIZADOR PODE EDITAR O FICHEIRO E MANDAR GUARDÁ-LO E DÁ-SE ORIGEM AO PRCESSO INVERSO, EM QUE O MUNDO SEGURO PEGA NO FICHEIRO E CIFRA-O, GUARDA-O NA ZONA DE MEMORIA E RETORNA AO MUNDO INSEGURO QUE PROCEDE A FAZER A STORAGE DESSE FICHEIRO.
+The \ac{PHR} application comprises of an untrusted client Android application which loads the sensitive encrypted file to a dedicated memory region shared by both worlds. This file is the personal health record to be displayed to the user. The client application then notifies the user the file is loaded and the user may proceed with the reliable world switch by pressing the button dedicated for the \ac{NMI} interrupt. After this world switch, the file in the shared memory region is decrypted and shown to the user for editing. The edited file can then be stored securely in the untrusted world by saving it and triggering a new reliable world switch, which encrypts the new file and stores it in the untrusted rich OS.
+
 
 % DIZER QUE COMO IMX53 NAO APRESENTA NMI (INTERRUPTS SEGUROS) TEM QUE SE FAZER O QUE ESTÁ NO PAPER DO TRUSTOTP
 
