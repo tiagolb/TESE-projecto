@@ -3,7 +3,6 @@
 \citation{comscore}
 \citation{research2guidance}
 \citation{marketsandmarkets}
-\citation{fsecure}
 \@writefile{toc}{\contentsline {title}{ViewZone}{1}}
 \@writefile{toc}{\authcount {1}}
 \@writefile{toc}{\contentsline {author}{Tiago Lu\IeC {\'\i }s de Oliveira Brito\unskip \ \ignorespaces  Supervisor: Prof. Nuno Santos}{1}}
@@ -11,18 +10,15 @@
 \AC@undonewlabel{acro:PC}
 \newlabel{acro:PC}{{1}{1}}
 \acronymused{PC}
-\AC@undonewlabel{acro:HIPAA}
-\newlabel{acro:HIPAA}{{1}{2}}
-\acronymused{HIPAA}
-\AC@undonewlabel{acro:CNN}
-\newlabel{acro:CNN}{{1}{2}}
-\acronymused{CNN}
-\acronymused{HIPAA}
+\citation{smalley2013security,bugiel2011practical,nauman2010apex,kern2012permission,conti2011crepe,russello2012moses,heuser2014asm,backes2014android,wang2015deepdroid,drm}
+\citation{ongtang2012semantically,dietz2011quire,bugiel2011xmandroid}
+\citation{beresford2011mockdroid,zhou2011taming,shebaro2014identidroid.enck2014taintdroid}
 \AC@undonewlabel{acro:OS}
 \newlabel{acro:OS}{{1}{2}}
 \acronymused{OS}
 \AC@undonewlabel{acro:TCB}
 \newlabel{acro:TCB}{{1}{2}}
+\acronymused{TCB}
 \acronymused{TCB}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Goals}{2}}
 \acronymused{TCB}
@@ -44,11 +40,11 @@
 \acronymused{PHR}
 \@writefile{toc}{\contentsline {paragraph}{Access threats}{4}}
 \acronymused{PHR}
+\@writefile{toc}{\contentsline {paragraph}{Disclosure threats}{4}}
 \citation{kotz2011threat}
 \citation{avancha2012privacy}
 \citation{he2014security}
 \citation{he2014security}
-\@writefile{toc}{\contentsline {paragraph}{Disclosure threats}{5}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Potential Attack Surface of Commercial Mobile Health Applications}{5}}
 \acronymused{PHR}
 \acronymused{PHR}
@@ -57,28 +53,28 @@
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Description of attack surface (taken from He et al. \cite  {he2014security})}}{6}}
 \newlabel{tab:attacksurfaces}{{1}{6}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}Severity of Attacks to Mobile Health Applications}{6}}
+\AC@undonewlabel{acro:DMB}
+\newlabel{acro:DMB}{{2.1.3}{6}}
+\acronymused{DMB}
 \citation{zhou2013identity}
 \citation{zhou2013identity}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Sensitive information distribution for study 3 (taken from He et al. \cite  {he2014security})}}{7}}
 \newlabel{fig:sensitivedistribution}{{1}{7}}
-\AC@undonewlabel{acro:DMB}
-\newlabel{acro:DMB}{{2.1.3}{7}}
-\acronymused{DMB}
 \acronymused{DMB}
 \citation{he2014security}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Security Mechanisms Map; A-application, R-system resource}}{8}}
 \newlabel{fig:relwork}{{2}{8}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}General-Purpose Mobile Security Mechanisms}{8}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Access Control Mechanisms}{8}}
+\@writefile{toc}{\contentsline {paragraph}{\textbf  {Access control mechanisms}}{8}}
+\AC@undonewlabel{acro:DAC}
+\newlabel{acro:DAC}{{2.2.1}{8}}
+\acronymused{DAC}
 \citation{smalley2013security}
 \citation{peter2001integrating}
 \citation{bugiel2011practical}
 \citation{nauman2010apex}
 \citation{kern2012permission}
-\@writefile{toc}{\contentsline {paragraph}{\textbf  {Access control mechanisms}}{9}}
-\AC@undonewlabel{acro:DAC}
-\newlabel{acro:DAC}{{2.2.1}{9}}
-\acronymused{DAC}
 \acronymused{DAC}
 \acronymused{DAC}
 \AC@undonewlabel{acro:MAC}
@@ -111,10 +107,11 @@
 \AC@undonewlabel{acro:DRM}
 \newlabel{acro:DRM}{{2.2.1}{10}}
 \acronymused{DRM}
+\acronymused{DRM}
 \citation{drm}
 \citation{ongtang2012semantically}
 \citation{dietz2011quire}
-\acronymused{DRM}
+\citation{bugiel2011xmandroid}
 \acronymused{DRM}
 \acronymused{DRM}
 \acronymused{DRM}
@@ -129,7 +126,6 @@
 \AC@undonewlabel{acro:IPC}
 \newlabel{acro:IPC}{{2.2.2}{11}}
 \acronymused{IPC}
-\citation{bugiel2011xmandroid}
 \citation{nunoduarte}
 \citation{beresford2011mockdroid}
 \citation{zhou2011taming}
@@ -216,12 +212,12 @@
 \citation{li2015adattester}
 \citation{sun2015trustotp}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.3}GPFR with Trusted UI}{19}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.4}TA with Trusted UI}{19}}
 \citation{sun2015reliable}
 \citation{knox_whitepaper}
 \citation{smalley2013security}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Architecture comparison between traditional TrustZone's software stack and TrustICE (adapted from\nobreakspace  {}\cite  {sun2015trustice})}}{20}}
 \newlabel{fig:trustICE_architecture}{{5}{20}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.4}TA with Trusted UI}{20}}
 \citation{li2014building}
 \@writefile{toc}{\contentsline {paragraph}{Summary}{21}}
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces TrustZone-based system categorization.}}{22}}
@@ -294,30 +290,29 @@
 \bibcite{kern2012permission}{17}
 \bibcite{kostiainen2012board}{18}
 \bibcite{kotz2011threat}{19}
-\bibcite{fsecure}{20}
-\bibcite{li2015adattester}{21}
-\bibcite{li2014building}{22}
-\bibcite{li2014droidvault}{23}
-\bibcite{trustzone_whitepaper}{24}
-\bibcite{knox_whitepaper}{25}
-\bibcite{marketsandmarkets}{26}
-\bibcite{mcgillion2015open}{27}
-\bibcite{nauman2010apex}{28}
-\bibcite{naveed2014inside}{29}
-\bibcite{ongtang2012semantically}{30}
-\bibcite{peter2001integrating}{31}
-\bibcite{research2guidance}{32}
-\bibcite{russello2012moses}{33}
-\bibcite{santos2011trusted}{34}
-\bibcite{shebaro2014identidroid}{35}
-\bibcite{smalley2013security}{36}
-\bibcite{sun2015reliable}{37}
-\bibcite{sun2015trustotp}{38}
-\bibcite{sun2015trustice}{39}
-\bibcite{wang2015deepdroid}{40}
-\bibcite{wright2006inferring}{41}
-\bibcite{zhou2013identity}{42}
-\bibcite{zhou2011taming}{43}
+\bibcite{li2015adattester}{20}
+\bibcite{li2014building}{21}
+\bibcite{li2014droidvault}{22}
+\bibcite{trustzone_whitepaper}{23}
+\bibcite{knox_whitepaper}{24}
+\bibcite{marketsandmarkets}{25}
+\bibcite{mcgillion2015open}{26}
+\bibcite{nauman2010apex}{27}
+\bibcite{naveed2014inside}{28}
+\bibcite{ongtang2012semantically}{29}
+\bibcite{peter2001integrating}{30}
+\bibcite{research2guidance}{31}
+\bibcite{russello2012moses}{32}
+\bibcite{santos2011trusted}{33}
+\bibcite{shebaro2014identidroid}{34}
+\bibcite{smalley2013security}{35}
+\bibcite{sun2015reliable}{36}
+\bibcite{sun2015trustotp}{37}
+\bibcite{sun2015trustice}{38}
+\bibcite{wang2015deepdroid}{39}
+\bibcite{wright2006inferring}{40}
+\bibcite{zhou2013identity}{41}
+\bibcite{zhou2011taming}{42}
 \newacro{PC}[PC]{Personal Computer}
 \newacro{OS}[OS]{Operating System}
 \newacro{TCB}[TCB]{Trusted Computing Base}

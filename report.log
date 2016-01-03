@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  3 JAN 2016 12:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  3 JAN 2016 20:46
 entering extended mode
 **report.tex
 (report.tex
@@ -563,17 +563,16 @@ hospitals-
 [1
 
 {C:/Users/Tiago/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Package acronym Info: Label `acro:HIPAA' newly defined as it shall be overridde
-n
-although it is yet undefined on input line 21.
-Package acronym Info: Label `acro:CNN' newly defined as it shall be overridden
-although it is yet undefined on input line 21.
+
+LaTeX Warning: Citation `shebaro2014identidroid.enck2014taintdroid' on page 2 u
+ndefined on input line 29.
+
 Package acronym Info: Label `acro:OS' newly defined as it shall be overridden
-although it is yet undefined on input line 26.
+although it is yet undefined on input line 29.
 Package acronym Info: Label `acro:TCB' newly defined as it shall be overridden
-although it is yet undefined on input line 26.
- [2]
-Underfull \hbox (badness 10000) in paragraph at lines 49--57
+although it is yet undefined on input line 29.
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
  []
 
@@ -615,16 +614,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
-[7 <./img/sensitivedistribution.jpg>]
-<img/relwork.pdf, id=34, 621.52202pt x 305.7021pt>
+
+Underfull \vbox (badness 1168) has occurred while \output is active []
+
+ [7 <./img/sensitivedistribution.jpg>] <img/relwork.pdf, id=34, 621.52202pt x 3
+05.7021pt>
 File: img/relwork.pdf Graphic file (type pdf)
- <use img/relwork.pdf>
+
+<use img/relwork.pdf>
 Package pdftex.def Info: img/relwork.pdf used on input line 93.
 (pdftex.def)             Requested size: 225.62817pt x 110.97626pt.
 Package acronym Info: Label `acro:DAC' newly defined as it shall be overridden
 although it is yet undefined on input line 103.
-
-[8 <./img/relwork.pdf>]
+ [8 <./img/relwork.pdf>]
 Package acronym Info: Label `acro:MAC' newly defined as it shall be overridden
 although it is yet undefined on input line 106.
  [9]
@@ -651,33 +653,33 @@ Package acronym Info: Label `acro:IMEI' newly defined as it shall be overridden
 although it is yet undefined on input line 166.
  [12 <./img/communicationattacks.png>]
 Package acronym Info: Label `acro:SoC' newly defined as it shall be overridden
-although it is yet undefined on input line 183.
+although it is yet undefined on input line 179.
 Package acronym Info: Label `acro:PIN' newly defined as it shall be overridden
-although it is yet undefined on input line 183.
+although it is yet undefined on input line 179.
 
 [13]
 Package acronym Info: Label `acro:MMU' newly defined as it shall be overridden
-although it is yet undefined on input line 187.
+although it is yet undefined on input line 183.
 Package acronym Info: Label `acro:GPUs' newly defined as it shall be overridden
 
-although it is yet undefined on input line 189.
+although it is yet undefined on input line 185.
  <img/trustzone.pdf, id=61, 690.17848pt x 440.84702pt>
 File: img/trustzone.pdf Graphic file (type pdf)
 
 <use img/trustzone.pdf>
-Package pdftex.def Info: img/trustzone.pdf used on input line 195.
+Package pdftex.def Info: img/trustzone.pdf used on input line 191.
 (pdftex.def)             Requested size: 277.69987pt x 177.37833pt.
  [14]
 Package acronym Info: Label `acro:TEE' newly defined as it shall be overridden
-although it is yet undefined on input line 204.
- [15 <./img/trustzone.pdf>] [16]
+although it is yet undefined on input line 200.
+ [15 <./img/trustzone.pdf>]
 Package acronym Info: Label `acro:GPFR' newly defined as it shall be overridden
 
-although it is yet undefined on input line 243.
+although it is yet undefined on input line 239.
 Package acronym Info: Label `acro:TA' newly defined as it shall be overridden
-although it is yet undefined on input line 243.
-
-Underfull \hbox (badness 10000) in paragraph at lines 250--250
+although it is yet undefined on input line 239.
+ [16]
+Underfull \hbox (badness 10000) in paragraph at lines 246--246
  [][]\OT1/cmr/m/n/9 http://www.w3.org/2012/webcrypto/webcrypto-next-
  []
 
@@ -685,7 +687,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 250--250
 File: img/trustICE.pdf Graphic file (type pdf)
 
 <use img/trustICE.pdf>
-Package pdftex.def Info: img/trustICE.pdf used on input line 280.
+Package pdftex.def Info: img/trustICE.pdf used on input line 276.
 (pdftex.def)             Requested size: 277.69987pt x 120.26128pt.
  [19] [20 <./img/trustICE.pdf>])
 (sections/6-architecture.tex [21] [22]
@@ -713,54 +715,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--47
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 114--119
-[]\OT1/cmr/m/n/9 F-Secure Labs.  Mo-bile Threat Re-port.  Tech-ni-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--119
-\OT1/cmr/m/n/9 cal re-port, F-Secure Labs., 03 2014.  https://www.f-
- []
-
-
-Underfull \hbox (badness 2181) in paragraph at lines 142--148
+Underfull \hbox (badness 2181) in paragraph at lines 135--141
 []\OT1/cmr/m/n/9 ARM Lim-ited.  ARM Se-cu-rity Tech-nol-ogy - Build-ing a Se-cu
 re Sys-tem
  []
 
 
-Underfull \hbox (badness 2119) in paragraph at lines 142--148
+Underfull \hbox (badness 2119) in paragraph at lines 135--141
 \OT1/cmr/m/n/9 us-ing Trust-Zone Tech-nol-ogy.  Tech-ni-cal re-port, ARM Lim-it
 ed, 04 2009.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--148
+Underfull \hbox (badness 10000) in paragraph at lines 135--141
 \OT1/cmr/m/n/9 http://infocenter.arm.com/help/topic/com.arm.doc.prd29-genc-0094
 92c/PRD29-
  []
 
 
-Underfull \hbox (badness 2875) in paragraph at lines 150--155
+Underfull \hbox (badness 2875) in paragraph at lines 143--148
 []\OT1/cmr/m/n/9 Samsung Elec-tron-ics Co. Ltd.  Sam-sung KNOX - White Pa-per :
  An
  []
 
 
-Underfull \hbox (badness 1087) in paragraph at lines 150--155
+Underfull \hbox (badness 1087) in paragraph at lines 143--148
 \OT1/cmr/m/n/9 Ltd., 04 2013.  http://www.samsung.com/es/business-images/resour
 ce/white-
  []
 
 [28] [29]) [30] (report.aux) ) 
 Here is how much of TeX's memory you used:
- 3818 strings out of 493673
- 51545 string characters out of 3141529
- 133117 words of memory out of 3000000
- 7076 multiletter control sequences out of 15000+200000
+ 3809 strings out of 493673
+ 51490 string characters out of 3141529
+ 132097 words of memory out of 3000000
+ 7067 multiletter control sequences out of 15000+200000
  10295 words of font info for 36 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 33i,11n,22p,2106b,288s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,11n,25p,2106b,288s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
@@ -772,7 +764,7 @@ cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 mr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti1
 0.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.p
 fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on report.pdf (30 pages, 432513 bytes).
+Output written on report.pdf (30 pages, 432001 bytes).
 PDF statistics:
  270 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

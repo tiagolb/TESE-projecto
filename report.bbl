@@ -110,13 +110,6 @@ David Kotz.
 \newblock A threat taxonomy for mhealth privacy.
 \newblock In {\em COMSNETS}, pages 1--6, 2011.
 
-\bibitem{fsecure}
-F-Secure Labs.
-\newblock {Mobile Threat Report}.
-\newblock Technical report, F-Secure Labs., 03 2014.
-\newblock
-  \url{https://www.f-secure.com/documents/996508/1030743/Mobile\_Threat\_Report\_Q1\_2014.pdf}.
-
 \bibitem{li2015adattester}
 Wenhao Li, Haibo Li, Haibo Chen, and Yubin Xia.
 \newblock Adattester: Secure online mobile advertisement attestation using
