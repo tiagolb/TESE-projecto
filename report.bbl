@@ -167,14 +167,6 @@ Mohammad Nauman, Sohail Khan, and Xinwen Zhang.
 \newblock In {\em Proceedings of the 5th ACM Symposium on Information, Computer
   and Communications Security}, pages 328--332. ACM, 2010.
 
-\bibitem{naveed2014inside}
-Muhammad Naveed, Xiaoyong Zhou, Soteris Demetriou, XiaoFeng Wang, and Carl~A
-  Gunter.
-\newblock Inside job: Understanding and mitigating the threat of external
-  device mis-bonding on android.
-\newblock In {\em Proceedings of the 21st Annual Network and Distributed System
-  Security Symposium (NDSS)}, pages 23--26, 2014.
-
 \bibitem{ongtang2012semantically}
 Machigar Ongtang, Stephen McLaughlin, William Enck, and Patrick McDaniel.
 \newblock Semantically rich application-centric security in android.
@@ -248,14 +240,6 @@ Charles~V Wright, Fabian Monrose, and Gerald~M Masson.
 \newblock On inferring application protocol behaviors in encrypted network
   traffic.
 \newblock {\em The Journal of Machine Learning Research}, 7:2745--2769, 2006.
-
-\bibitem{zhou2013identity}
-Xiaoyong Zhou, Soteris Demetriou, Dongjing He, Muhammad Naveed, Xiaorui Pan,
-  XiaoFeng Wang, Carl~A Gunter, and Klara Nahrstedt.
-\newblock Identity, location, disease and more: Inferring your secrets from
-  android public resources.
-\newblock In {\em Proceedings of the 2013 ACM SIGSAC conference on Computer \&
-  communications security}, pages 1017--1028. ACM, 2013.
 
 \bibitem{zhou2011taming}
 Yajin Zhou, Xinwen Zhang, Xuxian Jiang, and Vincent~W Freeh.
