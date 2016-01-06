@@ -75,9 +75,10 @@ Security measures and regulatory laws are implemented for custom healthcare info
 
 \subsection{General-Purpose Mobile Security Mechanisms}
 
-This section describes the security mechanisms available for the Android platform, either native or as security extensions, and how these mechanisms can be used to solve some of the problems covered in the previous section. The security mechanisms addressed are divided in four groups: \emph{(a)} access control mechanisms, \emph{(b)} application communication monitoring, \emph{(c)} privacy enhancement systems and \emph{(d)} trusted execution environment. Figure~\ref{fig:relwork} maps these four groups to a representation of a possible mobile system.
+This section describes the security mechanisms available for the Android platform, either native or as security extensions, and how these mechanisms can be used to solve some of the problems covered in the previous section. Since many security mechanisms have been proposed, we divide them into groups to reflect the different ways in which sensitive information is protected: (a) access control mechanisms enforce security policies that prevent access to sensitive resources by a given application, (b) application communication monitoring ensures that sensitive data that was read by a given application can be securely exchanged with co-located applications, (c) privacy enhancement systems aim to prevent privacy breaches by applications that have read from sensitive resources and need to share that data with Internet services, and (d) trusted execution systems provide restricted environments in which security-sensitive data can be processed while trusting in a smaller amount of code than in the typical system operation. Figure~\ref{fig:relwork} maps these four groups to a representation of a possible mobile system.
 
-%Since many security mechanisms have been proposed, we divide them into groups to reflect the different ways in which sensitive information is protected: (a) access control mechanisms enforce security policies that prevent access to sensitive resources by a given application, (b) application communication monitoring ensures that sensitive data that was read by a given application can be securely exchanged with co-located applications, (c) privacy enhancement systems aim to prevent privacy breaches by applications that have read from sensitive resources and need to share that data with Internet services, and (d) trusted execution systems provide restricted environments in which security-sensitive data can be processed while trusting in a smaller amount of code than in the typical system operation.
+%BEFORE
+%The security mechanisms addressed are divided in four groups: \emph{(a)} access control mechanisms, \emph{(b)} application communication monitoring, \emph{(c)} privacy enhancement systems and \emph{(d)} trusted execution environment.
 
 \begin{figure}[t!]
 	\centering
@@ -85,7 +86,6 @@ This section describes the security mechanisms available for the Android platfor
 	\caption{Security Mechanisms Map; A-application, R-system resource}
 	\label{fig:relwork}
 \end{figure}
-%Podes chamar a isto Trusted Execution System
 
 \subsubsection{Access Control Mechanisms}
 
@@ -93,48 +93,34 @@ This section describes the security mechanisms available for the Android platfor
 
 % TENTAR RESUMIR ISTO MAIS UM BOCADINHO?
 %Não ponhas em bold-itálico; ao fim e ao cabo, isto é o título da subsecção. ENTAO FAÇO O QUE?
-\paragraph{\textbf{Access control mechanisms}} implement security models in which subjects (e.g. user, processes, threads, etc.) are constrained by a security policy to perform certain actions on the system, namely access to resources (e.g. files, sensors, etc.), typically called objects. Android follows a type of access control referenced as \ac{DAC}, heritage from it's Linux based kernel. %Atenção que o Android herda de DAC, mas também tem MAC, nomeadamente na implementação do próprio modelo de permissões do Android. Clarifica isso logo antes de dizer que "Android follows..."
-In a \ac{DAC} system the data owner is responsible for this data and thus determines who can access it. %In a Linux system, one can imagine a system administrator creating several files and allowing access to these files, according to certain permissions. In this example, a subject with the specified permissions may access the file like its owner intended.
-In Android, an application can create and store files in the filesystem, thus becoming the sole owner of these files, it can allow access to these files to any other application.
+\paragraph{\textbf{Access control mechanisms}} implement security models in which subjects (e.g. user, processes, threads, etc.) are constrained by a security policy to perform certain actions on the system, namely access to resources (e.g. files, sensors, etc.), typically called objects. Android inherits a \ac{DAC} access control mechanism from it's Linux based kernel, but some system resources, such as the IPC Binder mechanism, are accessed via \ac{MAC} policies. In a \ac{DAC} system the data owner is responsible for this data and thus determines who can access it. In Android, an application can create and store files in the filesystem, thus becoming the sole owner of these files, and it can allow access to these files to any other application. In \ac{MAC}, subjects are much more restricted in determining specific permissions because the restrictions on these resource permissions are defined by a global system policy instead. In the Android operating system once a subject attempts to access an object, it triggers a policy evaluation by the kernel, which assesses whether the access may be granted. The advantage of this strict system is its robustness and restrictiveness, because subjects cannot override or modify the security policy. In Android, applications must specify in their manifest the permissions they require at runtime, and after the installation neither applications nor users have any control over the access policies.
 
-% se calhar tirar o exemplo da physical security para não confundir o leitor
-Although Android inherits the \ac{DAC} from its Linux ancestry, most other resources in Android follow \ac{MAC} policies. In \ac{MAC}, subjects are much more restricted in determining who has access to their resources. An example of this are physical security levels: confidential, secret and top secret. These labels are the only concept available to define the level of clearance of subjects or to classify data. When a subject attempts to access a classified piece of data, a verification is done to assess if this subject's security level matches (or is above) that of the classified piece of data. Similarly, in Android once a subject attempts to access an object, it triggers a policy evaluation by the kernel, which assesses whether the access may be granted. The advantage of this strict system is its robustness, because subjects cannot override or modify the security policy. In Android, applications must specify in their manifest the permissions they require at runtime, and after the installation neither applications nor users have any control over the access policies.
-
-%Atenção que isto não está inteiramente correcto. Estuda melhor a diferenca entre MAC e DAC. DAC quer dizer que o acesso a um objecto é totalmente determinado pelo dono do objecto. Por exemplo, no Linux os utilizadores podem livremente mudar as permissões dos seus ficheiros. Com MAC já não é assim. Por exemplo, com SELinux há restrições a mudança de permissões que podem ser feitas pelo dono do recurso. Essas restrições são definidas por uma política de segurança global. Sugiro que leias mais sobre DAC e MAC em Android na net. Vê na pg. 8: http://www.zhauniarovich.com/files/asani/asani.pdf
-
-Because \ac{MAC} is robust, several systems were created over the years to extend \ac{MAC}'s access control model to other Android resources. SEAndroid~\cite{smalley2013security} solves problems related to resources complying with the \ac{DAC} mechanism. The authors ported SELinux~\cite{peter2001integrating} to provide \ac{MAC} at the kernel layer. The kernel was then modified to support a new \ac{MAC} policy (e.g., filesystem, IPC) and a new middleware layer (MMAC) was created to extend \ac{MAC} to Android's Binder IPC. TrustDroid~\cite{bugiel2011practical} extends the \ac{MAC} mechanism to all the platform's resources in order to isolate different domains' sensitive information.
-% clarificar porque é que o MAC é robusto
+Because \ac{MAC} is more restrictive, several systems were created over the years to extend \ac{MAC}'s access control model to other Android resources. SEAndroid~\cite{smalley2013security} solves problems related to resources complying with the \ac{DAC} mechanism. The authors ported SELinux~\cite{peter2001integrating} to provide \ac{MAC} at the kernel layer. The kernel was then modified to support a new \ac{MAC} policy (e.g., filesystem, IPC) and a new middleware layer (MMAC) was created to extend \ac{MAC} to Android's Binder IPC. TrustDroid~\cite{bugiel2011practical} extends the \ac{MAC} mechanism to all the platform's resources in order to isolate different domains' sensitive information.
 
 \paragraph{\textbf{Permission Refinement}} %ISTO TEM QUE SER RESUMIDO MAIS UM POUCO
 
-The Android permission mechanism is a very restricted system. At install time, a list of permissions an application specifies in its manifest file is shown to the user, which is forced into a binary decision, either granting all permissions or quitting the installation. This is an inflexible solution, which makes it impossible for users to have full control of the permissions an application effectively requires at runtime. This inflexibility allows apps to use the device's resources whenever the app wishes without the user's knowledge, possibly with malicious intent.
-% acho que também é o problema de uma aplicação poder solicitar mais permissões do que aquelas que ela efectivamente precisa. Isso é também uma motivação para permission refinement.
+The Android permission mechanism is a very restricted system. At install time, a list of permissions an application specifies in its manifest file is shown to the user, which is forced into a binary decision, either granting all permissions or quitting the installation. Furthermore, some of these applications may even require more permissions than those effectively needed. This is an inflexible solution, which makes it impossible for users to have full control of the permissions an application effectively requires at runtime. This inflexibility allows apps to use the device's resources whenever the app wishes without the user's knowledge, possibly with malicious intent.
 
 Over the years, many systems aimed at improving the state of affairs through permission refinement. APEX~\cite{nauman2010apex} modified Android's permission model to allow users to specify the assignment of permissions to each app, both at install and runtime. Permission Tracker~\cite{kern2012permission} allows users to be informed on how the permissions are used at runtime and offers the possibility of revoking these permissions. Furthermore, a user can specify which permissions are of interest so they can be notified of every permission access and decide whether to grant or deny that access. These systems improve upon the original Android permission model, but require manual configuration by the user. % tempo verbal no they
 A more useful solution would be to use a context-aware system to handle the permissions at runtime. This way it may be possible to, without manual configuration, restrict permissions to all applications running along side a security sensitive app, thus isolating this application and avoiding possible leaks by shared resources.
 
-Several context-aware permission refinement systems exist. Trusted third parties can use CRePE~\cite{conti2011crepe} to enforce security policies on another devices whilst, for example, the employees' mobile devices are inside the company, but have no privileges otherwise. % melhorar ingles desta frase
-Similarly, MOSES~\cite{russello2012moses} enforces domain isolation through the concept of security profiles. MOSES can switch security profiles based on pre-established conditions (e.g., GPS coordinates and time).
+There are several context-aware permission refinement systems developed by the research community. Trusted third parties can use CRePE~\cite{conti2011crepe} to enforce security policies on another devices. For example, an employer may enforce a security policy on the employees' mobile devices when inside the company, in order to protect the company's interest.
+Similarly, MOSES~\cite{russello2012moses} enforces domain isolation through the concept of security profiles, allowing it to switch security profiles based on pre-established conditions (e.g., GPS coordinates and time).
 %When switching from a personal (less restrictive) profile to a professional (more restrictive) one, MOSES terminates and prevents the execution of applications not allowed to run in the new enforced profile.
 Additionally, MOSES leverages TaintDroid~\cite{enck2014taintdroid} to prevent apps from one profile to access data belonging to another. Both CRePE and MOSES suffer from a device control issue where a third party defines a policy that cannot be revoked by the user. Moreover, a user has no way to deny the enforcement of a third party policy. 
 
 \paragraph{\textbf{Access Control Hook APIs}}
 
-Most security extensions, such as CRePE~\cite{conti2011crepe} or MOSES~\cite{russello2012moses}, require modifying and adding components to the kernel and middleware layers in order to implement new security models. Some frameworks have been built to ease the development process by allowing developers to easily create security models as ordinary apps whilst benefiting from a full callback system capable of notifying the security enforcement applications of accesses and requests to some of the apps' resources of interest.
-%Está complexo, simplifica esta ultima frase
+Most security extensions, such as CRePE~\cite{conti2011crepe} or MOSES~\cite{russello2012moses}, require modifying and adding components to the kernel and middleware layers in order to implement new security models. Some frameworks, such as \ac{ASM}~\cite{heuser2014asm} and \ac{ASF}~\cite{backes2014android}, have been built by the research community in order to ease this development process. These frameworks allow developers to easily create new security models as ordinary Android applications whilst benefiting from a full callback system, which allows these apps to be notified of accesses to resources of interest.
 
-These frameworks comprise a set of hooks distributed among the kernel and middleware layers, which can be registered by a secure application. When a hook is activated it triggers a callback from the Hook API module, which in turn is forwarded to the app for verification. The app then decides if the operation that triggered the activation of the hook may or may not proceed. The main advantage of frameworks such as \ac{ASM}~\cite{heuser2014asm} and \ac{ASF}~\cite{backes2014android} is the flexibility and freedom given to developers in choosing whatever resources to manage.
-%Refere estas frameworks mais cedo no texto assim que fales de frameworks no parágrafo anterior.
+These frameworks comprise a set of hooks distributed among the kernel and middleware layers, which can be registered by a secure application. When a hook is activated it triggers a callback from the Hook API module, which in turn is forwarded to the app for verification. The app then decides if the operation that triggered the activation of the hook may or may not proceed. The main advantage of these frameworks is the flexibility and freedom given to developers in choosing whatever resources to manage.
 
 \paragraph{\textbf{Memory Instrumentation}}
-%liga melhor esta transicção: qual é a relação de memory instrumentation com access control mechanisms? Pelo que eu percebo a ideia é refinar o controlo de acesso às aplicações através de técnicas de análise de código da aplicação.
 
-Memory instrumentation can be divided in two groups: static memory instrumentation and dynamic memory instrumentation. While static memory instrumentation changes already compiled bytecode, dynamic instrumentation patches running processes. Dynamic memory instrumentation is an interesting mechanism as it supports the enforcement of new security models. DeepDroid~\cite{wang2015deepdroid} relies on dynamic memory instrumentation to enforce fine-grained context-aware security policies for enterprise.%Esta ideia é a mais importante para motivar memory instrumentation. Coloca no início do parágrafo.
-This is done by patching several system services and tracing system calls.
+Memory instrumentation leverages application code analysis techniques to restrict access from those applications to the corresponding resources, thus can be used as an access control mechanism. Memory instrumentation can be divided in two groups: static memory instrumentation and dynamic memory instrumentation. While static memory instrumentation changes already compiled bytecode, dynamic instrumentation patches running processes, and for this reason it supports the enforcement of new security models. DeepDroid~\cite{wang2015deepdroid} relies on dynamic memory instrumentation to enforce fine-grained context-aware security policies for enterprise and does this by patching several system services and tracing system calls to resources of interest.
 
 \paragraph{\textbf{Digital Rights Management}} is a specific access control technology which allows data owners to restrict if and how their data can be copied and also how it can be handled once transferred to another device. The \ac{DRM} ecosystem is composed of the following entities:
 
-% estruturar melhor esta lista
 \begin{itemize}
 	\item \emph{User} - human user of the DRM Content
 	\item \emph{Content Issuer} - entity that delivers the content
@@ -143,26 +129,11 @@ This is done by patching several system services and tracing system calls.
 	\item \emph{\ac{DRM} Agent} - trusted entity responsible for enforcing permissions and constraints upon the \ac{DRM} content
 \end{itemize}
 
-To understand how \ac{DRM} works in the context of mHealth one can suggest a simple example of a \ac{PHR} mobile health application. In this scenario, the healthcare provider (e.g. a hospital) would be the \emph{content issuer}, and it would use a \emph{rights issuer} to assign the restrictions imposed upon the \ac{DRM} content, which in this case would be the personal health record of a patient, when this content is transferred to the patient's device. When using \ac{DRM}, the patient is limited to access the content through a \emph{\ac{DRM} Agent}.
-%Isto não resolve toda a nossa vida? (nao tem secure IO)
-
 The \ac{OMA} developed a DRM standard~\cite{drm} which defines the format of the content delivered to DRM Agents, as well as the way this content can be transferred from the Content Issuer to the DRM Agent. Android provides an extensible DRM framework, called Android DRM Framework~\footnote{http://developer.android.com/reference/android/drm/package-summary.html}, allowing application developers to enable their apps to manage rights-protected content by complying with one of the supported DRM schemes (specific mechanisms, enforced by DRM Agents, to handle particular types of files).
 
+To understand how \ac{DRM} works in the context of mHealth one can suggest the simple example of a \ac{PHR} mobile health application. In this scenario, the healthcare provider (e.g. a hospital) would be the \emph{content issuer}, and it would use a \emph{rights issuer} to assign the restrictions imposed upon the \ac{DRM} content, which in this case would be the personal health record of a patient, when this content is transferred to the patient's device. When using \ac{DRM}, the patient is limited to access the content through a \emph{\ac{DRM} Agent}. Although this solution seems to fit the security properties a critical applications requires, once again the whole operating system is considered as trusted computing base, and resources shared by different applications such as the framebuffers and display devices may leak sensitive information if the system would become compromised.
+
 \subsubsection{Application Communication Monitoring}
-
-Another problematic mechanism in Android is the way applications interact with each other. Some problems were already described in section~\ref{sec:mhealth} regarding vulnerable mobile health applications, which fall into this category.
-% Qual é o primeiro problematic mechanism? Tens que clarificar isto pois o leitor já não se lembra.
-Two attacks will be described in this section, followed by systems developed to mitigate such attacks on Android. The attacks described are called \emph{Confused Deputy Attacks} and \emph{Collusion Attacks} and are represented in Figure~\ref{fig:communicationattacks}.
-
-Confused deputy attacks basically consist of unprivileged applications taking advantage of other applications’ publicly accessible APIs to perform malicious actions. Collusion attacks consist of an app, which might not have permission to perform an operation, still being able to perform it if there exists another app, belonging to the same developer, installed on the user’s device with the permission to perform said operation. This happens because Android’s permission system is based on UIDs.
-% Explica melhor isto com base na figura (a).
-
-Confused deputy attacks allow applications to use resources without explicitly specifying the necessary permission to do so. %A simple example is an app that exposes a service on its API allowing another app to receive photos directly from the device's camera. The second app, which did not specify the camera permission, can access this sensor without the user's knowledge. This problem generally happens because of poor or negligence application development.
-A system  called Saint~\cite{ongtang2012semantically} was created to specify which apps can access the public APIs of another app. Other systems control this communication by extending Android’s Binder \ac{IPC} mechanism, which is the main form of application inter-communication in Android.
-% Melhora a transição da frase anterior para esta para se perceber melhor que o Saint tem como objectivo mitigar este tipo de ataques.
-QUIRE~\cite{dietz2011quire} denies access to an API if in the message exchanged between apps, which contains the full call chain context, the source of the request does not have the necessary permission to access the corresponding data.
-
-Collusion attacks are based on a malicious developer building a legitimate application and persuading the user to install a second app with different permissions. Both apps can collude to leak sensitive information by cooperating with each other. XManDroid~\cite{bugiel2011xmandroid} extends the Android permission model in order to support policies that could constrain the way apps interact with each other. This system prevents data leakage or other types of collusion attacks by developing a graph at runtime with a representation of the apps’ interactions, which is then used to regulate app inter-communication.
 
 \begin{figure}[t!]
 	\centering
@@ -170,6 +141,14 @@ Collusion attacks are based on a malicious developer building a legitimate appli
 	\caption{Confused deputy attack (a); Collusion attack (b) - (taken from Duarte \cite{nunoduarte})}
 	\label{fig:communicationattacks}
 \end{figure}
+
+The Android operating system implements a middleware mechanism called Inter-Process Communication (IPC) which allows different processes, i.e. applications, to communicate between each other and controls how apps access system components and other apps. But this mechanism can be abused such that applications access unauthorized resources or data. In this section we describe two attacks based on Android's IPC mechanism followed by systems developed to mitigate such attacks. The attacks described are called \emph{Confused Deputy Attacks} and \emph{Collusion Attacks} and are represented in Figure~\ref{fig:communicationattacks}.
+
+Confused deputy attacks basically consist of unprivileged applications taking advantage of other applications’ publicly accessible APIs to perform an unauthorized action. If App 2 publicly allows other apps to use the Internet though its API, then the user is unaware that App 1 can use the Internet without explicitly requesting it in Android's manifest. Collusion attacks consist of an app, which might not have permission to perform an operation, still being able to perform it if there exists another app, belonging to the same developer, installed on the user’s device with the permission to perform said operation. This happens because Android’s permission system is based on UIDs.
+
+Confused deputy attacks allow applications to use resources without explicitly specifying the necessary permission to do so, and to mitigate such attacks the research community developed Saint~\cite{ongtang2012semantically} and QUIRE~\cite{dietz2011quire}. Saint was created to specify which apps can access the public APIs of another app. Other systems control this by extending Android’s \ac{IPC} mechanism. QUIRE denies access to an API if in the message exchanged between apps, which contains the full call chain context, the source of the request does not have the necessary permission to access the corresponding data.
+
+Collusion attacks are based on a malicious developer building a legitimate application and persuading the user to install a second app with different permissions. Both apps can collude to leak sensitive information by cooperating with each other. XManDroid~\cite{bugiel2011xmandroid} extends the Android permission model in order to support policies that could constrain the way apps interact with each other. This system prevents data leakage or other types of collusion attacks by developing a graph at runtime with a representation of the apps’ interactions, which is then used to regulate app inter-communication.
 
 \subsubsection{Privacy Enhancement Systems}
 
@@ -241,108 +220,112 @@ After describing and assessing the available technology, one can argue which mec
 These systems may be helpful in developing new access control policies or mitigating vulnerabilities caused by negligent development, but are not sufficient to build privacy-sensitive applications. % porquê?
 Privacy enhancement systems focus on detecting and preventing data leakage instead of providing a framework for developers to build privacy-sensitive applications, for this reason these systems do not fulfil the needs of this project. % muito vago. Mais claro.
 Besides the problems discussed above, all these mechanisms suffer from a critical limitation, both the middleware and the underlying kernel are considered as trusted computing base. This means that if a malicious app is capable of compromising these layers, then a critical application is compromised as well, and the data it protects may be accessible by a malicious party. The only solution for the problem described is using a \ac{TEE}. % vago
-As shown in table~\ref{tab:securityMechanismsComparison}, the \ac{TEE} solutions are the only solutions which work either with a trusted OS and a compromised OS.
+%As shown in table~\ref{tab:securityMechanismsComparison}, the \ac{TEE} solutions are the only solutions which work either with a trusted OS and a compromised OS.
 
 To accomplish the goals of this project, a completely secure flow of execution is needed, this means that privacy-sensitive data must never leave the trusted security perimeter. %o que é o trusted security perimeter? dizer que é para nao fazer o leakage
 A system which does not support secure I/O greatly limits the functionality offered by a \ac{PHR} application, to the point where it becomes useless. For this reason, both the external and internal hardware security modules were discarded. On a different note, the virtualization solution seems promising, but with all the problems related to sharing resources such as \ac{GPUs} and other system buses, and because total isolation is needed, which is not easily achievable using virtualization by it self, this security module is not appropriate for this project. TrustZone technology seems to be the most complete system of all the \ac{TEE} solutions, as it mitigates recurring problems from other mechanisms. For this reason, the next section will focus on describing some state-of-the-art TrustZone-based systems, as it is the only security mechanism suitable for the needs of this project.
 
-% Please add the following required packages to your document preamble:
-% \usepackage{graphicx}
-\begin{table}[t!]
-	\centering
-	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{|P{5cm}||P{2.3cm}|P{2.3cm}|P{2.3cm}|P{2.3cm}|}
-			\hline
-			\multirow{2}{*}{Security Mechanism} & \multicolumn{2}{c|}{Correct OS}  & \multicolumn{2}{c|}{Compromised OS} \\ \cline{2-5}
-			& Confidentiality & Data Integrity & Confidentiality & Data Integrity    \\ \hline \hline
-			Access Control Mechanisms			& \cmark 		  & \cmark         & \xmark          & \xmark            \\ \hline
-			App Communication Monitoring    	& \xmark          & \xmark         & \xmark          & \xmark            \\ \hline
-			Privacy Enhancement Systems         & \cmark          & \cmark         & \xmark          & \xmark            \\ \hline
-			Digital Rights Management           & \cmark          & \cmark         & \xmark          & \xmark            \\ \hline
-			TrUbi					            & \cmark          & \cmark         & \xmark          & \xmark            \\ \hline
-			External Hardware Security	        & \cmark          & \cmark         & \cmark          & \cmark            \\ \hline
-			Internal Hardware Security	        & \cmark          & \cmark         & \cmark          & \cmark            \\ \hline
-			Software Virtualization		        & \cmark          & \cmark         & \cmark          & \cmark            \\ \hline
-			TrustZone        					& \cmark          & \cmark         & \cmark          & \cmark            \\ \hline
-		\end{tabular}
-	}
-	\caption{Comparison between security mechanisms with and without a compromised Operating System (Android).}
-	\label{tab:securityMechanismsComparison}
-\end{table}
+%% Please add the following required packages to your document preamble:
+%% \usepackage{graphicx}
+%\begin{table}[t!]
+%	\centering
+%	\caption{Comparison between security mechanisms with and without a compromised Operating System (Android).}
+%	\label{tab:securityMechanismsComparison}
+%	\resizebox{\textwidth}{!}{%
+%		\begin{tabular}{|P{5cm}||P{2.3cm}|P{2.3cm}|P{2.3cm}|P{2.3cm}|}
+%			\hline
+%			\multirow{2}{*}{Security Mechanism} & \multicolumn{2}{c|}{Correct OS}  & \multicolumn{2}{c|}{Compromised OS} \\ \cline{2-5}
+%			& Confidentiality & Data Integrity & Confidentiality & Data Integrity    \\ \hline \hline
+%			Access Control Mechanisms			& \cmark 		  & \cmark         & \xmark          & \xmark            \\ \hline
+%			App Communication Monitoring    	& \xmark          & \xmark         & \xmark          & \xmark            \\ \hline
+%			Privacy Enhancement Systems         & \cmark          & \cmark         & \xmark          & \xmark            \\ \hline
+%			Digital Rights Management           & \cmark          & \cmark         & \xmark          & \xmark            \\ \hline
+%			TrUbi					            & \cmark          & \cmark         & \xmark          & \xmark            \\ \hline
+%			External Hardware Security	        & \cmark          & \cmark         & \cmark          & \cmark            \\ \hline
+%			Internal Hardware Security	        & \cmark          & \cmark         & \cmark          & \cmark            \\ \hline
+%			Software Virtualization		        & \cmark          & \cmark         & \cmark          & \cmark            \\ \hline
+%			TrustZone        					& \cmark          & \cmark         & \cmark          & \cmark            \\ \hline
+%		\end{tabular}
+%	}
+%\end{table}
 % Confesso que não sei bem a que te referes com confidentiality e integrity; estes sistemas são muito diferentes uns dos outros...
 
 % TRUSTZONE
 \subsection{TrustZone-based Mobile Security Systems}
 
-The research community has been experimenting with trusted execution environments in order to achieve better solutions for common security problems, such as two-factor authentication or cryptographic key generation.
-% Aqui não deves referir-te a TEE pois TEE é apenas um caso particular de um tipo de sistemas que podes construir com trustzone. Eu entraria logo a dizer que a tecnologia ARM TrustZone é um tipo de trusted hardware que permite o desenvolvimento de um conjunto variado de serviços / sistemas de segurança, como por exemplo X ou Y. Dizer que um dos aspectos chaves desta technologia tem a ver com o facto de permitir execução de código em isolamento do sistema operativo e portanto permitir reduzir a trusted computing base do sistema.
-Among the available \ac{TEE} supported architectures, ARM's TrustZone is the one which has been used the most by researchers and companies world-wide, this is because the deployment potential for these new security applications is tremendous, as most modern ARM processors support this technology.
-% evita este tipo de adjectivos "propagandísticos"
+The research community has been experimenting with hardware security architectures in order to achieve better solutions for common security problems, such as two-factor authentication or cryptographic key generation. Among the available security architectures there is ARM's TrustZone technology, a trusted hardware which allows the development of a diverse set of security systems and services, such as Samnsung KNOX and DroidVault. TrustZone is becoming popular as it support code to be executed isolated from a full-featured operating system such as Android. This allows for a reduced trusted computing base on the critical applications running in the isolated environment.
 
-%COPIADO, REVER
-Several \ac{TEE} software stack implementations have been designed since the concept was formalized around 2007 by the OMTP standardization forum, which issued a set of security requirements on functionality a TEE should support. The GlobalPlatform~\footnote{https://www.globalplatform.org/} organization went a step further by defining standard APIs: on the one hand, the TEE internal APIs that a Trusted Application can rely on, and on the other hand, the communication interfaces that rich OS software can use to interact with its Trusted Applications. It is worth noting that, because the TEE threat model assumes that nothing coming from the rich OS is trustworthy, the designer of a TA (Trusted Application) must assume that the rich-OS-side client of the TA may not be legitimate.
-% Para iniciar este parágrafo, podes dizer que um dos usos mais importantes de TZ é para suportar o desenvolivmento de trusted execution environments (TEE), e depois explicar.
+One of the most important uses of TrustZone is for building trusted execution environments (TEE), which are compact systems running in the secure world of the TrustZone hardware in order to provide and isolated environment for critical applications. Since its formal standardization by the OMTP in 2007, several \ac{TEE} software stack architectures have been implemented. This standard comprises a set of security requirements on functionality a TEE should support. The GlobalPlatform~\footnote{https://www.globalplatform.org/} organization went a step further by defining standard APIs: on the one hand, the TEE internal APIs that a trusted application can rely on, and on the other hand, the communication interfaces that rich OS software can use to interact with its trusted applications. It is worth noting that, because the TEE threat model assumes that nothing coming from the rich OS is trustworthy, the designer of a trusted application must assume that the rich OS side client of the trusted application may not be legitimate.
 
-% DIZER TBM QUE SER COMPLIANT COM ESSAS APIS PERMITEM QUE TRUSTED APPS CONSTRUIDAS SOBRE UM TEE FUNCIONAM NOUTRO QUE SUPORTE A API
+When surveying the literature, TrustZone-based systems can be divided in two separate groups: Trusted Kernels, and special-purpose Trusted Services. Trusted Kernels allow the execution of generic code in the secure world environment, whilst a Trusted Service implements a specific application in the secure domain. With a more thorough analysis, one can divide each of these categories even further, with regards to trusted user interface (UI). A TrustZone-based system features Trusted UI capability if it allows secure world components to directly access the mobile interface without interference from the rich OS, thus minimizing the risk of, for instance, password logging.
 
-When surveying the literature, TrustZone-based systems can be divided in two separate groups: \ac{GPFR}, and special-purpose \ac{TA}. \ac{GPFR} represent tool kits for building secure special-purpose operating systems or runtimes, which allow the development of Trusted Applications. Special-purpose \ac{TA} are secure applications, built on top of \ac{GPFR} systems, which are executed in the trusted execution environment to achieve a specific security property. With a more thorough analysis, one can divide each of these categories even further, with regards to trusted user interface (UI). 
-% Eu não usaria o termo TEE feature, pois pode não ser associado exclusivamente a TEE. Podes dizer que a TrustZone-based system features Trusted UI capability if it allows secure world components to directly access the mobile interface without interference from the rich OS...
-Trusted UI is a \ac{TEE} feature capable of ensuring that the correct information is displayed to the user and that this information is secure from the risk of, for instance, password logging, as well as allowing logs and statement information to be securely displayed to the user.
+For this reason, this section categorizes TrustZone-enabled systems into four subsections: \emph{(i)} Trusted Kernels with Untrusted UI, \emph{(ii)} Trusted Services with Untrusted UI, \emph{(iii)} Trusted Kernels with Trusted UI and \emph{(iv)} Trusted Services with Trusted UI. Table~\ref{tab:trustzonesystemscomparison} categorizes the systems described in the following subsections.
 
-% Gosto do facto de teres atribuido nomes específicos, mas talvez simplificar um pouco as designações e os conceitos, por exemplo Trusted Kernels (TK), e Trusted Services (TS). Um TK permite a execução código genérico no mundo seguro, um TS implementa uma aplicação específica no mundo seguro.
-
+% TODO ENTREGA
 % Não me chocaria se dissesses à partida em que quadrante encaixarias o sistema que queres conceber e porquê.
 
-For this reason, this section categorizes TrustZone-enabled systems into four subsections: \emph{(i)} GPFR with Untrusted UI, \emph{(ii)} TA with Untrusted UI, \emph{(iii)} GPFR with Trusted UI and \emph{(iv)} TA with Trusted UI.
-% Coloca a Tabela 3 nesta página.
+\begin{table}[t!]
+	\caption{TrustZone-based system categorization.}
+	\label{tab:trustzonesystemscomparison}
+	\centering
+	%\resizebox{\textwidth}{!}{%
+	\begin{tabular}{ c|c|c| }
+		\multicolumn{1}{c}{} 	& \multicolumn{1}{c}{Untrusted UI} 	& \multicolumn{1}{c}{Trusted UI} \\ \cline{2-3}
+		\multirow{5}{*}{TAs} 	&									& \\
+		& Android Key Store					& TrustOTP \\
+		& DroidVault 						& TrustDump \\
+		& Brasser et al.					& AdAttester \\
+		& 									& TrustUI \\
+		&									& \\
+		\cline{2-3}
+		\multirow{5}{*}{GPFR}	&									& \\
+		& TLK								& Genode \\
+		& OP-TEE 							& T6 \\
+		& Andix OS							& TrustICE \\
+		& Nokia ObC							& SierraTEE \\
+		& TLR 								& Samsung KNOX \\
+		&									& \\
+		\cline{2-3}
+	\end{tabular}
+	%}
+\end{table}
 
-% ESTES NOMES ESTAO ESQUISITOS, PERGUNTAR AO PROF POR OUTRO NOME
-\subsubsection{GPFR with Untrusted UI}
+\subsubsection{Trusted Kernels with Untrusted UI}
 
-% Começas muito abruptamente. Tens que explicar novamente o que é GPFR para depois avançares.
+Trusted Kernels have the goal of executing generic code in its isolated environment, and most of theses kernels have similar architectures (similar to the one shown in section~\ref{sec:tee}). This architecture is generally composed of a small trusted kernel running in the isolated secure world of TrustZone-enabled processors, a normal world user space client API and a kernel TEE device driver, used to communicate between worlds.
 
-Most of the \ac{TEE} software stack implementations have similar architectures (similar to the one shown in section~\ref{sec:tee}). This architecture is generally composed of a small trusted kernel running in the isolated secure world of TrustZone-enabled processors, a normal world user space client API and a kernel TEE device driver used to communicate between worlds. OP-TEE~\footnote{https://wiki.linaro.org/WorkingGroups/Security/OP-TEE}, TLK\footnote{http://www.w3.org/2012/webcrypto/webcrypto-next-workshop/papers/webcrypto2014\_submission\_25.pdf}, TLR~\cite{santos2011trusted} and AndixOS~\cite{fitzekandix} are \ac{TEE} implementations which share this general architecture. Although these systems use TrustZone's hardware based isolation to ensure that applications running inside the secure world are not tempered with by a compromised rich OS, they were implemented with the goal of reducing the \ac{TCB} in order to ensure a less vulnerable system. there are some limitations regarding the applications it can support.
+OP-TEE~\footnote{https://wiki.linaro.org/WorkingGroups/Security/OP-TEE}, TLK\footnote{http://www.w3.org/2012/webcrypto/webcrypto-next-workshop/papers/webcrypto2014\_submission\_25.pdf}, TLR~\cite{santos2011trusted} and AndixOS~\cite{fitzekandix} are \ac{TEE} implementations which share this general architecture. On-board Credentials (ObC)~\cite{kostiainen2012board} is another \ac{TEE} system, originally developed for Nokia mobile devices using the TI M-Shield technology and later ported to ARM's TrustZone, which supports the development of secure credential and authentication mechanisms. Although these systems use TrustZone hardware based isolation to ensure that applications running inside the secure world are not tempered with by a compromised rich OS, they were implemented with the goal of reducing the \ac{TCB} in order to ensure a less vulnerable system, and for this reason there are some limitations regarding the features they can support.
 
+%TODO ENTREGA
 % Estes sistemas não têm publicações associadas?
+A reduced \ac{TCB} means that most features of standard mobile operating systems are not supported, for instance, in both TLR and OP-TEE, as well as AndixOS, the secure world kernel lacks drivers for peripherals such as the touchscreen or code to control the framebuffer, thus it is not capable of supporting trusted UI. For this reason, these systems do not allow developers to easily build trusted applications for sensitive data display and management. Instead, these sytems support an RPC-like mechanism for in-between-world communication, secure persistence storage and basic cryptographic systems allowing for the development of simple trusted services.
 
-A reduced \ac{TCB} means that most features of standard mobile operating systems are not supported, for instance, in AndixOS the secure world kernel lacks drivers for peripherals such as the touchscreen or code to control the framebuffer, thus it it is not capable of supporting trusted UI. The same limitations are present in both TLR and OP-TEE. Instead, these sytems support an RPC-like mechanism for in-between-world communication, secure persistence storage and basic cryptographic systems allowing for the development of simple trusted applications.
+\subsubsection{Trusted Services with Untrusted UI}
 
-% COLOCAR AQUI UM EXEMPLO DE ALGUM DOS SISTEMAS ACIMA, POR EXEMPLO DO TLR ?
-
-On-board Credentials (ObC)~\cite{kostiainen2012board} is another \ac{TEE} system which supports the development of secure credential and authentication mechanisms. Originally developed for Nokia mobile devices using the TI M-Shield technology, and later ported to ARM's TrustZone, it suffers from the same limitation described above.
-
-% above, i.e., explica. Adiciona também uma ou duas frases que relacionem com o teu projecto: porque é que estes sistemas não resolvem o problema que te propoes resolver?
-
-\subsubsection{TA with Untrusted UI}
-
-% Liga melhor com a secção anterior, comparando algum aspecto com os sistemas que introduziste na secção anterior. Por exemplo, "As opposed to GPFR, which enable the execution of general-purpose application code on the secure world, TA are designed to implement specific applications from the secure world natively."
-
-Trusted Applications are built on top of secure runtimes in order to minimize and mitigate the impact of the normal world on its execution.
-% Isto é mesmo verdade? Alguns dos papers como o Droidvault não correm em cima de nenhum runtime, mas correm nativamente no secure world... ou está a falhar-me alguma coisa?
-This subsection describes trusted applications built using runtimes which do not support trusted UI, or TAs which do not require trusted UI to correctly perform its function. Some trusted applications use custom TEEs to fully control the underlying hardware and design specific security solution which may not be supported by generic secure runtimes.
-% applications, such as ..., 
+As opposed to Trusted Kernels, which enable the execution of general-purpose application code on the secure world, Trusted Services are designed to implement specific applications from the secure world natively. This subsection describes trusted services which do not support trusted UI, or trusted services which do not require trusted UI to correctly perform its function. Some trusted services, such as DroidVault and Restricted Spaces, use custom trusted kernels to fully control the underlying hardware and execution environment and design specific security solution which may not be supported by generic trusted kernels.
 
 %REVER PARA FACILITAR A LEITURA
-Brasser et al.~\cite{brasserregulating} designed a minimalistic runtime to support the bare minimum necessary for their trusted application to work. This system leverages Android in the normal world and allows for third parties (hosts) to regulate how users (guests) use their devices (e.g., manage their devices’ resources), while in a specific space. This system comprises of authentication and communication mechanisms between guest's secure world and hosts, remote memory operations (reads retrieve certain normal world kernel pages and writes change certain page configurations, e.g., uninstall peripheral drivers, either pointing their interfaces to NULL, or by pointing them to dummy drivers, that just return error codes) and other common features supported by most TEE such as secure boot through TrustZone, with secure world component integrity checks, and world switches based on software interrupts.
-% Não percebi qual é a funcionalidade que é oferecida por esta aplicação? Neste paper, o sistema tem algum nome?
-%COMO SE PODE VER NAO PRECISA DE SECURE UI, dar o exemplo do paper(da figura)?
+Brasser et al.~\cite{brasserregulating}, which will be referred to as Restricted Spaces for the remainder of this section, similarly to CRePE~\cite{conti2011crepe} and MOSES~\cite{russello2012moses}, allows for third parties (hosts) to regulate how users (guests) use their devices (e.g., manage their devices’ resources), while in a specific space. This system comprises of authentication and communication mechanisms between the guest's secure world and hosts, and remote memory operations, which allow for configuration changes such as uninstall peripheral drivers, either pointing their interfaces to NULL, or by pointing them to dummy drivers that just return error codes. With this, Remote Spaces is capable of securely refine device permissions using a context-aware approach.
 
-Other trusted applications are built using generic runtimes and frameworks. DroidVault~\cite{li2014droidvault} introduces the notion of data vault as a protective measure for sensitive data on Android mobile devices. % vago... explica melhor para que serve isto, o que é um data vault?
-To achieve this, DroidVault adopts the memory manager and interrupt handler from Open Virtualization's SierraTEE~\footnote{http://www.openvirtualization.org/} and is implemented with a data protection manager, encryption library and a port of a lightweight SSL/TLS library called PolarSSL~\footnote{https://polarssl.org/}. Much like the trusted application described above, DroidVault supports world switching through software interrupts and secure boot and even inter-world communication. With this TA a user can securely download a sensitive file from an authority and securely store it in the untrusted Android OS, because secure storage space is limited, and allows an app to process sensitive data but only through data protection managers signed by the data owner running inside the secure world. %This system supports trusted input/output by using a secure keyboard and serial console, but because we are interested in trusted user interfaces similar to those offered by mobile operating systems we decided to consider this system as not supporting trusted UI. 
+DroidVault~\cite{li2014droidvault} introduces the notion of data vault, which is an isolated data protection manager running in the trusted domain for secure file management, as a protective measure for sensitive data on Android mobile devices. To achieve this, DroidVault adopts the memory manager and interrupt handler from Open Virtualization's SierraTEE~\footnote{http://www.openvirtualization.org/} and is implemented with a data protection manager, encryption library and a port of a lightweight SSL/TLS library called PolarSSL~\footnote{https://polarssl.org/}. Much like the trusted application described above, DroidVault supports world switching through software interrupts and secure boot and even inter-world communication. With this Trusted Service a user can download a sensitive file from an authority and securely store it on the device. The sensitive file is encrypted and signed by the data protection manager before it is stored in the untrusted Android OS, in order to save space in the limited storage capacity available in the secure world domain.
 
 Android Key Store~\footnote{http://developer.android.com/training/articles/keystore.html} is another security service in Android. This service allows for cryptographic keys to be stored in a container (keystore), so its extraction from the device becomes difficult and so they can be used for common cryptographic operations. The encryption and decryption of the container is handled by the keystore service, which in turn links with a hardware abstraction layer module called "keymaster". The android open source project (AOSP) provides a sofware implementation of this module called "softkeymaster", but device vendors can offer support for hardware based protected storage when available by using TrustZone.
 
-% Falta uma ou duas frases que relacionem com os objectivos do teu projecto. Isto resolve o teu problema? Porquê?
+These Trusted Services do not fulfil the goals of this project as they do not support necessary features such as secure display and input. On the other, DroidVault takes an interesting approach to secure storage each may be an inspiration for the secure storage problem in \emph{ViewZone}.
 
-\subsubsection{GPFR with Trusted UI}
+\subsubsection{Trusted Kernels with Trusted UI}
 
-In this section we describe TEE frameworks and runtimes with support for trusted UI. As referenced before, GlobalPlatform defined standard APIs for the communication between the rich OS running in the normal world and the secure OS, but this organization also defined device specifications which TEEs must comply to in order to be certified. Included in these device specifications is a trusted UI clause, meaning that every TEE which complies with GlobalPlatform's device specifications must support trusted UI. SierraTEE~\footnote{http://www.openvirtualization.org/}, T6~\footnote{https://www.trustkernel.com/products/tee/t6.html} and Open-TEE~\cite{mcgillion2015open} comply with this standard, and for this reason allow the development of trusted applications with secure user interfaces. Open-TEE's trusted UI feature is being developed by the community as it was not originally supported.The Genode OS Framework~\footnote{http://genode.org/} is a tool kit for building highly secure special-purpose operating systems to be executed in TrustZone-enabled processors. Genode implements a framebuffer and input drivers to be used by the secure kernel, thus trusted applications running on top of Genode-based TEEs can offer trusted user interfaces.
+In this section we describe Trusted Kernels with support for trusted UI. As referenced before, GlobalPlatform defined standard APIs for the communication between the rich OS running in the normal world and the secure OS, but this organization also defined device specifications which TEEs must comply to in order to be certified. Included in these device specifications is a trusted UI clause, meaning that every TEE which complies with GlobalPlatform's device specifications must support trusted UI. 
 
-TrustICE~\cite{sun2015trustice} is an isolation framework to provide isolated computing environments (ICEs) on mobile devices. A lot of similar solutions provide isolated computing environments using ARM's TrustZone by allowing code to be executed in the secure world, generally in the form of trusted applications. TrustICE aims at creating ICEs in the normal world domain rather than in the secure world. For this reason, TrustICE's architecture is slightly different from those described before.
+SierraTEE~\footnote{http://www.openvirtualization.org/}, T6~\footnote{https://www.trustkernel.com/products/tee/t6.html} and Open-TEE~\cite{mcgillion2015open} comply with this standard, and for this reason allow the development of trusted applications with secure user interfaces. Open-TEE's trusted UI feature is being developed by the community as it was not originally supported.The Genode OS Framework~\footnote{http://genode.org/} is a tool kit for building highly secure special-purpose operating systems to be executed in TrustZone-enabled processors. Genode implements a framebuffer and input drivers to be used by the secure kernel, thus trusted applications running on top of Genode-based TEEs can offer trusted user interfaces.
+
+Samsung KNOX~\cite{knox_whitepaper} is a defense-grade mobile security platform which provides strong guarantees for the protection of enterprise data. This security is achieved through several layers of data protections which include secure boot, TrustZone-based integrity measurement architecture (TIMA) and Security Enhancements for Android (SEAndroid~\cite{smalley2013security}, which was already discussed in previous sections). Samsung KNOX offers a product called KNOX Workspace, which is a container designed to separate, isolate, encrypt, and protect work data from attackers. This enterprise-ready solution provides management tools and utilities to meet security needs of enterprises large and small. Workspace provides this separate secure environment within the mobile device, complete with its own home screen, launcher, applications, and widgets.
+
+TrustICE~\cite{sun2015trustice} is an isolation framework to provide isolated computing environments (ICEs) on mobile devices. A lot of similar solutions provide isolated computing environments by allowing code to be executed in the secure world, generally in the form of trusted applications. TrustICE aims at creating ICEs in the normal world domain rather than in the secure world. For this reason, TrustICE's architecture is slightly different from those described before.
 
 Figure~\ref{fig:trustICE_architecture} compares TrustICE's architecture with those of traditional TrustZone TEE's, where trusted applications run inside the secure world domain. TrustICE works by implementing a trusted domain controler (TDC) in the secure world, which is responsible for suspending the execution of the rich OS as well as other ICE's in the system when another ICE is running, thus supporting CPU isolation for running ICE's. For memory isolation a watermarking mechanism is implemented so the rich OS cannot access secure code running in the normal world memory. In order to isolate I/O devices the secure world blocks all unnecessary external interrupts from arriving at the TDC, thus protecting the TDC from being interrupted by malicious devices, the exception being a minimal set of required interrupts to allow trusted UI.
 
-%Também aqui, no final, tens que relacionar com o objectivo do teu projecto. Porque é que estes sistemas não resolvem o teu problema original?
+Because these systems support secure display, input and secure storage they are adequate for the development of trusted applications which require sensitive information to be displayed and managed by the user. However, to develop such application is complex because these trusted kernels are not developer friendly and are not build to support applications with this specific goal. For this reason, there is a need to create a trusted system which allows easy development of critical applications for content display and management.
 
 \begin{figure}[t!]
 	\centering
@@ -351,84 +334,18 @@ Figure~\ref{fig:trustICE_architecture} compares TrustICE's architecture with tho
 	\label{fig:trustICE_architecture}
 \end{figure}
 
-\subsubsection{TA with Trusted UI}
+\subsubsection{Trusted Services with Trusted UI}
 
-% Acho que a transição pode ser melhorada, relacionando melhor com a última secção. Depois no parágrafo de abertura, introduziria a questão dizendo que têm sido desenvolvidas aplicações bastante diversificadas para correrem no mundo seguro e que oferecem uma trusted UI.
+Besides Trusted Kernels, some Trusted Services offer secure display and input to the applications implemented secure domain. Usually, this is done by implementing secure touchscreen drivers and secure framebuffers in the secure world, thus isolating the resources which support trusted user interfaces.
 
-Most TEEs and trusted applications implement secure touchscreen drivers and secure framebuffers in the secure world such that secure UI can be supported.
-% melhorar esta frase porque a maior parte nao implementa as drivers, mas para conseguir ter trusted ui essa implementação é a escolha mais comum
-AdAttester~\cite{li2015adattester} is a mobile ad framework to reliably detect and prevent well-known ad frauds by providing attestable proofs to ad vendors. This is done by providing two novel security primitives: \emph{unforgeable clicks} and \emph{verifiable display}.
-% o que são estas primitivas e o que têm a ver com trustzone?
+TrustOTP~\cite{sun2015trustotp} is a One-Time-Password (OTP) system, secured by hardware, where the OTP is generated based on Time and a Counter secured by TrustZone's memory management. Most trusted applications described before require inter-world communication to trigger the world-switching mechanism. This system leverages hardware interrupts to trigger the world-switch. This mitigates denial-of-service attacks by a malicious rich OS which may control the inter-world communication mechanism and intercept the calls (software interrupts) required to trigger the world-switch. 
 
-TrustOTP~\cite{sun2015trustotp} creates a secure One-Time-Password (OTP) mechanism, secured by hardware, where the OTP is generated based on Time and a Counter secured by TrustZone's memory management. Most trusted applications described before require inter-world communication to trigger the world-switching mechanism. This system leverages hardware interrupts to trigger this world-switch. This mitigates denial-of-service attacks by a malicious rich OS which may control the inter-world communication mechanism. A malicious rich OS may deny calling the necessary methods to trigger the world switch by intercepting the software interrupts, but with this hardware-based solution, even if the rich OS is malicious, the world-switch cannot be avoided by the normal world domain, thus the TrustOTP service is always available even when the rich OS crashes or tries to compromise this service's execution. This solution may be implemented by trusted applications which require no communication or integration with the normal world domain. TrustDump~\cite{sun2015reliable} creates a secure memory acquisition tool and offloads the memory through micro-USB or serial port. Just like TrustOTP, TrustDump has trusted UI and reliable world-switching via hardware interrupts.
+TrustDump~\cite{sun2015reliable} is a secure memory acquisition tool and offloads the memory through micro-USB. Simmilarly to TrustOTP, this system relies on hardware interrupts to trigger world-switchs. This solution may be implemented by systems which require no inter-world communication, but for systems which need to offer seamless integration with the normal world this approach may have to be leveraged with other development strategies. Both of these systems support trusted UI by implementing secure display and input drivers and display controllers to manage the secure framebuffers.
 
-Samsung KNOX~\cite{knox_whitepaper} is a defense-grade mobile security platform which provides strong guarantees for the protection of enterprise data. This security is achieved through several layers of data protections which include secure boot, TrustZone-based integrity measurement architecture (TIMA) and Security Enhancements for Android (SEAndroid~\cite{smalley2013security}, which was already discussed in previous sections). Samsung KNOX offers a product called KNOX Workspace, which is a container designed to separate, isolate, encrypt, and protect work data from attackers. This enterprise-ready solution provides management tools and utilities to meet security needs of enterprises large and small. Workspace provides this separate secure environment within the mobile device, complete with its own home screen, launcher, applications, and widgets. % REVER AS ULTIMAS FRASES QUE ESTAO MUITO COPIADAS
-The trusted UI for these trusted applications is supported by a secure framebuffer and touchscreen driver implemented in the secure world. This is a viable solution for trusted UI, but implementing a framebuffer and drivers in the secure world highly increases the secure system's TCB, which may introduce code vulnerabilities in the secure domain.
-% O KNOX não pertence mais à categoria anterior? Não pode ser configurado para correr aplicações arbitrárias?
-
-Instead of implementing the required drivers to support trusted UI some systems designed mechanisms to allow the reuse of untrusted drivers implemented in the rich OS by the secure world domain.
+Instead of implementing the required drivers to support trusted UI, some systems designed mechanisms to allow the reuse of untrusted drivers, implemented in the rich OS, by the secure world domain.
 % Melhorar este parágrafo para se perceber de forma mais clara.
-TrustUI~\cite{li2014building} excludes the device drivers for input, display and network from the secure world, and instead reuses the existing drivers from the normal world, thus achieving a much smaller TCB than the systems described above. Because we are only interested in trusted UI, the following explanation discards the network delegation mode. To achieve trusted UI, device drivers are split into two parts: a backend running in the normal world domain and a frontend running in the secure world. Both parts correspond through proxy modules running in both worlds which communicate via shared memory. Whenever secure display is necessary, the frontend asks for a framebuffer from the backend driver and sets the memory region for that buffer as secure only, thus isolating the framebuffer from rich OS manipulation. This mechanism may still be victim of framebuffer overlay attacks, where a malicious backend driver gives a false framebuffer to the secure world. To protect from such attacks the system randomizes the colour of the background and foreground used in the display and uses two LEDs, controlled by the secure world only, to show these same colours. A user can visually check if these colours match with those shown in the display. If they match then the user is assured that the display shown is being controlled by the secure world. To support trusted input from the user TrustUI introduces a randomization mechanism to generate different software keyboards for every input of the user. This means a malicious rich OS cannot correctly intercept user input, but it is still possible to disclose, for instance, the length of a password. For this reason, and to prevent fake key injection attacks, the keyboard mechanism introduces, from time to time, \emph{confirm} buttons randomly position on the screen before continuing.
-% Isto é o nosso concorrente directo. Explica mais calmamente.
-% Parte isto em mais parágrafos e se achares que ajuda, coloca aqui uma figura do sistema.
+TrustUI~\cite{li2014building} excludes the device drivers for input, display and network from the secure world, and instead reuses the existing drivers from the normal world, thus achieving a much smaller TCB than previously described systems. Because we are only interested in trusted UI, the following explanation discards the network delegation mode. To achieve trusted UI, device drivers are split into two parts: a backend running in the normal world domain and a frontend running in the secure world. Both parts correspond through proxy modules running in both worlds, which communicate via shared memory. Whenever secure display is necessary, the frontend asks for a framebuffer from the backend driver and sets that memory region as secure only, thus isolating the framebuffer from rich OS manipulation. 
 
-% No final desta secção, tem que ser muito claro porque é que nenhum destes sistemas resolve o problema que queremos resolver. Em especial o TrustUI: porque é que não é suficiente para nós?
+Because this mechanism can still be victim of framebuffer overlay attacks, where a malicious backend driver gives a false framebuffer to the secure world, the system randomizes the background and foreground colours used in the display and uses two LEDs, controlled by the secure world, to show these same colours. A user can visually check if the colours shown in the secure LEDs match those of the display. If they match then the user is assured that the display shown is being controlled by the secure world. To support trusted input from the user, TrustUI introduces a randomization mechanism to generate different software keyboards for every input of the user. This means a malicious rich OS cannot correctly intercept user input. But a malicious system still disclose, for instance, the length of a password and for this reason, the keyboard mechanism introduces, from time to time, \emph{confirm} buttons randomly positioned on the screen before continuing. This method also prevents fake key injection attacks, where a malicious system would trick the secure world into believing those key strokes were authentic and originated from a real user.
 
-\begin{table}[t!]
-	\centering
-	%\resizebox{\textwidth}{!}{%
-	\begin{tabular}{ c|c|c| }
-		\multicolumn{1}{c}{} 	& \multicolumn{1}{c}{Untrusted UI} 	& \multicolumn{1}{c}{Trusted UI} \\ \cline{2-3}
-		\multirow{5}{*}{TAs} 	&									& \\
-								& Android Key Store					& TrustOTP \\
-								& DroidVault 						& TrustDump \\
-								& Brasser et al.					& AdAttester \\
-								& 									& TrustUI \\
-								&									& Samsung Knox\\
-								&									& \\
-								\cline{2-3}
-		\multirow{5}{*}{GPFR}	&									& \\
-								& TLK								& Genode \\
-								& OP-TEE 							& T6 \\
-								& Andix OS							& TrustICE \\
-								& Nokia ObC							& SierraTEE \\
-								& TLR 								& \\
-								&									& \\
-		\cline{2-3}
-	\end{tabular}
-	%}
-	\caption{TrustZone-based system categorization.}
-	\label{tab:trustzonesystemscomparison}
-\end{table}
-% Coloca este quadro lá em cima, no início da secção 2.3.
-
-\paragraph{Summary} Table~\ref{tab:trustzonesystemscomparison} briefly summarizes the categorization of systems described in this section according to the partitioning documented above. % NOSSO SISTEMA DEVE ENCAIXAR EM QUE CELULA?
-
-%% Please add the following required packages to your document preamble:
-%% \usepackage{graphicx}
-%\begin{table}[t!]
-%	\centering
-%	\caption{Comparison between security mechanisms with and without a compromised Operating System (Android).}
-%	\label{tab:trustzonesystemscomparison}
-%	\resizebox{\textwidth}{!}{%
-%		\begin{tabular}{|P{2.8cm}||P{2.3cm}|P{2.3cm}|P{2.3cm}|P{2.3cm}|P{2.3cm}|}
-%			\hline
-%			TrustZone-Enabled Systems 		& Secure I/O	& Secure Storage	& Secure World-Switching	& Inter-World Communication 	& Open-Source \\ \hline \hline
-%			TrustOTP						& \cmark 		& \cmark    		& \cmark          			& \xmark 						& \xmark \\ \hline
-%			TrustICE						& \cmark 		& \cmark    		& \cmark          			& \xmark 						& \xmark \\ \hline
-%			TrustDump						& \cmark 		& \cmark    		& \cmark          			& \xmark 						& \xmark \\ \hline
-%			DroidVault					    & \cmark    	& \cmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
-%			AdAttester					    & \cmark    	& \cmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
-%			TrustUI					        & \cmark    	& \xmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
-%			VeriUI					        & \cmark    	& \xmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
-%			Genode						    & \cmark    	& \cmark    		& \cmark          			& \cmark 						& \cmark \\ \hline
-%			TLR							    & \xmark    	& \cmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
-%			SECRYPT Video					& \cmark   		& \cmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
-%			Andix OS        				& \xmark    	& \cmark    		& \xmark          			& \cmark 						& \cmark \\ \hline
-%			Restricted Spaces  				& \xmark    	& \xmark    		& \xmark          			& \cmark 						& \xmark \\ \hline
-%		\end{tabular}
-%	}
-%\end{table}
-
-
-
+Because these systems support secure display and secure input they do not disclose sensitive data. However, TrustOTP and TrustDump do not offer a fully integrated environment with the Android running in the normal domain. TrustUI, on the other hand, fully integrates its environment with that of the Android operating system. Furthermore, TrustUI describes a novelty mechanismm for the reuse, by the secure domain, of untrusted driver implemented in the normal world without compromising security, which significantly reduces the secure system's trusted computing base. The main disadvantage of TrustUI is that, similarly to TrustOTP and TrustDump, does not support the development of generic display applications. Besides, TrustUI is not immune to denial-of-service attacks by a malicious operating system running in the normal world, which may compromise the execution of the secure system.
