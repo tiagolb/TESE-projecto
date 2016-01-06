@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  6 JAN 2016 04:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  6 JAN 2016 14:03
 entering extended mode
 **report.tex
 (report.tex
@@ -607,94 +607,99 @@ although it is yet undefined on input line 96.
 
 [7] [8 <./img/relwork.pdf>]
 Package acronym Info: Label `acro:ASM' newly defined as it shall be overridden
-although it is yet undefined on input line 114.
+although it is yet undefined on input line 111.
 Package acronym Info: Label `acro:ASF' newly defined as it shall be overridden
-although it is yet undefined on input line 114.
+although it is yet undefined on input line 111.
 
 Underfull \vbox (badness 2418) has occurred while \output is active []
 
  [9]
 Package acronym Info: Label `acro:DRM' newly defined as it shall be overridden
-although it is yet undefined on input line 122.
+although it is yet undefined on input line 119.
 Package acronym Info: Label `acro:OMA' newly defined as it shall be overridden
-although it is yet undefined on input line 132.
+although it is yet undefined on input line 129.
 
 <img/communicationattacks.png, id=46, 657.95813pt x 228.855pt>
 File: img/communicationattacks.png Graphic file (type png)
 
 <use img/communicationattacks.png>
-Package pdftex.def Info: img/communicationattacks.png used on input line 140.
+Package pdftex.def Info: img/communicationattacks.png used on input line 137.
 (pdftex.def)             Requested size: 329.7663pt x 114.70308pt.
  [10]
 Package acronym Info: Label `acro:IPC' newly defined as it shall be overridden
-although it is yet undefined on input line 149.
+although it is yet undefined on input line 146.
  [11 <./img/communicationattacks.png>]
 Package acronym Info: Label `acro:IMEI' newly defined as it shall be overridden
 
-although it is yet undefined on input line 161.
-
-Overfull \hbox (1.93263pt too wide) in paragraph at lines 174--175
-\OT1/cmr/m/n/10 Trusted ex-e-cu-tion sys-tems im-ple-ment iso-lated en-vi-ron-m
-ents that pro-vide a higher
- []
+although it is yet undefined on input line 154.
 
 [12]
 Package acronym Info: Label `acro:SoC' newly defined as it shall be overridden
-although it is yet undefined on input line 187.
+although it is yet undefined on input line 171.
 Package acronym Info: Label `acro:PIN' newly defined as it shall be overridden
-although it is yet undefined on input line 187.
-Package acronym Info: Label `acro:MMU' newly defined as it shall be overridden
-although it is yet undefined on input line 195.
+although it is yet undefined on input line 171.
  [13]
-Package acronym Info: Label `acro:GPUs' newly defined as it shall be overridden
+Package acronym Info: Label `acro:MMU' newly defined as it shall be overridden
+although it is yet undefined on input line 179.
 
-although it is yet undefined on input line 198.
- <img/trustzone.pdf, id=60, 690.17848pt x 440.84702pt>
+Overfull \hbox (0.54236pt too wide) in paragraph at lines 179--184
+ \OT1/cmr/bx/it/10 Soft-ware vir-tu-al-iza-tion[] \OT1/cmr/m/n/10 is a soft-war
+e se-cu-rity mech-a-nism with a highly trusted
+ []
+
+<img/trustzone.pdf, id=60, 690.17848pt x 440.84702pt>
 File: img/trustzone.pdf Graphic file (type pdf)
-
-<use img/trustzone.pdf>
-Package pdftex.def Info: img/trustzone.pdf used on input line 208.
+ <use img/trustzone.pdf>
+Package pdftex.def Info: img/trustzone.pdf used on input line 189.
 (pdftex.def)             Requested size: 277.69987pt x 177.37833pt.
- [14 <./img/trustzone.pdf>]
+
+[14] [15 <./img/trustzone.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
 Package acronym Info: Label `acro:TEE' newly defined as it shall be overridden
-although it is yet undefined on input line 222.
- [15]
-Underfull \hbox (badness 10000) in paragraph at lines 297--297
+although it is yet undefined on input line 254.
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 293--293
  [][]\OT1/cmr/m/n/9 http://www.w3.org/2012/webcrypto/webcrypto-next-
  []
 
-[16] [17] [18] [19] <img/trustICE.pdf, id=114, 712.58218pt x 308.5929pt>
+[18] [19] [20] <img/trustICE.pdf, id=117, 712.58218pt x 308.5929pt>
 File: img/trustICE.pdf Graphic file (type pdf)
 
 <use img/trustICE.pdf>
-Package pdftex.def Info: img/trustICE.pdf used on input line 332.
+Package pdftex.def Info: img/trustICE.pdf used on input line 328.
 (pdftex.def)             Requested size: 277.69987pt x 120.26128pt.
- [20 <./img/trustICE.pdf>]) (sections/6-architecture.tex
-[21]
+ [21 <./img/trustICE.pdf>]) (sections/6-architecture.tex
+Underfull \vbox (badness 2158) has occurred while \output is active []
+
+ [22]
 Package acronym Info: Label `acro:DPM' newly defined as it shall be overridden
 although it is yet undefined on input line 19.
+
+[23]
 Package acronym Info: Label `acro:NMI' newly defined as it shall be overridden
 although it is yet undefined on input line 23.
- [22] <img/viewzone_architecture.pdf, id=165, 719.80919pt x 416.99791pt>
+ [24] <img/viewzone_architecture.pdf, id=171, 719.80919pt x 416.99791pt>
 File: img/viewzone_architecture.pdf Graphic file (type pdf)
 
 <use img/viewzone_architecture.pdf>
 Package pdftex.def Info: img/viewzone_architecture.pdf used on input line 38.
-(pdftex.def)             Requested size: 347.12354pt x 201.09842pt.
-) (sections/7-evaluation.tex [23]
+(pdftex.def)             Requested size: 312.40906pt x 180.9854pt.
+) (sections/7-evaluation.tex [25 <./img/viewzone_architecture.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 10--10
  [][]\OT1/cmr/m/n/9 http://www.freescale.com/products/arm-processors/i.mx-appli
 cations-processors-
  []
 
-[24 <./img/viewzone_architecture.pdf>] [25]) (sections/8-conclusions.tex)
-(report.bbl [26]
+[26]) (sections/8-conclusions.tex) [27] (report.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 42--47
 \OT1/cmr/m/n/9 http://www.comscore.com/Insights/Presentations-and-Whitepapers/2
 015/2015-
  []
 
-[27]
+[28]
 Underfull \hbox (badness 2181) in paragraph at lines 128--134
 []\OT1/cmr/m/n/9 ARM Lim-ited.  ARM Se-cu-rity Tech-nol-ogy - Build-ing a Se-cu
 re Sys-tem
@@ -724,12 +729,12 @@ Underfull \hbox (badness 1087) in paragraph at lines 136--141
 ce/white-
  []
 
-[28]) [29] (report.aux) ) 
+[29]) [30] (report.aux) ) 
 Here is how much of TeX's memory you used:
- 3783 strings out of 493673
- 50978 string characters out of 3141529
- 127044 words of memory out of 3000000
- 7043 multiletter control sequences out of 15000+200000
+ 3779 strings out of 493673
+ 50938 string characters out of 3141529
+ 125029 words of memory out of 3000000
+ 7039 multiletter control sequences out of 15000+200000
  9935 words of font info for 35 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  33i,9n,22p,1795b,268s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -743,9 +748,9 @@ m/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
 r7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.p
 fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on report.pdf (29 pages, 363169 bytes).
+Output written on report.pdf (30 pages, 367243 bytes).
 PDF statistics:
- 262 PDF objects out of 1000 (max. 8388607)
+ 265 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
