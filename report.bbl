@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{aks}
+{Android Key Store}.
+\newblock \url{http://developer.android.com/training/articles/keystore.html}.
+\newblock Accessed: 2016-01-07.
+
 \bibitem{avancha2012privacy}
 Sasikanth Avancha, Amit Baxi, and David Kotz.
 \newblock Privacy in mobile technology for personal healthcare.
@@ -83,6 +88,11 @@ Andreas Fitzek, Florian Achleitner, Johannes Winter, and Daniel Hein.
 \newblock The andix research os-arm trustzone meets industrial control systems
   security.
 
+\bibitem{genode}
+{Genode OS}.
+\newblock \url{http://genode.org/}.
+\newblock Accessed: 2016-01-07.
+
 \bibitem{he2014security}
 Dongjing He, Muhammad Naveed, Carl~A Gunter, and Klara Nahrstedt.
 \newblock Security concerns in android mhealth apps.
@@ -109,6 +119,13 @@ Kari Kostiainen et~al.
 David Kotz.
 \newblock A threat taxonomy for mhealth privacy.
 \newblock In {\em COMSNETS}, pages 1--6, 2011.
+
+\bibitem{li2015adattester}
+Wenhao Li, Haibo Li, Haibo Chen, and Yubin Xia.
+\newblock Adattester: Secure online mobile advertisement attestation using
+  trustzone.
+\newblock In {\em Proceedings of the 13th Annual International Conference on
+  Mobile Systems, Applications, and Services}, pages 75--88. ACM, 2015.
 
 \bibitem{li2014building}
 Wenhao Li, Mingyang Ma, Jinchen Han, Yubin Xia, Binyu Zang, Cheng-Kang Chu, and
@@ -165,6 +182,11 @@ Machigar Ongtang, Stephen McLaughlin, William Enck, and Patrick McDaniel.
 \newblock Semantically rich application-centric security in android.
 \newblock {\em Security and Communication Networks}, 5(6):658--673, 2012.
 
+\bibitem{op_tee}
+{OP-TEE}.
+\newblock \url{https://wiki.linaro.org/WorkingGroups/Security/OP-TEE}.
+\newblock Accessed: 2016-01-07.
+
 \bibitem{peter2001integrating}
 NSA Peter~Loscocco.
 \newblock Integrating flexible support for security policies into the linux
@@ -196,6 +218,11 @@ Bilal Shebaro, Oluwatosin Ogunwuyi, Daniele Midi, and Elisa Bertino.
 \newblock Identidroid: Android can finally wear its anonymous suit.
 \newblock 2014.
 
+\bibitem{sierra_tee}
+{SierraTEE}.
+\newblock \url{http://www.openvirtualization.org/}.
+\newblock Accessed: 2016-01-07.
+
 \bibitem{smalley2013security}
 Stephen Smalley and Robert Craig.
 \newblock Security enhanced (se) android: Bringing flexible mac to android.
@@ -220,6 +247,17 @@ He~Sun, Kun Sun, Yuewu Wang, Jiwu Jing, and Haining Wang.
   devices.
 \newblock In {\em Dependable Systems and Networks (DSN), 2015 45th Annual
   IEEE/IFIP International Conference on}, pages 367--378. IEEE, 2015.
+
+\bibitem{t6_tee}
+{T6 TEE}.
+\newblock \url{https://www.trustkernel.com/products/tee/t6.html}.
+\newblock Accessed: 2016-01-07.
+
+\bibitem{tlk}
+{TLK}.
+\newblock
+  \url{http://www.w3.org/2012/webcrypto/webcrypto-next-workshop/papers/webcrypto2014\_submission\_25.pdf}.
+\newblock Accessed: 2016-01-07.
 
 \bibitem{wang2015deepdroid}
 Xueqiang Wang, Kun Sun, Yuewu Wang, and Jiwu Jing.

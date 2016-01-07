@@ -3,7 +3,7 @@
 \citation{comscore}
 \citation{research2guidance}
 \citation{marketsandmarkets}
-\@writefile{toc}{\contentsline {title}{ViewZone}{1}}
+\@writefile{toc}{\contentsline {title}{Dissertation: ViewZone}{1}}
 \@writefile{toc}{\authcount {1}}
 \@writefile{toc}{\contentsline {author}{Tiago Lu\IeC {\'\i }s de Oliveira Brito\unskip \ \ignorespaces  Supervisor: Prof. Nuno Santos}{1}}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
@@ -13,6 +13,8 @@
 \citation{smalley2013security,bugiel2011practical,nauman2010apex,kern2012permission,conti2011crepe,russello2012moses,heuser2014asm,backes2014android,wang2015deepdroid,drm}
 \citation{ongtang2012semantically,dietz2011quire,bugiel2011xmandroid}
 \citation{beresford2011mockdroid,zhou2011taming,shebaro2014identidroid,enck2014taintdroid}
+\citation{li2014droidvault,genode,t6_tee,knox_whitepaper,brasserregulating,fitzekandix,kostiainen2012board,li2014building,li2015adattester,mcgillion2015open,sun2015trustotp,sun2015trustice,sun2015reliable,santos2011trusted,sierra_tee,tlk,aks,op_tee}
+\citation{trustzone_whitepaper}
 \AC@undonewlabel{acro:OS}
 \newlabel{acro:OS}{{1}{2}}
 \acronymused{OS}
@@ -22,14 +24,11 @@
 \acronymused{TCB}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Goals}{2}}
 \acronymused{TCB}
-\acronymused{TCB}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{3}}
 \newlabel{sec:relatedWork}{{2}{3}}
 \citation{kotz2011threat}
 \citation{he2014security}
 \citation{kotz2011threat}
-\citation{wright2006inferring}
-\citation{avancha2012privacy}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Studies in Mobile Health Security}{4}}
 \newlabel{sec:mhealth}{{2.1}{4}}
 \AC@undonewlabel{acro:HIPAA}
@@ -42,18 +41,18 @@
 \acronymused{PHR}
 \acronymused{PHR}
 \acronymused{PHR}
+\citation{wright2006inferring}
+\citation{avancha2012privacy}
+\citation{he2014security}
+\citation{he2014security}
 \acronymused{PHR}
-\citation{he2014security}
-\citation{he2014security}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Description of attack surface (taken from He et al. \cite  {he2014security})}}{5}}
-\newlabel{tab:attacksurfaces}{{1}{5}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Potential Attack Surface of Commercial Mobile Health Applications}{5}}
-\citation{he2014security}
-\citation{he2014security}
 \acronymused{PHR}
+\citation{he2014security}
+\citation{he2014security}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Description of attack surface (taken from He et al. \cite  {he2014security})}}{6}}
+\newlabel{tab:attacksurfaces}{{1}{6}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}Severity of Attacks to Mobile Health Applications}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Security Mechanisms Map; A-application, R-system resource}}{7}}
-\newlabel{fig:relwork}{{1}{7}}
 \acronymused{HIPAA}
 \acronymused{TCB}
 \acronymused{TCB}
@@ -61,8 +60,8 @@
 \citation{smalley2013security}
 \citation{peter2001integrating}
 \citation{bugiel2011practical}
-\citation{nauman2010apex}
-\citation{kern2012permission}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Security Mechanisms Map; A-application, R-system resource}}{8}}
+\newlabel{fig:relwork}{{1}{8}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Access Control Mechanisms}{8}}
 \@writefile{toc}{\contentsline {paragraph}{\textbf  {Access control mechanisms}}{8}}
 \AC@undonewlabel{acro:DAC}
@@ -81,6 +80,8 @@
 \acronymused{MAC}
 \acronymused{MAC}
 \@writefile{toc}{\contentsline {paragraph}{\textbf  {Permission Refinement}}{8}}
+\citation{nauman2010apex}
+\citation{kern2012permission}
 \citation{conti2011crepe}
 \citation{russello2012moses}
 \citation{enck2014taintdroid}
@@ -96,11 +97,11 @@
 \AC@undonewlabel{acro:ASF}
 \newlabel{acro:ASF}{{2.2.1}{9}}
 \acronymused{ASF}
-\@writefile{toc}{\contentsline {paragraph}{\textbf  {Memory Instrumentation}}{9}}
-\@writefile{toc}{\contentsline {paragraph}{\textbf  {Digital Rights Management}}{9}}
 \citation{drm}
 \citation{nunoduarte}
 \citation{nunoduarte}
+\@writefile{toc}{\contentsline {paragraph}{\textbf  {Memory Instrumentation}}{10}}
+\@writefile{toc}{\contentsline {paragraph}{\textbf  {Digital Rights Management}}{10}}
 \AC@undonewlabel{acro:DRM}
 \newlabel{acro:DRM}{{2.2.1}{10}}
 \acronymused{DRM}
@@ -115,26 +116,26 @@
 \acronymused{DRM}
 \acronymused{DRM}
 \acronymused{DRM}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Application Communication Monitoring}{10}}
 \citation{ongtang2012semantically}
 \citation{dietz2011quire}
 \citation{bugiel2011xmandroid}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Confused deputy attack (a); Collusion attack (b) - (taken from Duarte \cite  {nunoduarte})}}{11}}
+\newlabel{fig:communicationattacks}{{2}{11}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Application Communication Monitoring}{11}}
 \citation{beresford2011mockdroid}
 \citation{zhou2011taming}
 \citation{shebaro2014identidroid}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Confused deputy attack (a); Collusion attack (b) - (taken from Duarte \cite  {nunoduarte})}}{11}}
-\newlabel{fig:communicationattacks}{{2}{11}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Privacy Enhancement Systems}{11}}
 \citation{enck2014taintdroid}
 \citation{nunoduarte}
 \citation{miguelcosta}
 \citation{heuser2014asm}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Privacy Enhancement Systems}{12}}
 \AC@undonewlabel{acro:IMEI}
 \newlabel{acro:IMEI}{{2.2.3}{12}}
 \acronymused{IMEI}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.4}Trusted Execution Systems}{12}}
 \newlabel{sec:tee}{{2.2.4}{12}}
-\@writefile{toc}{\contentsline {paragraph}{\textbf  {TrUbi}}{12}}
+\@writefile{toc}{\contentsline {paragraph}{\textbf  {TrUbi}}{13}}
 \acronymused{PHR}
 \acronymused{PHR}
 \@writefile{toc}{\contentsline {paragraph}{\textbf  {External hardware security modules}}{13}}
@@ -149,38 +150,45 @@
 \acronymused{SoC}
 \citation{trustzone_whitepaper}
 \citation{trustzone_whitepaper}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces TrustZone's Software Architecture (adapted from \cite  {trustzone_whitepaper})}}{14}}
-\newlabel{fig:trustzone_architecture}{{3}{14}}
 \@writefile{toc}{\contentsline {paragraph}{\textbf  {Software virtualization}}{14}}
 \AC@undonewlabel{acro:MMU}
 \newlabel{acro:MMU}{{2.2.4}{14}}
 \acronymused{MMU}
 \acronymused{MMU}
 \@writefile{toc}{\contentsline {paragraph}{\textbf  {TrustZone}}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces TrustZone's Software Architecture (adapted from \cite  {trustzone_whitepaper})}}{15}}
+\newlabel{fig:trustzone_architecture}{{3}{15}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.5}Summary}{15}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}TrustZone-based Mobile Security Systems}{16}}
-\AC@undonewlabel{acro:TEE}
-\newlabel{acro:TEE}{{2.3}{16}}
-\acronymused{TEE}
+\citation{op_tee}
+\citation{tlk}
 \citation{santos2011trusted}
 \citation{fitzekandix}
 \citation{kostiainen2012board}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces TrustZone-based system categorization.}}{17}}
-\newlabel{tab:trustzonesystemscomparison}{{2}{17}}
+\AC@undonewlabel{acro:TEE}
+\newlabel{acro:TEE}{{2.3}{17}}
+\acronymused{TEE}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Trusted Kernels with Untrusted UI}{17}}
+\acronymused{TEE}
+\acronymused{TEE}
 \citation{brasserregulating}
 \citation{conti2011crepe}
 \citation{russello2012moses}
-\citation{li2014droidvault}
-\acronymused{TEE}
-\acronymused{TEE}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces TrustZone-based system categorization.}}{18}}
+\newlabel{tab:trustzonesystemscomparison}{{2}{18}}
 \acronymused{TCB}
 \acronymused{TCB}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Trusted Services with Untrusted UI}{18}}
+\citation{li2014droidvault}
+\citation{sierra_tee}
+\citation{aks}
+\citation{sierra_tee}
+\citation{t6_tee}
 \citation{mcgillion2015open}
+\citation{genode}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.3}Trusted Kernels with Trusted UI}{19}}
 \citation{knox_whitepaper}
 \citation{smalley2013security}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.3}Trusted Kernels with Trusted UI}{19}}
 \citation{sun2015trustice}
 \citation{sun2015trustice}
 \citation{sun2015trustice}
@@ -233,51 +241,58 @@
 \acronymused{NMI}
 \bibstyle{plain}
 \bibdata{references}
-\bibcite{avancha2012privacy}{1}
+\bibcite{aks}{1}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Evaluation}{26}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Future Work Plan}{26}}
 \newlabel{sec:workplan}{{5}{26}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}Conclusions}{26}}
 \newlabel{sec:conclusion}{{6}{26}}
 \@writefile{toc}{\contentsline {section}{References}{26}}
-\bibcite{backes2014android}{2}
-\bibcite{beresford2011mockdroid}{3}
-\bibcite{brasserregulating}{4}
-\bibcite{bugiel2011xmandroid}{5}
-\bibcite{bugiel2011practical}{6}
-\bibcite{comscore}{7}
-\bibcite{conti2011crepe}{8}
-\bibcite{miguelcosta}{9}
-\bibcite{dietz2011quire}{10}
-\bibcite{drm}{11}
-\bibcite{nunoduarte}{12}
-\bibcite{enck2014taintdroid}{13}
-\bibcite{fitzekandix}{14}
-\bibcite{he2014security}{15}
-\bibcite{heuser2014asm}{16}
-\bibcite{kern2012permission}{17}
-\bibcite{kostiainen2012board}{18}
-\bibcite{kotz2011threat}{19}
-\bibcite{li2014building}{20}
-\bibcite{li2014droidvault}{21}
-\bibcite{trustzone_whitepaper}{22}
-\bibcite{knox_whitepaper}{23}
-\bibcite{marketsandmarkets}{24}
-\bibcite{mcgillion2015open}{25}
-\bibcite{nauman2010apex}{26}
-\bibcite{ongtang2012semantically}{27}
-\bibcite{peter2001integrating}{28}
-\bibcite{research2guidance}{29}
-\bibcite{russello2012moses}{30}
-\bibcite{santos2011trusted}{31}
-\bibcite{shebaro2014identidroid}{32}
-\bibcite{smalley2013security}{33}
-\bibcite{sun2015reliable}{34}
-\bibcite{sun2015trustotp}{35}
-\bibcite{sun2015trustice}{36}
-\bibcite{wang2015deepdroid}{37}
-\bibcite{wright2006inferring}{38}
-\bibcite{zhou2011taming}{39}
+\bibcite{avancha2012privacy}{2}
+\bibcite{backes2014android}{3}
+\bibcite{beresford2011mockdroid}{4}
+\bibcite{brasserregulating}{5}
+\bibcite{bugiel2011xmandroid}{6}
+\bibcite{bugiel2011practical}{7}
+\bibcite{comscore}{8}
+\bibcite{conti2011crepe}{9}
+\bibcite{miguelcosta}{10}
+\bibcite{dietz2011quire}{11}
+\bibcite{drm}{12}
+\bibcite{nunoduarte}{13}
+\bibcite{enck2014taintdroid}{14}
+\bibcite{fitzekandix}{15}
+\bibcite{genode}{16}
+\bibcite{he2014security}{17}
+\bibcite{heuser2014asm}{18}
+\bibcite{kern2012permission}{19}
+\bibcite{kostiainen2012board}{20}
+\bibcite{kotz2011threat}{21}
+\bibcite{li2015adattester}{22}
+\bibcite{li2014building}{23}
+\bibcite{li2014droidvault}{24}
+\bibcite{trustzone_whitepaper}{25}
+\bibcite{knox_whitepaper}{26}
+\bibcite{marketsandmarkets}{27}
+\bibcite{mcgillion2015open}{28}
+\bibcite{nauman2010apex}{29}
+\bibcite{ongtang2012semantically}{30}
+\bibcite{op_tee}{31}
+\bibcite{peter2001integrating}{32}
+\bibcite{research2guidance}{33}
+\bibcite{russello2012moses}{34}
+\bibcite{santos2011trusted}{35}
+\bibcite{shebaro2014identidroid}{36}
+\bibcite{sierra_tee}{37}
+\bibcite{smalley2013security}{38}
+\bibcite{sun2015reliable}{39}
+\bibcite{sun2015trustotp}{40}
+\bibcite{sun2015trustice}{41}
+\bibcite{t6_tee}{42}
+\bibcite{tlk}{43}
+\bibcite{wang2015deepdroid}{44}
+\bibcite{wright2006inferring}{45}
+\bibcite{zhou2011taming}{46}
 \newacro{PC}[PC]{Personal Computer}
 \newacro{OS}[OS]{Operating System}
 \newacro{TCB}[TCB]{Trusted Computing Base}

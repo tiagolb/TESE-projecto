@@ -1,10 +1,35 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: report.aux
 The style file: plain.bst
 Database file #1: references.bib
+I was expecting a `,' or a `}'---line 9 of file references.bib
+ :  
+ :  note = {Accessed: 2016-01-07}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 20 of file references.bib
+ :  
+ :  note = {Accessed: 2016-01-07}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 311 of file references.bib
+ :  
+ :  note = {Accessed: 2016-01-07}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 321 of file references.bib
+ :  
+ :  note = {Accessed: 2016-01-07}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 354 of file references.bib
+ :  
+ :  note = {Accessed: 2016-01-07}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--empty journal in brasserregulating
 Warning--empty year in brasserregulating
 Warning--empty journal in fitzekandix
 Warning--empty year in fitzekandix
 Warning--empty journal in kostiainen2012board
 Warning--empty journal in shebaro2014identidroid
-(There were 6 warnings)
+(There were 5 error messages)
