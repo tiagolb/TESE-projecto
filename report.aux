@@ -13,8 +13,9 @@
 \citation{smalley2013security,bugiel2011practical,nauman2010apex,kern2012permission,conti2011crepe,russello2012moses,heuser2014asm,backes2014android,wang2015deepdroid,drm}
 \citation{ongtang2012semantically,dietz2011quire,bugiel2011xmandroid}
 \citation{beresford2011mockdroid,zhou2011taming,shebaro2014identidroid,enck2014taintdroid}
-\citation{li2014droidvault,genode,t6_tee,knox_whitepaper,brasserregulating,fitzekandix,kostiainen2012board,li2014building,li2015adattester,mcgillion2015open,sun2015trustotp,sun2015trustice,sun2015reliable,santos2011trusted,sierra_tee,tlk,aks,op_tee}
 \citation{trustzone_whitepaper}
+\citation{genode,t6_tee,knox_whitepaper,fitzekandix,kostiainen2012board,mcgillion2015open,sun2015trustice,santos2011trusted,sierra_tee,tlk,op_tee}
+\citation{li2014droidvault,brasserregulating,li2014building,li2015adattester,sun2015trustotp,sun2015reliable,aks}
 \AC@undonewlabel{acro:OS}
 \newlabel{acro:OS}{{1}{2}}
 \acronymused{OS}
@@ -57,13 +58,13 @@
 \acronymused{TCB}
 \acronymused{TCB}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}General-Purpose Mobile Security Mechanisms}{7}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Access Control Mechanisms}{7}}
+\newlabel{sec:accesscontrol}{{2.2.1}{7}}
 \citation{smalley2013security}
 \citation{peter2001integrating}
 \citation{bugiel2011practical}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Security Mechanisms Map; A-application, R-system resource}}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Security Mechanisms Map; A-application, R-system resource, TES-Trusted Execution System}}{8}}
 \newlabel{fig:relwork}{{1}{8}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Access Control Mechanisms}{8}}
-\@writefile{toc}{\contentsline {paragraph}{\textbf  {Access control mechanisms}}{8}}
 \AC@undonewlabel{acro:DAC}
 \newlabel{acro:DAC}{{2.2.1}{8}}
 \acronymused{DAC}
@@ -122,135 +123,122 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Confused deputy attack (a); Collusion attack (b) - (taken from Duarte \cite  {nunoduarte})}}{11}}
 \newlabel{fig:communicationattacks}{{2}{11}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Application Communication Monitoring}{11}}
+\AC@undonewlabel{acro:IPC}
+\newlabel{acro:IPC}{{2.2.2}{11}}
+\acronymused{IPC}
 \citation{beresford2011mockdroid}
 \citation{zhou2011taming}
 \citation{shebaro2014identidroid}
 \citation{enck2014taintdroid}
-\citation{nunoduarte}
-\citation{miguelcosta}
-\citation{heuser2014asm}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Privacy Enhancement Systems}{12}}
 \AC@undonewlabel{acro:IMEI}
 \newlabel{acro:IMEI}{{2.2.3}{12}}
 \acronymused{IMEI}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.4}Trusted Execution Systems}{12}}
 \newlabel{sec:tee}{{2.2.4}{12}}
+\citation{nunoduarte}
+\citation{miguelcosta}
+\citation{heuser2014asm}
 \@writefile{toc}{\contentsline {paragraph}{\textbf  {TrUbi}}{13}}
 \acronymused{PHR}
 \acronymused{PHR}
-\@writefile{toc}{\contentsline {paragraph}{\textbf  {External hardware security modules}}{13}}
+\@writefile{toc}{\contentsline {paragraph}{\textbf  {External and Internal hardware security modules}}{13}}
 \AC@undonewlabel{acro:SoC}
 \newlabel{acro:SoC}{{2.2.4}{13}}
 \acronymused{SoC}
-\AC@undonewlabel{acro:PIN}
-\newlabel{acro:PIN}{{2.2.4}{13}}
-\acronymused{PIN}
-\acronymused{PIN}
-\@writefile{toc}{\contentsline {paragraph}{\textbf  {Internal hardware security modules}}{13}}
 \acronymused{SoC}
 \citation{trustzone_whitepaper}
 \citation{trustzone_whitepaper}
-\@writefile{toc}{\contentsline {paragraph}{\textbf  {Software virtualization}}{14}}
-\AC@undonewlabel{acro:MMU}
-\newlabel{acro:MMU}{{2.2.4}{14}}
-\acronymused{MMU}
-\acronymused{MMU}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces TrustZone's Software Architecture (adapted from \cite  {trustzone_whitepaper})}}{14}}
+\newlabel{fig:trustzone_architecture}{{3}{14}}
 \@writefile{toc}{\contentsline {paragraph}{\textbf  {TrustZone}}{14}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces TrustZone's Software Architecture (adapted from \cite  {trustzone_whitepaper})}}{15}}
-\newlabel{fig:trustzone_architecture}{{3}{15}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.5}Summary}{15}}
+\citation{knox_whitepaper}
+\citation{li2014droidvault}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}TrustZone-based Mobile Security Systems}{16}}
+\newlabel{sec:trustzone}{{2.3}{16}}
+\AC@undonewlabel{acro:TEE}
+\newlabel{acro:TEE}{{2.3}{16}}
+\acronymused{TEE}
 \citation{op_tee}
 \citation{tlk}
 \citation{santos2011trusted}
 \citation{fitzekandix}
 \citation{kostiainen2012board}
-\AC@undonewlabel{acro:TEE}
-\newlabel{acro:TEE}{{2.3}{17}}
-\acronymused{TEE}
+\citation{li2014droidvault}
+\citation{brasserregulating}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces TrustZone-based system categorization.}}{17}}
+\newlabel{tab:trustzonesystemscomparison}{{2}{17}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Trusted Kernels with Untrusted UI}{17}}
 \acronymused{TEE}
 \acronymused{TEE}
+\acronymused{TCB}
+\acronymused{TCB}
 \citation{brasserregulating}
-\citation{conti2011crepe}
-\citation{russello2012moses}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces TrustZone-based system categorization.}}{18}}
-\newlabel{tab:trustzonesystemscomparison}{{2}{18}}
-\acronymused{TCB}
-\acronymused{TCB}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Trusted Services with Untrusted UI}{18}}
 \citation{li2014droidvault}
 \citation{sierra_tee}
 \citation{aks}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Trusted Services with Untrusted UI}{18}}
 \citation{sierra_tee}
 \citation{t6_tee}
 \citation{mcgillion2015open}
 \citation{genode}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.3}Trusted Kernels with Trusted UI}{19}}
 \citation{knox_whitepaper}
 \citation{smalley2013security}
 \citation{sun2015trustice}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.3}Trusted Kernels with Trusted UI}{19}}
 \citation{sun2015trustice}
 \citation{sun2015trustice}
 \citation{sun2015trustotp}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.4}Trusted Services with Trusted UI}{20}}
 \citation{sun2015reliable}
 \citation{li2014building}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Architecture comparison between traditional TrustZone's software stack and TrustICE (adapted from\nobreakspace  {}\cite  {sun2015trustice})}}{21}}
-\newlabel{fig:trustICE_architecture}{{4}{21}}
-\citation{li2014droidvault}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Architecture}{22}}
-\newlabel{sec:architecture}{{3}{22}}
-\acronymused{PHR}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}ViewZone}{22}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Architecture comparison between traditional TrustZone's software stack and TrustICE (adapted from\nobreakspace  {}\cite  {sun2015trustice})}}{20}}
+\newlabel{fig:trustICE_architecture}{{4}{20}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.4}Trusted Services with Trusted UI}{20}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Architecture}{21}}
+\newlabel{sec:architecture}{{3}{21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces ViewZone's Architecture}}{22}}
+\newlabel{fig:viewzone_architecture}{{5}{22}}
+\AC@undonewlabel{acro:DPM}
+\newlabel{acro:DPM}{{3}{22}}
+\acronymused{DPM}
+\acronymused{DPM}
+\AC@undonewlabel{acro:NMI}
+\newlabel{acro:NMI}{{3}{22}}
+\acronymused{NMI}
+\acronymused{DPM}
+\acronymused{NMI}
+\@writefile{toc}{\contentsline {paragraph}{\textbf  {Trusted User Interface}}{22}}
 \citation{sun2015trustotp}
 \citation{sun2015reliable}
-\@writefile{toc}{\contentsline {paragraph}{\textbf  {Secure Storage}}{23}}
-\AC@undonewlabel{acro:DPM}
-\newlabel{acro:DPM}{{3.1}{23}}
-\acronymused{DPM}
-\acronymused{DPM}
-\acronymused{DPM}
-\acronymused{DPM}
 \@writefile{toc}{\contentsline {paragraph}{\textbf  {Secure World-Switching}}{23}}
-\AC@undonewlabel{acro:NMI}
-\newlabel{acro:NMI}{{3.1}{23}}
 \acronymused{NMI}
-\@writefile{toc}{\contentsline {paragraph}{\textbf  {Trusted User Interface}}{23}}
+\@writefile{toc}{\contentsline {paragraph}{\textbf  {Secure File Handling}}{23}}
 \@writefile{toc}{\contentsline {paragraph}{\textbf  {Developer Friendly}}{23}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces ViewZone's Architecture}}{24}}
-\newlabel{fig:viewzone_architecture}{{5}{24}}
-\@writefile{toc}{\contentsline {paragraph}{\textbf  {Architecture}}{24}}
-\acronymused{DPM}
-\acronymused{DPM}
-\acronymused{NMI}
-\acronymused{DPM}
-\acronymused{NMI}
-\acronymused{DPM}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Implementation and Evaluation}{25}}
-\newlabel{sec:evaluation}{{4}{25}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Implementation}{25}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Implementation and Evaluation}{23}}
+\newlabel{sec:evaluation}{{4}{23}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Implementation}{24}}
 \acronymused{PHR}
-\@writefile{toc}{\contentsline {paragraph}{The \ac {PHR} application}{25}}
+\@writefile{toc}{\contentsline {paragraph}{The \ac {PHR} application}{24}}
 \acronymused{NMI}
-\@writefile{toc}{\contentsline {paragraph}{Memory Isolation}{25}}
-\@writefile{toc}{\contentsline {paragraph}{Reliable Switch}{25}}
-\acronymused{NMI}
-\acronymused{NMI}
+\@writefile{toc}{\contentsline {paragraph}{Memory Isolation}{24}}
+\@writefile{toc}{\contentsline {paragraph}{Reliable Switch}{24}}
 \acronymused{NMI}
 \acronymused{NMI}
+\acronymused{NMI}
+\acronymused{NMI}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Evaluation}{24}}
 \bibstyle{plain}
 \bibdata{references}
 \bibcite{aks}{1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Evaluation}{26}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Future Work Plan}{26}}
-\newlabel{sec:workplan}{{5}{26}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusions}{26}}
-\newlabel{sec:conclusion}{{6}{26}}
-\@writefile{toc}{\contentsline {section}{References}{26}}
 \bibcite{avancha2012privacy}{2}
 \bibcite{backes2014android}{3}
 \bibcite{beresford2011mockdroid}{4}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Future Work Plan}{25}}
+\newlabel{sec:workplan}{{5}{25}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusions}{25}}
+\newlabel{sec:conclusion}{{6}{25}}
+\@writefile{toc}{\contentsline {section}{References}{25}}
 \bibcite{brasserregulating}{5}
 \bibcite{bugiel2011xmandroid}{6}
 \bibcite{bugiel2011practical}{7}
@@ -313,7 +301,7 @@
 \newacro{MMU}[MMU]{Memory Management Unit}
 \newacro{GPUs}[GPUs]{Graphics Processing Units}
 \newacro{IMEI}[IMEI]{International Mobile Equipment Identity}
-\newacro{IPC}[IPC]{Inter Process Communication}
+\newacro{IPC}[IPC]{Inter-Process Communication}
 \newacro{TEE}[TEE]{Trusted Execution Environment}
 \newacro{GPFR}[GPFR]{General-purpose Frameworks and Runtimes}
 \newacro{TA}[TA]{Trusted Applications}
