@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{android_drm}
+{Android DRM Framework}.
+\newblock
+  \url{http://developer.android.com/reference/android/drm/package-summary.html}.
+\newblock Accessed: 2016-01-07.
+
 \bibitem{aks}
 {Android Key Store}.
 \newblock \url{http://developer.android.com/training/articles/keystore.html}.
@@ -88,9 +94,20 @@ Andreas Fitzek, Florian Achleitner, Johannes Winter, and Daniel Hein.
 \newblock The andix research os-arm trustzone meets industrial control systems
   security.
 
+\bibitem{QSB_board}
+{Freescale i.MX53 Quick Start Board development board}.
+\newblock
+  \url{http://www.freescale.com/products/arm-processors/i.mx-applications-processors-based-on-arm-cores/i.mx53-processors/i.mx53-quick-start-board:IMX53QSB}.
+\newblock Accessed: 2016-01-07.
+
 \bibitem{genode}
 {Genode OS}.
 \newblock \url{http://genode.org/}.
+\newblock Accessed: 2016-01-07.
+
+\bibitem{global}
+{GlobalPlatform}.
+\newblock \url{https://www.globalplatform.org/}.
 \newblock Accessed: 2016-01-07.
 
 \bibitem{he2014security}
@@ -119,13 +136,6 @@ Kari Kostiainen et~al.
 David Kotz.
 \newblock A threat taxonomy for mhealth privacy.
 \newblock In {\em COMSNETS}, pages 1--6, 2011.
-
-\bibitem{li2015adattester}
-Wenhao Li, Haibo Li, Haibo Chen, and Yubin Xia.
-\newblock Adattester: Secure online mobile advertisement attestation using
-  trustzone.
-\newblock In {\em Proceedings of the 13th Annual International Conference on
-  Mobile Systems, Applications, and Services}, pages 75--88. ACM, 2015.
 
 \bibitem{li2014building}
 Wenhao Li, Mingyang Ma, Jinchen Han, Yubin Xia, Binyu Zang, Cheng-Kang Chu, and
@@ -194,11 +204,23 @@ NSA Peter~Loscocco.
 \newblock In {\em Proceedings of the FREENIX Track:... USENIX Annual Technical
   Conference}, page~29. The Association, 2001.
 
+\bibitem{polar}
+{PolarSSL}.
+\newblock \url{https://polarssl.org/}.
+\newblock Accessed: 2016-01-07.
+
 \bibitem{research2guidance}
 Research2Guidance.
 \newblock {Mobile Health Market Report 2013-2017}.
 \newblock Technical report, Research2Guidance, 03 2013.
 \newblock \url{http://research2guidance.com/}.
+
+\bibitem{reuters}
+{Reuters - "Your medical record is worth more to hackers than your credit
+  card"}.
+\newblock
+  \url{http://www.reuters.com/article/2014/09/24/us-cybersecurity-hospitals-idUSKCN0HJ21I20140924}.
+\newblock Accessed: 2016-01-07.
 
 \bibitem{russello2012moses}
 Giovanni Russello, Mauro Conti, Bruno Crispo, and Earlence Fernandes.
