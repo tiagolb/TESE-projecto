@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  8 JAN 2016 19:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  8 JAN 2016 20:02
 entering extended mode
 **report.tex
 (report.tex
@@ -726,10 +726,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
-) (sections/5-related-work.tex [3]
+) (sections/5-related-work.tex
 Package acronym Info: Label `acro:HIPAA' newly defined as it shall be overridde
 n
 although it is yet undefined on input line 15.
+ [3]
 Package acronym Info: Label `acro:PHR' newly defined as it shall be overridden
 although it is yet undefined on input line 25.
  [4]
@@ -742,13 +743,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
-[6] <img/relwork.pdf, id=247, 648.26187pt x 306.4248pt>
+[6] <img/relwork.pdf, id=248, 648.26187pt x 306.4248pt>
 File: img/relwork.pdf Graphic file (type pdf)
  <use img/relwork.pdf>
 Package pdftex.def Info: img/relwork.pdf used on input line 75.
 (pdftex.def)             Requested size: 173.56177pt x 82.03912pt.
 
-[7 <./img/relwork.pdf>]
+Underfull \vbox (badness 2608) has occurred while \output is active []
+
+ [7 <./img/relwork.pdf>]
 Package acronym Info: Label `acro:DAC' newly defined as it shall be overridden
 although it is yet undefined on input line 86.
 Package acronym Info: Label `acro:MAC' newly defined as it shall be overridden
@@ -764,7 +767,7 @@ although it is yet undefined on input line 111.
 Package acronym Info: Label `acro:OMA' newly defined as it shall be overridden
 although it is yet undefined on input line 121.
 
-<img/communicationattacks.png, id=307, 657.95813pt x 228.855pt>
+<img/communicationattacks.png, id=308, 657.95813pt x 228.855pt>
 File: img/communicationattacks.png Graphic file (type png)
 
 <use img/communicationattacks.png>
@@ -776,7 +779,7 @@ although it is yet undefined on input line 134.
 [12]
 Package acronym Info: Label `acro:SoC' newly defined as it shall be overridden
 although it is yet undefined on input line 163.
- <img/trustzone.pdf, id=358, 690.17848pt x 440.84702pt>
+ <img/trustzone.pdf, id=359, 690.17848pt x 440.84702pt>
 File: img/trustzone.pdf Graphic file (type pdf)
 
 <use img/trustzone.pdf>
@@ -786,7 +789,7 @@ Package pdftex.def Info: img/trustzone.pdf used on input line 171.
 Package acronym Info: Label `acro:TEE' newly defined as it shall be overridden
 although it is yet undefined on input line 202.
  [16] [17] [18]
-<img/trustICE.pdf, id=487, 712.58218pt x 308.5929pt>
+<img/trustICE.pdf, id=488, 712.58218pt x 308.5929pt>
 File: img/trustICE.pdf Graphic file (type pdf)
  <use img/trustICE.pdf>
 Package pdftex.def Info: img/trustICE.pdf used on input line 271.
@@ -800,7 +803,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 288--289
  []
 
 [20]) (sections/6-architecture.tex
-<img/viewzone_architecture.pdf, id=551, 720.53192pt x 339.66899pt>
+<img/viewzone_architecture.pdf, id=552, 720.53192pt x 339.66899pt>
 File: img/viewzone_architecture.pdf Graphic file (type pdf)
 
 <use img/viewzone_architecture.pdf>
@@ -907,7 +910,7 @@ Here is how much of TeX's memory you used:
  11009 multiletter control sequences out of 15000+200000
  10438 words of font info for 38 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 33i,9n,34p,1377b,513s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,9n,34p,1353b,513s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/P
@@ -921,7 +924,7 @@ x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)
 iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on report.pdf (29 pages, 447931 bytes).
+Output written on report.pdf (29 pages, 448160 bytes).
 PDF statistics:
  770 PDF objects out of 1000 (max. 8388607)
  134 named destinations out of 1000 (max. 500000)
