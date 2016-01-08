@@ -13,7 +13,7 @@ This section presents \emph{ViewZone}, our proposed solution for TrustZone-enabl
 \begin{figure}[t!]
 	\centering
 	\includegraphics[width=0.9\textwidth]{img/viewzone_architecture.pdf}
-	\caption{ViewZone's Architecture}
+	\caption{ViewZone's Architecture.}
 	\label{fig:viewzone_architecture}
 \end{figure}
 
@@ -36,12 +36,8 @@ A big limitation of some systems described in section~\ref{sec:relatedWork} is w
 %ideia é conseguir ter coisas guardadas no mundo inseguro mas que apenas o viewzone tem acesso
 % Sobre a chave, podes adicionar um parágrafo que terá precisamente que referir o problema da chave, e de como esta é aprovisionada. Uma solução inicail que podes referir é que a chave pode já vir de fábrica e que existe uma chave pública associada que pode ser usada para enviar conteúdos cifrados para a ViewZone. Dizer que depois a ViewZone deverá também suportar protocolos criptográficos para renovação da chave.
 
-In order for the sensitive information to be inaccessible by the rich operating system, the file which contains such information must be encrypted. This encryption must be leveraged so that the file is not understandable by the full-featured operating system but is readable by the \emph{ViewZone} service. To achieve this \emph{ViewZone} must  
-
-%In order to bypass the physical limitations of storage in the secure world domain a different strategy must be implemented to support secure storage of large files. Inspired by the work which culminated on the development of DroidVault~\cite{li2014droidvault}, secure storage is possible by enabling large files to be stored in the untrusted domain. To achieve this goal \emph{ViewZone} must implement, similarly to what is done in DroidVault, a \ac{DPM}, which is the secure module for data operations. A file can be created inside \emph{ViewZone}, or downloaded from a remote server, and encrypted with a key generated in the secure side, or known by it. This way, sensitive data is encrypted before leaving \emph{ViewZone} and is never disclosed to the Android OS. Moreover, \ac{DPM} can verify if a client application running in Android (front-end of the \emph{ViewZone} trusted service) is the owner of the encrypted data. If it is then the \ac{DPM} is responsible for loading the corresponding file in the secure world domain so it can be securely managed by the trusted application. The \ac{DPM} assures the confidentiality and integrity of sensitive data in \emph{ViewZone} and allows for large files to be securely stored in the untrusted domain of a TrustZone-enabled mobile device.
+In order for the sensitive information to be inaccessible by the rich operating system, the file which contains such information must be encrypted. This encryption must be leveraged so that the file is not understandable by the full-featured operating system but is readable by the \emph{ViewZone} service. To achieve this, \emph{ViewZone} must support a unique private key from factory which, paired with a known public key, allows for files to be encrypted before being stored in the untrusted domain. \emph{ViewZone} must also support cryptographic protocols for key renewal. Key management and file handling, which includes copying a sensitive file from a shared memory region into secure memory and decrypting such file, is done by a \emph{ViewZone} module designated Data Processing Module (DPM).
 
 \paragraph{\textbf{Developer Friendly}}
 
-\emph{ViewZone} should allow for an easy deployment of critical applications using the trusted display service. The developer should not have to handle low level primitives regarding device drives, framebuffers or display controllers, as this is to be done by \emph{ViewZone}. As such, developers should leverage an API which, by communicating with \emph{ViewZone}'s service running in the secure domain, is capable of registering for the secure service, send the encrypted file to be displayed by the secure service and store it securely, with the necessary credentials, in the Android filesystem.
-
-% DIGO QUE ISTO EXISTE MAS NAO EXPLICO COMO FUNCIONA
+\emph{ViewZone} should allow for an easy deployment of critical applications using the trusted display service. The developer should not have to handle low level primitives regarding device drives, framebuffers or display controllers, as this is to be done by \emph{ViewZone}. As such, developers should leverage an API which, by communicating with \emph{ViewZone}'s service running in the secure domain, is capable of registering for the secure service and send the encrypted file to be displayed by the secure service.
