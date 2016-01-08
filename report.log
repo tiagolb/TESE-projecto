@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  8 JAN 2016 15:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  8 JAN 2016 19:26
 entering extended mode
 **report.tex
 (report.tex
@@ -733,73 +733,69 @@ although it is yet undefined on input line 15.
 Package acronym Info: Label `acro:PHR' newly defined as it shall be overridden
 although it is yet undefined on input line 25.
  [4]
-Overfull \hbox (1.10948pt too wide) in paragraph at lines 42--53
+Overfull \hbox (1.10948pt too wide) in paragraph at lines 41--52
 [][] 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
 [6] <img/relwork.pdf, id=247, 648.26187pt x 306.4248pt>
 File: img/relwork.pdf Graphic file (type pdf)
  <use img/relwork.pdf>
-Package pdftex.def Info: img/relwork.pdf used on input line 76.
+Package pdftex.def Info: img/relwork.pdf used on input line 75.
 (pdftex.def)             Requested size: 173.56177pt x 82.03912pt.
 
 [7 <./img/relwork.pdf>]
 Package acronym Info: Label `acro:DAC' newly defined as it shall be overridden
-although it is yet undefined on input line 87.
+although it is yet undefined on input line 86.
 Package acronym Info: Label `acro:MAC' newly defined as it shall be overridden
-although it is yet undefined on input line 87.
+although it is yet undefined on input line 86.
  [8]
 Package acronym Info: Label `acro:ASM' newly defined as it shall be overridden
-although it is yet undefined on input line 102.
+although it is yet undefined on input line 101.
 Package acronym Info: Label `acro:ASF' newly defined as it shall be overridden
-although it is yet undefined on input line 102.
-Package acronym Info: Label `acro:DRM' newly defined as it shall be overridden
-although it is yet undefined on input line 112.
+although it is yet undefined on input line 101.
  [9]
+Package acronym Info: Label `acro:DRM' newly defined as it shall be overridden
+although it is yet undefined on input line 111.
 Package acronym Info: Label `acro:OMA' newly defined as it shall be overridden
-although it is yet undefined on input line 122.
+although it is yet undefined on input line 121.
 
 <img/communicationattacks.png, id=307, 657.95813pt x 228.855pt>
 File: img/communicationattacks.png Graphic file (type png)
 
 <use img/communicationattacks.png>
-Package pdftex.def Info: img/communicationattacks.png used on input line 130.
+Package pdftex.def Info: img/communicationattacks.png used on input line 129.
 (pdftex.def)             Requested size: 329.7663pt x 114.70308pt.
 Package acronym Info: Label `acro:IPC' newly defined as it shall be overridden
-although it is yet undefined on input line 135.
+although it is yet undefined on input line 134.
  [10] [11 <./img/communicationattacks.png>]
 [12]
 Package acronym Info: Label `acro:SoC' newly defined as it shall be overridden
-although it is yet undefined on input line 164.
+although it is yet undefined on input line 163.
  <img/trustzone.pdf, id=358, 690.17848pt x 440.84702pt>
 File: img/trustzone.pdf Graphic file (type pdf)
 
 <use img/trustzone.pdf>
-Package pdftex.def Info: img/trustzone.pdf used on input line 172.
+Package pdftex.def Info: img/trustzone.pdf used on input line 171.
 (pdftex.def)             Requested size: 277.69987pt x 177.37833pt.
- [13] [14 <./img/trustzone.pdf>]
+ [13] [14 <./img/trustzone.pdf>] [15]
 Package acronym Info: Label `acro:TEE' newly defined as it shall be overridden
-although it is yet undefined on input line 203.
- [15]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [16]
-[17] [18] <img/trustICE.pdf, id=487, 712.58218pt x 308.5929pt>
+although it is yet undefined on input line 202.
+ [16] [17] [18]
+<img/trustICE.pdf, id=487, 712.58218pt x 308.5929pt>
 File: img/trustICE.pdf Graphic file (type pdf)
-
-<use img/trustICE.pdf>
-Package pdftex.def Info: img/trustICE.pdf used on input line 272.
+ <use img/trustICE.pdf>
+Package pdftex.def Info: img/trustICE.pdf used on input line 271.
 (pdftex.def)             Requested size: 277.69987pt x 120.26128pt.
 
 Underfull \vbox (badness 2126) has occurred while \output is active []
 
  [19 <./img/trustICE.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 289--290
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
 
  []
 
@@ -901,7 +897,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 124.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 124.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 124.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 14DDD639FCA7974654232E6B03443219;2151.
+(rerunfilecheck)             Checksum: 64D8D5D09F3BC6B8D743943433E9B091;2137.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 124.
  ) 
 Here is how much of TeX's memory you used:
@@ -911,7 +907,7 @@ Here is how much of TeX's memory you used:
  11009 multiletter control sequences out of 15000+200000
  10438 words of font info for 38 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 33i,9n,34p,1392b,513s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,9n,34p,1377b,513s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/P
@@ -925,7 +921,7 @@ x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)
 iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on report.pdf (29 pages, 448165 bytes).
+Output written on report.pdf (29 pages, 447931 bytes).
 PDF statistics:
  770 PDF objects out of 1000 (max. 8388607)
  134 named destinations out of 1000 (max. 500000)

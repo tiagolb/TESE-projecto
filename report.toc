@@ -1,4 +1,4 @@
-\contentsline {title}{Dissertation: ViewZone}{1}{chapter.1}
+\contentsline {title}{ViewZone}{1}{chapter.1}
 \authcount {1}
 \contentsline {author}{Tiago Lu\IeC {\'\i }s de Oliveira Brito\unskip \ \ignorespaces Supervisor: Prof. Nuno Santos}{1}{chapter.1}
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1.1}
@@ -22,7 +22,7 @@
 \contentsline {paragraph}{\textbf {TrustZone}}{13}{section*.11}
 \contentsline {subsubsection}{\numberline {2.2.5}Summary}{14}{subsubsection.1.2.2.5}
 \contentsline {subsection}{\numberline {2.3}TrustZone-based Mobile Security Systems}{15}{subsection.1.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}Trusted Kernels with Untrusted UI}{17}{subsubsection.1.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.1}Trusted Kernels with Untrusted UI}{16}{subsubsection.1.2.3.1}
 \contentsline {subsubsection}{\numberline {2.3.2}Trusted Services with Untrusted UI}{17}{subsubsection.1.2.3.2}
 \contentsline {subsubsection}{\numberline {2.3.3}Trusted Kernels with Trusted UI}{18}{subsubsection.1.2.3.3}
 \contentsline {subsubsection}{\numberline {2.3.4}Trusted Services with Trusted UI}{20}{subsubsection.1.2.3.4}
