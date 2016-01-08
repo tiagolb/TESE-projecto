@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  8 JAN 2016 23:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.14)  8 JAN 2016 23:29
 entering extended mode
 **report.tex
 (report.tex
@@ -779,17 +779,17 @@ although it is yet undefined on input line 134.
 [12]
 Package acronym Info: Label `acro:SoC' newly defined as it shall be overridden
 although it is yet undefined on input line 163.
- <img/trustzone.pdf, id=359, 690.17848pt x 440.84702pt>
+ <img/trustzone.pdf, id=359, 686.565pt x 432.17459pt>
 File: img/trustzone.pdf Graphic file (type pdf)
 
 <use img/trustzone.pdf>
 Package pdftex.def Info: img/trustzone.pdf used on input line 171.
-(pdftex.def)             Requested size: 277.69987pt x 177.37833pt.
+(pdftex.def)             Requested size: 277.69987pt x 174.79893pt.
  [13] [14 <./img/trustzone.pdf>] [15]
 Package acronym Info: Label `acro:TEE' newly defined as it shall be overridden
 although it is yet undefined on input line 202.
  [16] [17] [18]
-<img/trustICE.pdf, id=488, 712.58218pt x 308.5929pt>
+<img/trustICE.pdf, id=490, 712.58218pt x 308.5929pt>
 File: img/trustICE.pdf Graphic file (type pdf)
  <use img/trustICE.pdf>
 Package pdftex.def Info: img/trustICE.pdf used on input line 271.
@@ -803,7 +803,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 288--289
  []
 
 [20]) (sections/6-architecture.tex
-<img/viewzone_architecture.pdf, id=552, 720.53192pt x 339.66899pt>
+<img/viewzone_architecture.pdf, id=554, 720.53192pt x 339.66899pt>
 File: img/viewzone_architecture.pdf Graphic file (type pdf)
 
 <use img/viewzone_architecture.pdf>
@@ -906,7 +906,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 124.
 Here is how much of TeX's memory you used:
  7949 strings out of 493673
  114979 string characters out of 3141529
- 221356 words of memory out of 3000000
+ 221354 words of memory out of 3000000
  11009 multiletter control sequences out of 15000+200000
  10438 words of font info for 38 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
@@ -924,9 +924,9 @@ x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)
 iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on report.pdf (29 pages, 447852 bytes).
+Output written on report.pdf (29 pages, 448630 bytes).
 PDF statistics:
- 770 PDF objects out of 1000 (max. 8388607)
+ 772 PDF objects out of 1000 (max. 8388607)
  134 named destinations out of 1000 (max. 500000)
  234 words of extra memory for PDF output out of 10000 (max. 10000000)
 
